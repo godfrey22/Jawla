@@ -41,7 +41,7 @@ class PagesController extends AppController
     public function display(...$path)
     {
 
-        $this->viewBuilder()->setLayout('jawla');
+        $this->viewBuilder()->setLayout('jalwa');
 
         $count = count($path);
         if (!$count) {
