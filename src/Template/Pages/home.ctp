@@ -1,68 +1,150 @@
-<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="#">Navbar</a>
+<div class="wrapper">
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
+    <div class="navbar" id="navbar">
+        <a href="#" class="nav-toggle" id="nav-toggle"><i class="fa fa-bars" data-swap="fa fa-times"></i> Menu</a>
+        <ul class="nav pull-left">
+            <li class="current"><a href="http://www.jalwadancecompany.com/">Home</a></li>
+            <li><a href="http://www.jalwadancecompany.com/genres/">Genres</a></li>
+            <li class="parent"><a href="http://www.jalwadancecompany.com/classes/">Dance Classes</a>
+                <ul class="sub-menu">
+                    <li><a href="http://www.jalwadancecompany.com/classes/">Studio</a></li>
+                    <li><a href="http://www.jalwadancecompany.com/kids/school-incursions/">School Incursions</a></li>
+                    <li><a href="http://www.jalwadancecompany.com/team-bonding/">Team Bonding</a></li>
+                    <li><a href="http://www.jalwadancecompany.com/hens-nights/">Hen’s Nights</a></li>
+                    <li><a href="http://www.jalwadancecompany.com/kids/kids-parties/">Kid’s Parties</a></li>
+                </ul>
+            </li>
+            <li class="parent"><a href="http://www.jalwadancecompany.com/live-entertainment/">Live Entertainment</a>
+                <ul class="sub-menu">
+                    <li><a href="http://www.jalwadancecompany.com/functions-festivals-events/">Functions, Festivals
+                            &amp; Events</a></li>
+                    <li><a href="http://www.jalwadancecompany.com/kids/kids-parties/">Kid’s Parties</a></li>
+                    <li><a href="http://www.jalwadancecompany.com/hens-nights/">Hen’s Nights</a></li>
+                </ul>
+            </li>
+            <li class="parent"><a href="http://www.jalwadancecompany.com/kids/kids-parties/">Kids</a>
+                <ul class="sub-menu">
+                    <li><a href="http://www.jalwadancecompany.com/classes/">Dance Classes</a></li>
+                    <li><a href="http://www.jalwadancecompany.com/kids/kids-parties/">Kid’s Parties</a></li>
+                    <li><a href="http://www.jalwadancecompany.com/kids/school-incursions/">School Incursions</a></li>
+                </ul>
+            </li>
+            <li><a href="http://www.jalwadancecompany.com/studio-hire/">Studio Hire</a></li>
+            <li><a href="http://www.jalwadancecompany.com/contact/">Contact</a></li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1 class="display-3">Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
-      </div>
+        <ul class="social pull-right">
+            <li><a href="tel:0423652338"><i class="fa fa-phone"></i><span> 0423 652 338</span></a></li>
+            <li><a href="https://www.facebook.com/Jalwa-DanceCo-244403902431353/"><i class="fa fa-facebook-square"></i></a>
+            </li>
+            <li><a href="https://www.instagram.com/jalwadanceco/"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+        <div class="clear"></div>
     </div>
 
+    <div class="feature front-page"
+         style="background-image: url(http://www.jalwadancecompany.com/wp-content/uploads/2016/09/HOME.jpg);">
+
+        <div class="container">
+            <h1 class="logo">
+                <a href="http://www.jalwadancecompany.com">
+                    <img src="http://www.jalwadancecompany.com/wp-content/themes/ndtheme/images/jalwa_logo_home.png"
+                         alt="Jalwa Dance Company">
+                </a>
+            </h1>
+        </div>
+
+    </div>
+    <div class="main">
+
+        <div class="container">
+
+            <div class="where-to">
+                <ul>
+                    <li>
+                        <a href="http://www.jalwadancecompany.com/genres/">
+                            <div class="box"
+                                 style="background-image: url(http://www.jalwadancecompany.com/wp-content/uploads/2016/09/GENRES-300x167.jpg)">
+                            </div>
+                            <span>Genres ›</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.jalwadancecompany.com/classes/">
+                            <div class="box"
+                                 style="background-image: url(http://www.jalwadancecompany.com/wp-content/uploads/2016/09/Sequence-01.Still003-300x169.jpg)">
+                            </div>
+                            <span>Dance Classes ›</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.jalwadancecompany.com/kids/kids-parties/">
+                            <div class="box"
+                                 style="background-image: url(http://www.jalwadancecompany.com/wp-content/uploads/2016/09/KIDS-300x200.jpg)">
+                            </div>
+                            <span>Kids ›</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.jalwadancecompany.com/live-entertainment/">
+                            <div class="box"
+                                 style="background-image: url(http://www.jalwadancecompany.com/wp-content/uploads/2016/09/LIVE-ENTERTAINMENT-300x168.jpg)">
+                            </div>
+                            <span>Live Entertainment ›</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.jalwadancecompany.com/studio-hire/">
+                            <div class="box"
+                                 style="background-image: url(http://www.jalwadancecompany.com/wp-content/uploads/2016/09/STUDIO-HIRE-1-1-300x106.jpg)">
+                            </div>
+                            <span>Studio Hire ›</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+
+            <div class="content">
+                <h2>The Jalwa Dance Company is a professional troupe based in Melbourne</h2>
+                <h3>We are experts in Bollywood, Bellydancing, Fire Twirling, Latin styles and Aerial Acts.</h3>
+                <p>Choose authentic, stunning and colourful costumes. Choose sass, charm and professionalism that will
+                    give your function an instant boost in energy and get the party started! Our professional team of
+                    dancers unite weekly to create new, updated magical routines and continue to push the boundaries to
+                    guarantee your event will only ever receive nothing less than an astonishing floorshow.</p>
+                <p>Why book many different troupes when you can book one with all styles for the same cost!*</p>
+                <p>*(conditions apply)</p>
+                <p>&nbsp;</p>
+                <p style="text-align: center;">WATCH OUR LATEST SHOW REEL:</p>
+                <p style="text-align: center;">
+                    <iframe width="500" height="281" src="https://www.youtube.com/embed/TKfZWxV8FLU?feature=oembed"
+                            frameborder="0" allowfullscreen=""></iframe>
+                </p>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="push"></div>
+
+</div>
+
+<div class="footer">
+
     <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-        </div>
-      </div>
+        <div class="clear"></div>
 
-      <hr>
+        <div class="attribution">
 
-      <footer>
-        <p>© Company 2017</p>
-      </footer>
-    </div> <!-- /container -->
+            <p class="pull-left">A passion for cultures, irresistibly contagious </p>
+
+            <p class="pull-right">Copyright © Jalwa Dance Company 2017 | ABN 72 045 015 126 | 3/23-25 Bunney Road
+                Oakleigh South 3167 VIC</p>
+            <div class="clear"></div>
+        </div>
+
+    </div>
+
+</div>
