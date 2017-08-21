@@ -30,7 +30,7 @@ class UsersController extends AppController
 {
 
     public function login(){
-        
+        $this->viewBuilder()->setLayout('admin');
     }
 
 }
