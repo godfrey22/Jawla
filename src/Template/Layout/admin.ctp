@@ -36,6 +36,7 @@ $cakeDescription = 'Test Admin';
     <?= $this->fetch('script') ?>
 
     <style>
+        /* this is an internal css, because the css is in this file, not linked from other files */
         body{
             background-image: url("img/jalwa_bg.jpg");
         }
