@@ -29,8 +29,14 @@ use Cake\View\Exception\MissingTemplateException;
 class UsersController extends AppController
 {
 
+    public function register(){
+        $this->viewBuilder()->setLayout('admin');
+        
+    }
+
     public function login(){
         $this->viewBuilder()->setLayout('admin');
     }
+
 
 }
