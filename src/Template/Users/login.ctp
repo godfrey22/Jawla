@@ -1,3 +1,28 @@
+<body class="app flex-row align-items-center">
+<style>
+    .bg-primary {
+        background-color: #d8a72b !important;
+    }
+    .card.bg-primary {
+        border-color: #d8a925;
+    }
+    .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
+        background-color: #af8613;
+        background-image: none;
+        border-color: #af8613;
+    }
+    .btn-primary {
+        color: #fff;
+        background-color: #af8613;
+        border-color: #af8613;
+    }
+    .btn-primary:hover {
+        color: #fff;
+        background-color: #c79915;
+        border-color: #c79915;
+    }
+</style>
+<div class="container clearfix">
 <div class="container">
     <div class="row justify-content-center">
         <img src="img/jalwa_logo_home.png" alt="Logo">
@@ -23,7 +48,12 @@
                         </div>
                         <div class="row">
                             <div class="col-6">
-                                <button type="button" class="btn btn-primary px-4">Login</button>
+                                <?php
+                                echo $this->Html->link("Login",
+                                    array('controller' => 'Admin', 'action' => 'home'),
+                                    array('class' => 'btn btn-primary px-4'));
+                                ?>
+
                             </div>
                             <div class="col-6 text-right">
                                 <button type="button" class="btn btn-link px-0">Forgot password?</button>
@@ -37,7 +67,11 @@
                             <h2>Sign up</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua.</p>
-                            <button type="button" class="btn btn-primary active mt-3">Register Now!</button>
+                            <?php
+                                echo $this->Html->link("Register Now!",
+                                    array('controller' => 'Users', 'action' => 'register'),
+                                    array('class' => 'btn btn-primary active mt-3'));
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -45,3 +79,5 @@
         </div>
     </div>
 </div>
+</div>
+</body>

@@ -1,3 +1,17 @@
+<body class="app flex-row align-items-center">
+<style>
+    .btn-success {
+        color: #fff;
+        background-color: #af8613;
+        border-color: #af8613;
+    }
+    .btn-success:hover {
+        color: #fff;
+        background-color: #c79915;
+        border-color: #c79915;
+    }
+</style>
+<div class="container clearfix">
 <div class="container">
     <div class="row justify-content-center">
         <img src="img/jalwa_logo_home.png" alt="Logo">
@@ -38,3 +52,6 @@
             </div>
         </div>
     </div>
+</div>
+</div>
+</body>

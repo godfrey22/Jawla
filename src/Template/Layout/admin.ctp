@@ -37,47 +37,9 @@ $cakeDescription = 'Test Admin';
 
     <style>
         body{
-            background-image: url("img/jalwa_bg.jpg");
+            background-image: url(<?php echo $this->Url->image('jalwa_bg.jpg'); ?>);
         }
-        .bg-primary {
-            background-color: #d8a72b !important;
-        }
-        .card.bg-primary {
-            border-color: #d8a925;
-        }
-        .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
-            background-color: #af8613;
-            background-image: none;
-            border-color: #af8613;
-        }
-        .btn-primary {
-            color: #fff;
-            background-color: #af8613;
-            border-color: #af8613;
-        }
-        .btn-primary:hover {
-            color: #fff;
-            background-color: #c79915;
-            border-color: #c79915;
-        }
-
-        .btn-success {
-            color: #fff;
-            background-color: #af8613;
-            border-color: #af8613;
-        }
-        .btn-success:hover {
-            color: #fff;
-            background-color: #c79915;
-            border-color: #c79915;
-        }
-
     </style>
 </head>
-<body class="app flex-row align-items-center">
-    <?= $this->Flash->render() ?>
-    <div class="container clearfix">
-        <?= $this->fetch('content') ?>
-    </div>
-</body>
+    <?= $this->fetch('content') ?>
 </html>
