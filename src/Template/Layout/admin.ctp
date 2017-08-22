@@ -29,11 +29,9 @@ $cakeDescription = 'Test Admin';
     <?= $this->Html->css('admin/font-awesome.min.css') ?>
     <?= $this->Html->css('admin/simple-line-icons.css') ?>
     <?= $this->Html->css('admin/style.css') ?>
-    
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
 
     <style>
         /* this is an internal css, because the css is in this file, not linked from other files */
@@ -43,4 +41,15 @@ $cakeDescription = 'Test Admin';
     </style>
 </head>
     <?= $this->fetch('content') ?>
+
+    <?= $this->Html->script('admin/jquery/dist/jquery.min.js') ?>
+    <?= $this->Html->script('admin/popper.js/dist/umd/popper.js') ?>
+
+    <?= $this->Html->script('admin/bootstrap/dist/js/bootstrap.min.js') ?>
+    <?= $this->Html->script('admin/pace/pace.min.js') ?>
+    <?= $this->Html->script('admin/chart.js/dist/Chart.min.js') ?>
+    <?= $this->Html->script('admin/app.js') ?>
+    <?= $this->Html->script('admin/views/main.js') ?>
+    <?= $this->fetch('script') ?>
+
 </html>
