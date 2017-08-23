@@ -36,8 +36,10 @@ $cakeDescription = 'Test Admin';
     <style>
         /* this is an internal css, because the css is in this file, not linked from other files */
         body{
-            background-image: url(<?php echo $this->Url->image('jalwa_bg.jpg'); ?>);
+            background-image: url(<?= $this->Url->image('jalwa_bg.jpg'); ?>);
         }
+        .app-header.navbar .navbar-brand {
+             background-image: url(<?= $this->Url->image('admin/logo.png'); ?>);  }
     </style>
 </head>
     <?= $this->fetch('content') ?>
