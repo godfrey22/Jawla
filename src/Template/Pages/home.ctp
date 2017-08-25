@@ -33,7 +33,9 @@
             <li><a href="http://www.jalwadancecompany.com/contact/">Contact</a></li>
         </ul>
         <ul class="social pull-right">
-            <li><a href="tel:0423652338"><i class="fa fa-phone"></i><span> 0423 652 338</span></a></li>
+            <li><a href="tel:0423652338"><i class="fa fa-phone"></i><span>
+                        <?= h($information[0]->value) ?>
+                    </span></a></li>
             <li><a href="https://www.facebook.com/Jalwa-DanceCo-244403902431353/"><i class="fa fa-facebook-square"></i></a>
             </li>
             <li><a href="https://www.instagram.com/jalwadanceco/"><i class="fa fa-instagram"></i></a></li>
@@ -140,8 +142,8 @@
 
             <p class="pull-left">A passion for cultures, irresistibly contagious </p>
 
-            <p class="pull-right">Copyright © Jalwa Dance Company 2017 | ABN 72 045 015 126 | 3/23-25 Bunney Road
-                Oakleigh South 3167 VIC</p>
+            <p class="pull-right">Copyright © <?= h($information[1]->value) ?> | ABN <?= h($information[2]->value) ?> | <?= h($information[3]->value) ?>
+                O<?= h($information[4]->value) ?></p>
             <div class="clear"></div>
         </div>
 

@@ -18,6 +18,7 @@ use Cake\Core\Configure;
 use Cake\Network\Exception\ForbiddenException;
 use Cake\Network\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
+use App\Model;
 
 /**
  * Static content controller
@@ -40,7 +41,11 @@ class PagesController extends AppController
      */
 
     public function home(){
+        $info = $this->loadModel('Information');
+        $information = $info->find('all')->toArray();
+
         $this->viewBuilder()->setLayout('jalwa');
+        $this->set(compact('information'));
     }
 
 }
