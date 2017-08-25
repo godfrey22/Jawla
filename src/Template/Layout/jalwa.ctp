@@ -253,7 +253,5 @@ $cakeDescription = 'Testing Landing Page';
     <div class="container">
         <?= $this->fetch('content') ?>
     </div>
-    <footer>
-    </footer>
 </body>
 </html>
