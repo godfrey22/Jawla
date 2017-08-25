@@ -48,4 +48,8 @@ class PagesController extends AppController
         $this->set(compact('information'));
     }
 
+    public function test(){
+
+    }
+
 }
