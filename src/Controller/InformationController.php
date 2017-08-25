@@ -79,11 +79,11 @@ class InformationController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $information = $this->Information->patchEntity($information, $this->request->getData());
             if ($this->Information->save($information)) {
-                $this->Flash->success(__('The information has been saved.'));
+//                $this->Flash->success(__('The information has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect('/test');
             }
-            $this->Flash->error(__('The information could not be saved. Please, try again.'));
+//            $this->Flash->error(__('The information could not be saved. Please, try again.'));
         }
         $this->set(compact('information'));
         $this->set('_serialize', ['information']);
