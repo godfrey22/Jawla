@@ -44,12 +44,11 @@
     </div>
 
     <div class="feature front-page"
-         style="background-image: url(http://www.jalwadancecompany.com/wp-content/uploads/2016/09/HOME.jpg);">
-
+         style="background-image: url(<?= $this->Url->image('home/'.$information[5]->value); ?>);">
         <div class="container">
             <h1 class="logo">
                 <a href="http://www.jalwadancecompany.com">
-                    <img src="http://www.jalwadancecompany.com/wp-content/themes/ndtheme/images/jalwa_logo_home.png"
+                    <img src="<?= $this->Url->image('home/'.$information[6]->value); ?>"
                          alt="Jalwa Dance Company">
                 </a>
             </h1>
