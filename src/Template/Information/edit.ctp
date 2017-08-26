@@ -37,18 +37,17 @@ use Cake\Filesystem\File;
                         </div>
                         <div class="modal-body">
                             <?php foreach ($files as $file){
-                                echo '<a href="#" onclick=selectFile('.$file.')>'.
+                                echo '<a href="#" onclick=selectFile("'.$file.'")>'.
                                         $file.
                                         '</a>
                                         </br>';
                             } ?>
-
-                            <script>
-                                function selectFile(fileName){
-                                    alert(fileName)
-                                }
-                            </script>
                         </div>
+                        <script language="JavaScript" type="text/javascript">
+                            function selectFile(fileName){
+                                alert(fileName)
+                            }
+                        </script>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
