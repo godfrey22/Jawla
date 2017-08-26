@@ -2,6 +2,8 @@
 /**
   * @var \App\View\AppView $this
   */
+use Cake\Filesystem\Folder;
+use Cake\Filesystem\File;
 ?>
 
 <div class="information form-group container">
@@ -15,7 +17,8 @@
     </fieldset>
     <?php
         if ($information->id == 7 || $information->id == 8) {
-
+            $dir = new Folder(WWW_ROOT . 'img/home');
+            $files = $dir->find('.*\.png|jpg', true);
     ?>
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
@@ -33,7 +36,9 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            ...
+                            <?php foreach ($files as $file){
+                                echo $file.'</br>';
+                            } ?>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -44,7 +49,6 @@
             </div>
     <?php
         }
-
     ?>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
