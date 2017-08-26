@@ -16,20 +16,21 @@ $cakeDescription = 'Testing Landing Page';
     <?= $this->Html->meta('icon') ?>
 
     <?= $this->Html->css('bs/bootstrap.min.css') ?>
-    <?= $this->Html->script('jquery-3.2.1.min.js') ?>
-    <?= $this->Html->script('popper.min.js') ?>
-    <?= $this->Html->script('bs/bootstrap.min.js') ?>
+
     
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
+
 </head>
 <body>
     <?= $this->Flash->render() ?>
     <div class="container">
         <?= $this->fetch('content') ?>
     </div>
-    <footer>
-    </footer>
+
+    <?= $this->Html->script('jquery-3.2.1.min.js') ?>
+    <?= $this->Html->script('popper.min.js') ?>
+    <?= $this->Html->script('bs/bootstrap.min.js') ?>
+    <?= $this->fetch('script') ?>
 </body>
 </html>
