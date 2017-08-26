@@ -58,12 +58,20 @@
     <tr>
         <th>Background Image</th>
         <th><?= h($information[5]->value) ?></th>
-        <th><a href="" class="btn btn-primary">Edit</a></th>
+        <th>            <?=
+            $this->Html->link(
+                'Edit',
+                ['controller' => 'Information', 'action' => 'edit/7', '_full' => true]
+            ); ?></th>
     </tr>
     <tr>
         <th>Logo Image</th>
         <th><?= h($information[6]->value) ?></th>
-        <th><a href="" class="btn btn-primary">Edit</a></th>
+        <th>            <?=
+            $this->Html->link(
+                'Edit',
+                ['controller' => 'Information', 'action' => 'edit/8', '_full' => true]
+            ); ?></th>
     </tr>
 
 

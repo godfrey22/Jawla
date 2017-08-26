@@ -12,6 +12,12 @@
             echo $this->Form->control('value');
         ?>
     </fieldset>
+    <?php
+        if ($information->id == 7 || $information->id == 8) {
+            echo $this->Form->button(__('Choose'));
+        }
+
+    ?>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>
