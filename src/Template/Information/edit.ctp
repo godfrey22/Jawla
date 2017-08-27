@@ -20,9 +20,9 @@ use Cake\Filesystem\File;
             $dir = new Folder(WWW_ROOT . 'img/home');
             $files = $dir->find('.*\.png|jpg', true);
     ?>
-            <img src="<?= $this->Url->image('home/'.$information['value'])?>" alt="" class="img-thumbnail">
+            <img src="<?= $this->Url->image('home/'.$information['value'])?>" alt="" class="img-thumbnail" id="thumbnail">
             <!-- Button trigger modal -->
-
+            <br>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                 Choose
             </button>
@@ -48,6 +48,9 @@ use Cake\Filesystem\File;
                         <script language="JavaScript" type="text/javascript">
                             function selectFile(fileName){
                                 $("#value").val(fileName);
+                                var imgDir = "<?= $this->Url->image('home/')?>";
+                                console.log(imgDir);
+                                $("#thumbnail").attr("src", imgDir + fileName);
                             }
                         </script>
                         <div class="modal-footer">
