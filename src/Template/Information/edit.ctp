@@ -20,7 +20,7 @@ use Cake\Filesystem\File;
             $dir = new Folder(WWW_ROOT . 'img/home');
             $files = $dir->find('.*\.png|jpg', true);
     ?>
-            <img src="<?= $this->Url->image('home/'.$information['value'])?>" alt="" class="img-thumbnail" id="thumbnail">
+            <img src="<?= $this->Url->image('home/'.$information['value'])?>" alt="" class="img-thumbnail" id="thumbnail" width="300" height="200">
             <!-- Button trigger modal -->
             <br>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
