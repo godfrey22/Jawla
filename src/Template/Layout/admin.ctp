@@ -44,6 +44,9 @@ $cakeDescription = 'Test Admin';
         }
     </style>
 </head>
+
+
+
 <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
 <header class="app-header navbar">
     <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">☰</button>
@@ -139,6 +142,7 @@ $cakeDescription = 'Test Admin';
             </ul>
         </nav>
     </div>
+
     <?= $this->fetch('content') ?>
 
 </div>
@@ -147,6 +151,7 @@ $cakeDescription = 'Test Admin';
     <span class="float-right">Powered by <a href="http://coreui.io">CoreUI</a>
         </span>
 </footer>
+
 <?= $this->Html->script('admin/jquery/dist/jquery.min.js') ?>
 <?= $this->Html->script('admin/popper.js/dist/umd/popper.js') ?>
 

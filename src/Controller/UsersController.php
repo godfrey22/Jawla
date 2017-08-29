@@ -30,12 +30,12 @@ class UsersController extends AppController
 {
 
     public function register(){
-        $this->viewBuilder()->setLayout('admin');
+        $this->viewBuilder()->setLayout('login');
         
     }
 
     public function login(){
-        $this->viewBuilder()->setLayout('admin');
+        $this->viewBuilder()->setLayout('login');
     }
 
 
