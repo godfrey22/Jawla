@@ -193,10 +193,11 @@
                                 <i class="fa fa-align-justify"></i> Simple Table
                             </div>
                             <div class="card-body">
-                                <table class="table">
+                                <table class="table table-bordered table-striped table-sm">
                     <tr>
                         <th>Field</th>
                         <th>Value</th>
+                        <th>Action</th>
                     </tr>
                     <tr>
                         <th>Phone</th>
