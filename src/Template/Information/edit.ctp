@@ -35,65 +35,73 @@ use Cake\Filesystem\File;
                 <div class="col-lg-6">
                     <div class="card">
                         <div class="card-header">
-                            Edit Information
+                            Website Content Management
                         </div>
-                        <div class="card-body">
+                        <div class="card-block information form-group">
 
-                            <div class="information form-group container">
-                                <?= $this->Form->create($information) ?>
-
+                            <?= $this->Form->create($information) ?>
+                            <?php
+                            if ($information->id == 7 || $information->id == 8) {
+                            $dir = new Folder(WWW_ROOT . 'img/home');
+                            $files = $dir->find('.*\.png|jpg', true);
+                            ?>
+                            <fieldset class="form-control">
+                                <legend><?= "Edit Information" ?></legend>
                                 <?php
-                                if ($information->id == 7 || $information->id == 8) {
-
-                                    $dir = new Folder(WWW_ROOT . 'img/home');
-                                    $files = $dir->find('.*\.png|jpg', true);
-                                    ?>
-                                    <fieldset>
-                                        <legend><?= __($information->field) ?></legend>
-                                        <?php
-                                        echo $this->Form->control('value',
-                                            ['disabled'=>true]);
-                                        ?>
-                                    </fieldset>
-                                    <img src="<?= $this->Url->image('home/' . $information['value']) ?>" alt="" class="img-thumbnail" id="thumbnail"
-                                         width="300" height="200">
-                                    <!-- Button trigger modal -->
-                                    <hr>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                                        Choose
-                                    </button>
-
-                                    <!-- Modal -->
-                                    <?php
-                                }else{
-                                    ?>
-
-                                    <fieldset>
-                                        <legend><?= __($information->field) ?></legend>
-                                        <?php
-                                        echo $this->Form->control('value');
-                                        ?>
-                                    </fieldset>
-
-                                <?php
-                                }
+                                echo $this->Form->control('value',
+                                    [
+                                        'label' => $information->field,
+                                        'class' => "form-control",
+                                        'disabled' => true
+                                    ]);
                                 ?>
-                                <?= $this->Form->button(__('Submit'), ['class'=>'btn btn-primary']) ?>
-                                <?= $this->Form->end() ?>
-                            </div>
+                            </fieldset>
+                            <img src="<?= $this->Url->image('home/' . $information['value']) ?>" alt=""
+                                 class="img-thumbnail form-control" id="thumbnail"
+                                 width="300" height="200">
 
+                        </div>
 
+                        <div class="card-footer">
+                            <!-- Button trigger modal -->
 
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#myModal">
+                                Choose
+                            </button>
 
+                            <?php
+                            } else {
+                            ?>
+
+                            <fieldset>
+                                <legend><?= "Edit Information" ?></legend>
+                                <?php
+                                echo $this->Form->control('value',
+                                    [
+                                        'label' => $information->field,
+                                        'class' => "form-control"
+                                    ]);
+                                ?>
+                            </fieldset>
+                        </div>
+                        <div class="card-footer">
+                            <?php
+                            }
+                            ?>
+
+                            <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-primary']) ?>
+                            <?= $this->Form->end() ?>
                         </div>
                     </div>
+
+
                 </div>
 
             </div>
 
         </div>
         <!-- /.conainer-fluid -->
-
 
 
 </main>
@@ -173,7 +181,8 @@ use Cake\Filesystem\File;
             <hr class="mx-3 my-0">
             <div class="callout callout-success m-0 py-3">
                 <div>
-                    <strong>#10 Startups.Garden</strong>Meetup</div>
+                    <strong>#10 Startups.Garden</strong>Meetup
+                </div>
                 <small class="text-muted mr-3"><i class="icon-calendar"></i>&nbsp; 1 - 3pm</small>
                 <small class="text-muted"><i class="icon-location-pin"></i>&nbsp; Palo Alto, CA</small>
             </div>
@@ -223,7 +232,9 @@ use Cake\Filesystem\File;
                     <small class="text-muted float-right mt-1">1:52 PM</small>
                 </div>
                 <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
-                <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
+                <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt...
+                </small>
             </div>
             <hr>
             <div class="message">
@@ -238,7 +249,9 @@ use Cake\Filesystem\File;
                     <small class="text-muted float-right mt-1">1:52 PM</small>
                 </div>
                 <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
-                <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
+                <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt...
+                </small>
             </div>
             <hr>
             <div class="message">
@@ -253,7 +266,9 @@ use Cake\Filesystem\File;
                     <small class="text-muted float-right mt-1">1:52 PM</small>
                 </div>
                 <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
-                <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
+                <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt...
+                </small>
             </div>
             <hr>
             <div class="message">
@@ -268,7 +283,9 @@ use Cake\Filesystem\File;
                     <small class="text-muted float-right mt-1">1:52 PM</small>
                 </div>
                 <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
-                <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
+                <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt...
+                </small>
             </div>
             <hr>
             <div class="message">
@@ -283,7 +300,9 @@ use Cake\Filesystem\File;
                     <small class="text-muted float-right mt-1">1:52 PM</small>
                 </div>
                 <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
-                <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...</small>
+                <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt...
+                </small>
             </div>
         </div>
         <div class="tab-pane p-3" id="settings" role="tabpanel">
@@ -300,7 +319,9 @@ use Cake\Filesystem\File;
                     </label>
                 </div>
                 <div>
-                    <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
+                    <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.
+                    </small>
                 </div>
             </div>
 
@@ -315,7 +336,9 @@ use Cake\Filesystem\File;
                     </label>
                 </div>
                 <div>
-                    <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
+                    <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.
+                    </small>
                 </div>
             </div>
 
@@ -351,7 +374,8 @@ use Cake\Filesystem\File;
                 </small>
             </div>
             <div class="progress progress-xs">
-                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25"
+                     aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <small class="text-muted">348 Processes. 1/4 Cores.</small>
 
@@ -360,7 +384,8 @@ use Cake\Filesystem\File;
                 </small>
             </div>
             <div class="progress progress-xs">
-                <div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70"
+                     aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <small class="text-muted">11444GB/16384MB</small>
 
@@ -369,7 +394,8 @@ use Cake\Filesystem\File;
                 </small>
             </div>
             <div class="progress progress-xs">
-                <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="95"
+                     aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <small class="text-muted">243GB/256GB</small>
 
@@ -378,7 +404,8 @@ use Cake\Filesystem\File;
                 </small>
             </div>
             <div class="progress progress-xs">
-                <div class="progress-bar bg-success" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-success" role="progressbar" style="width: 10%" aria-valuenow="10"
+                     aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <small class="text-muted">25GB/256GB</small>
         </div>
