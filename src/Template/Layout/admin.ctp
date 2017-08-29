@@ -142,7 +142,7 @@ $cakeDescription = 'Test Admin';
             </ul>
         </nav>
     </div>
-
+    <?= $this->Flash->render() ?>
     <?= $this->fetch('content') ?>
 
 </div>

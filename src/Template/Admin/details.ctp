@@ -51,7 +51,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <i class="fa fa-align-justify"></i> Simple Table
+                                <i class="fa fa-align-justify"></i> Company Information
                             </div>
                             <div class="card-body">
                                 <table class="table table-bordered table-striped table-sm">

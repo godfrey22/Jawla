@@ -52,7 +52,7 @@ use Cake\Filesystem\File;
                                     [
                                         'label' => $information->field,
                                         'class' => "form-control",
-                                        'disabled' => true
+                                        'readonly' => true
                                     ]);
                                 ?>
                             </fieldset>
