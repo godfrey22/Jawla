@@ -41,17 +41,20 @@ use Cake\Filesystem\File;
 
                             <div class="information form-group container">
                                 <?= $this->Form->create($information) ?>
-                                <fieldset>
-                                    <legend><?= __($information->field) ?></legend>
-                                    <?php
-                                    echo $this->Form->control('value');
-                                    ?>
-                                </fieldset>
+
                                 <?php
                                 if ($information->id == 7 || $information->id == 8) {
+
                                     $dir = new Folder(WWW_ROOT . 'img/home');
                                     $files = $dir->find('.*\.png|jpg', true);
                                     ?>
+                                    <fieldset>
+                                        <legend><?= __($information->field) ?></legend>
+                                        <?php
+                                        echo $this->Form->control('value',
+                                            ['disabled'=>true]);
+                                        ?>
+                                    </fieldset>
                                     <img src="<?= $this->Url->image('home/' . $information['value']) ?>" alt="" class="img-thumbnail" id="thumbnail"
                                          width="300" height="200">
                                     <!-- Button trigger modal -->
@@ -62,6 +65,17 @@ use Cake\Filesystem\File;
 
                                     <!-- Modal -->
                                     <?php
+                                }else{
+                                    ?>
+
+                                    <fieldset>
+                                        <legend><?= __($information->field) ?></legend>
+                                        <?php
+                                        echo $this->Form->control('value');
+                                        ?>
+                                    </fieldset>
+
+                                <?php
                                 }
                                 ?>
                                 <?= $this->Form->button(__('Submit'), ['class'=>'btn btn-primary']) ?>
