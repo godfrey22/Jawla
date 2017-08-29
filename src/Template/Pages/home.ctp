@@ -36,9 +36,11 @@
             <li><a href="tel:0423652338"><i class="fa fa-phone"></i><span>
                         <?= h($information[0]->value) ?>
                     </span></a></li>
-            <li><a href="https://www.facebook.com/Jalwa-DanceCo-244403902431353/"><i class="fa fa-facebook-square"></i></a>
+            <li>
+                <?= $this->Html->link("Login / Register",
+                    array('controller' => 'Users', 'action' => 'login'));
+                ?>
             </li>
-            <li><a href="https://www.instagram.com/jalwadanceco/"><i class="fa fa-instagram"></i></a></li>
         </ul>
         <div class="clear"></div>
     </div>
