@@ -61,7 +61,7 @@
                         <th>Action</th>
                     </tr>
                     <tr>
-                        <th>Phone</th>
+                        <th>Contact Number</th>
                         <th>
                             <?= h($information[0]->value) ?>
                         </th>
