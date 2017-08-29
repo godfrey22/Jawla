@@ -112,14 +112,24 @@ $cakeDescription = 'Test Admin';
         <nav class="sidebar-nav">
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html"><i class="icon-speedometer"></i> Dashboard </a>
+                    <a class="nav-link" href="
+                    <?=  $this->Url->build([
+                        "controller" => "admin",
+                        "action" => "home",
+                    ]);
+                    ?>"><i class="icon-speedometer"></i> Dashboard </a>
                 </li>
 
                 <li class="nav-title">
                     Content Management
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="icon-puzzle"></i> Website Info
+                    <a class="nav-link" href="
+                    <?=  $this->Url->build([
+                        "controller" => "admin",
+                        "action" => "details",
+                    ]);
+                    ?>"><i class="icon-puzzle"></i> Website Info
                         <span class="badge badge-primary">NEW</span>
                     </a>
                 </li>
