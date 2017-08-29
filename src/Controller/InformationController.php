@@ -81,12 +81,14 @@ class InformationController extends AppController
             if ($this->Information->save($information)) {
 //                $this->Flash->success(__('The information has been saved.'));
 
-                return $this->redirect('/test');
+                return $this->redirect('/admin/details');
             }
 //            $this->Flash->error(__('The information could not be saved. Please, try again.'));
         }
         $this->set(compact('information'));
         $this->set('_serialize', ['information']);
+        $this->viewBuilder()->setLayout('admin');
+
     }
 
     /**
