@@ -83,3 +83,34 @@ use Cake\Filesystem\File;
 
         </div>
         <!-- /.conainer-fluid -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Available Images</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <?php foreach ($files as $file) {
+                            echo '<a href="#" onclick=selectFile("' . $file . '") data-dismiss="modal" >' .
+                                $file .
+                                '</a>
+                                        </br>';
+                        } ?>
+                    </div>
+                    <script language="JavaScript" type="text/javascript">
+                        function selectFile(fileName) {
+                            $("#value").val(fileName);
+                            var imgDir = "<?= $this->Url->image('home/')?>";
+                            $("#thumbnail").attr("src", imgDir + fileName);
+                        }
+                    </script>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
