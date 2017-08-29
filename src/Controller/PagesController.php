@@ -48,11 +48,4 @@ class PagesController extends AppController
         $this->set(compact('information'));
     }
 
-    public function test(){
-        $info = $this->loadModel('Information');
-        $information = $info->find('all')->toArray();
-        $this->set(compact('information'));
-
-    }
-
 }
