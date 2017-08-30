@@ -59,7 +59,7 @@ class AppController extends Controller
 
         // Allow the display action so our pages controller
         // continues to work.
-        $this->Auth->allow(['display']);
+        $this->Auth->allow(['display','home']);
         /*
          * Enable the following components for recommended CakePHP security settings.
          * see http://book.cakephp.org/3.0/en/controllers/components/security.html
@@ -76,8 +76,11 @@ class AppController extends Controller
      */
     public function isAuthorized($user)
     {
-        return true;
+        return false;
+
     }
+
+
     public function beforeRender(Event $event)
     {
         if (!array_key_exists('_serialize', $this->viewVars) &&
