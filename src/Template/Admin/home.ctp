@@ -24,12 +24,10 @@
 -->
 
 
+<div class="container-fluid">
+    <div class="animated fadeIn">
 
+    </div>
 
-            <div class="container-fluid">
-                <div class="animated fadeIn">
-
-                </div>
-
-            </div>
-            <!-- /.conainer-fluid -->
+</div>
+<!-- /.conainer-fluid -->

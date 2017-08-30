@@ -49,6 +49,8 @@ class UsersController extends AppController
      */
     public function index()
     {
+        $this->viewBuilder()->setLayout('admin');
+
         $users = $this->paginate($this->Users);
 
         $this->set(compact('users'));

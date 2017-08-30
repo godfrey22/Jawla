@@ -20,6 +20,7 @@ class InformationController extends AppController
      */
     public function index()
     {
+
         $information = $this->paginate($this->Information);
 
         $this->set(compact('information'));
