@@ -1,4 +1,7 @@
 <body class="app flex-row align-items-center">
+
+
+
 <style>
     .bg-primary {
         background-color: #d8a72b !important;
@@ -26,7 +29,9 @@
         border-color: #c79915;
     }
 </style>
+
 <div class="container clearfix">
+    <?= $this->Flash->render() ?>
     <div class="container">
         <div class="row justify-content-center">
             <img src="img/jalwa_logo_home.png" alt="Logo">
@@ -58,7 +63,7 @@
                                     [
                                         'class' => 'form-control',
                                         'placeholder' => 'Password',
-                                        'type'=>'password'
+                                        'type' => 'password'
                                     ]) ?>
 
                             </div>
@@ -66,7 +71,7 @@
                                 <div class="col-6">
                                     <?= $this->Form->button('Login',
                                         [
-                                            'class'=>'btn btn-primary px-4'
+                                            'class' => 'btn btn-primary px-4'
                                         ]) ?>
 
 

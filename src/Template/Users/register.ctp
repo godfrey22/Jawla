@@ -13,6 +13,7 @@
     }
 </style>
 <div class="container clearfix">
+    <?= $this->Flash->render() ?>
     <div class="container">
         <div class="row justify-content-center">
             <img src="img/jalwa_logo_home.png" alt="Logo">
