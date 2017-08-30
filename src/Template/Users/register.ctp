@@ -34,13 +34,22 @@
 
                         <div class="input-group mb-3">
                             <span class="input-group-addon">@</span>
-                            <?= $this->Form->control('email') ?>
+                            <?= $this->Form->text('email',
+                                [
+                                    'class' => 'form-control',
+                                    'placeholder' => 'Email'
+                                ]) ?>
                         </div>
 
                         <div class="input-group mb-3">
                             <span class="input-group-addon"><i class="icon-lock"></i>
                             </span>
-                            <?= $this->Form->control('password') ?>
+                            <?= $this->Form->text('password',
+                                [
+                                    'class' => 'form-control',
+                                    'placeholder' => 'Password',
+                                    'type'=>'password'
+                                ]) ?>
                         </div>
 
                         <div class="input-group mb-4">
@@ -48,8 +57,13 @@
                             </span>
                             <input type="password" class="form-control" placeholder="Repeat password">
                         </div>
-                        <?= $this->Form->submit('Create Account') ?>
+                        <?= $this->Form->submit('Create Account',
+                            [
+                                'class'=>'btn btn-block btn-success'
+
+                            ]) ?>
                         <?= $this->Form->end() ?>
+
                     </div>
                 </div>
             </div>
