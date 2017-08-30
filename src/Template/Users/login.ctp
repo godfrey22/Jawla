@@ -44,18 +44,30 @@
                             <div class="input-group mb-3">
                                                  <span class="input-group-addon"><i class="icon-user"></i>
                                                  </span>
-                                <?= $this->Form->control('email') ?>
+                                <?= $this->Form->text('email',
+                                    [
+                                        'class' => 'form-control',
+                                        'placeholder' => 'Email'
+                                    ]) ?>
 
                             </div>
                             <div class="input-group mb-4">
                                                  <span class="input-group-addon"><i class="icon-lock"></i>
                                                  </span>
-                                <?= $this->Form->control('password') ?>
+                                <?= $this->Form->text('password',
+                                    [
+                                        'class' => 'form-control',
+                                        'placeholder' => 'Password',
+                                        'type'=>'password'
+                                    ]) ?>
 
                             </div>
                             <div class="row">
                                 <div class="col-6">
-                                    <?= $this->Form->button('Login') ?>
+                                    <?= $this->Form->button('Login',
+                                        [
+                                            'class'=>'btn btn-primary px-4'
+                                        ]) ?>
 
 
                                 </div>
