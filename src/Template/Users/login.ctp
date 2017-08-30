@@ -34,31 +34,33 @@
             <div class="card-group mb-0">
                 <div class="card p-4">
                     <div class="card-body">
-                        <h1>Login</h1>
-                        <p class="text-muted">Sign In to your account</p>
-                        <div class="input-group mb-3">
-                            <span class="input-group-addon"><i class="icon-user"></i>
-                            </span>
-                            <input type="text" class="form-control" placeholder="Username">
-                        </div>
-                        <div class="input-group mb-4">
-                            <span class="input-group-addon"><i class="icon-lock"></i>
-                            </span>
-                            <input type="password" class="form-control" placeholder="Password">
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <?php
-                                echo $this->Html->link("Login",
-                                    array('controller' => 'Admin', 'action' => 'home'),
-                                    array('class' => 'btn btn-primary px-4'));
-                                ?>
+                     <?= $this->Form->create() ?>
+                                             <h1>Login</h1>
+                                             <p class="text-muted">Sign In to your account</p>
+                                             <div class="input-group mb-3">
+                                                 <span class="input-group-addon"><i class="icon-user"></i>
+                                                 </span>
+                                                 <?= $this->Form->control('email') ?>
 
-                            </div>
-                            <div class="col-6 text-right">
-                                <button type="button" class="btn btn-link px-0">Forgot password?</button>
-                            </div>
-                        </div>
+                                             </div>
+                                             <div class="input-group mb-4">
+                                                 <span class="input-group-addon"><i class="icon-lock"></i>
+                                                 </span>
+                                                 <?= $this->Form->control('password') ?>
+
+                                             </div>
+                                             <div class="row">
+                                                 <div class="col-6">
+                                                     <?= $this->Form->button('Login') ?>
+
+
+
+                                                 </div>
+                                                 <div class="col-6 text-right">
+                                                     <button type="button" class="btn btn-link px-0">Forgot password?</button>
+                                                 </div>
+                                             </div>
+                                             <?= $this->Form->end() ?>
                     </div>
                 </div>
                 <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
