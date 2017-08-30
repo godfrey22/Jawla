@@ -37,7 +37,7 @@
                                 <i class="fa fa-align-justify"></i> Company Information
                             </div>
                             <div class="card-body">
-                                <table class="table table-bordered table-striped table-sm">
+                                <table class="table table-bordered table-striped table-sm table-responsive">
                     <tr>
                         <th>Field</th>
                         <th>Value</th>

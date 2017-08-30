@@ -10,10 +10,10 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <i class="fa fa-align-justify"></i> Company Information
+                        <i class="fa fa-align-justify"></i> User Information
                     </div>
                     <div class="card-body">
-                        <table class ="table table-bordered table-striped table-sm" cellpadding="0" cellspacing="0">
+                        <table class ="table table-bordered table-striped table-sm table-responsive" cellpadding="0" cellspacing="0">
                             <thead>
                             <tr>
                                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
