@@ -131,11 +131,25 @@ $cakeDescription = 'Test Admin';
                         "controller" => "admin",
                         "action" => "details",
                     ]);
-                    ?>"><i class="icon-puzzle"></i> Website Info
+                    ?>"><i class="icon-info"></i> Website Info
                         <span class="badge badge-primary">NEW</span>
                     </a>
                 </li>
                 <li class="divider"></li>
+
+                <li class="nav-title">
+                    Administration
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="
+                    <?= $this->Url->build([
+                        "controller" => "users",
+                        "action" => "index",
+                    ]);
+                    ?>"><i class="icon-user"></i> User
+                        <span class="badge badge-primary">NEW</span>
+                    </a>
+                </li>
 
 
             </ul>
