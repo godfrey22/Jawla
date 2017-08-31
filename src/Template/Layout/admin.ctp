@@ -64,20 +64,11 @@ $cakeDescription = 'Test Admin';
         </li>
     </ul>
     <ul class="nav navbar-nav ml-auto">
-        <li class="nav-item d-md-down-none">
-            <a class="nav-link" href="#"><i class="icon-bell"></i><span
-                        class="badge badge-pill badge-danger">5</span></a>
-        </li>
-        <li class="nav-item d-md-down-none">
-            <a class="nav-link" href="#"><i class="icon-list"></i></a>
-        </li>
-        <li class="nav-item d-md-down-none">
-            <a class="nav-link" href="#"><i class="icon-location-pin"></i></a>
-        </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button"
                aria-haspopup="true" aria-expanded="false">
-                <img src="<?= $this->Url->image('admin/avatars/6.jpg'); ?>" class="img-avatar" alt="admin@bootstrapmaster.com">
+                <img src="<?= $this->Url->image('admin/avatars/6.jpg'); ?>" class="img-avatar"
+                     alt="admin@bootstrapmaster.com">
                 <span class="d-md-down-none">admin</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
@@ -102,7 +93,9 @@ $cakeDescription = 'Test Admin';
                 <a class="dropdown-item" href="#"><i class="fa fa-file"></i> Projects<span class="badge badge-primary">42</span></a>
                 <div class="divider"></div>
                 <a class="dropdown-item" href="#"><i class="fa fa-shield"></i> Lock Account</a>
-                <a class="dropdown-item" href="<?= $this->Url->build(["controller"=>"users", "action"=>"logout"]); ?>"><i class="fa fa-lock"></i> Logout</a>
+                <a class="dropdown-item"
+                   href="<?= $this->Url->build(["controller" => "users", "action" => "logout"]); ?>"><i
+                            class="fa fa-lock"></i> Logout</a>
             </div>
         </li>
     </ul>
@@ -140,18 +133,25 @@ $cakeDescription = 'Test Admin';
                 <li class="nav-title">
                     Administration
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="
-                    <?= $this->Url->build([
-                        "controller" => "users",
-                        "action" => "index",
-                    ]);
-                    ?>"><i class="icon-user"></i> User
-                        <span class="badge badge-primary">NEW</span>
-                    </a>
+
+                <li class="nav-item nav-dropdown">
+                    <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-user-plus"></i> Account</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="<?= $this->Url->build(["controller" => "users", "action" => "index"]); ?>"
+                               target="_top"><i class="fa fa-user"></i> Individual</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="<?= $this->Url->build(["controller" => "users", "action" => "index2"]); ?>"
+                               target="_top"><i class="fa fa-users"></i>
+                                Family<span class="badge badge-primary">NEW</span></a>
+                        </li>
+
+                    </ul>
                 </li>
-
-
             </ul>
         </nav>
     </div>
@@ -208,7 +208,8 @@ $cakeDescription = 'Test Admin';
                 <hr class="transparent mx-3 my-0">
                 <div class="callout callout-warning m-0 py-3">
                     <div class="avatar float-right">
-                        <img src="<?= $this->Url->image('admin/avatars/7.jpg'); ?>" class="img-avatar" alt="admin@bootstrapmaster.com">
+                        <img src="<?= $this->Url->image('admin/avatars/7.jpg'); ?>" class="img-avatar"
+                             alt="admin@bootstrapmaster.com">
                     </div>
                     <div>Meeting with
                         <strong>Lucas</strong>
@@ -219,7 +220,8 @@ $cakeDescription = 'Test Admin';
                 <hr class="mx-3 my-0">
                 <div class="callout callout-info m-0 py-3">
                     <div class="avatar float-right">
-                        <img src="<?= $this->Url->image('admin/avatars/4.jpg'); ?>" class="img-avatar" alt="admin@bootstrapmaster.com">
+                        <img src="<?= $this->Url->image('admin/avatars/4.jpg'); ?>" class="img-avatar"
+                             alt="admin@bootstrapmaster.com">
                     </div>
                     <div>Skype with
                         <strong>Megan</strong>
@@ -241,19 +243,24 @@ $cakeDescription = 'Test Admin';
                     <small class="text-muted"><i class="icon-home"></i>&nbsp; creativeLabs HQ</small>
                     <div class="avatars-stack mt-2">
                         <div class="avatar avatar-xs">
-                            <img src="<?= $this->Url->image('admin/avatars/2.jpg'); ?>" class="img-avatar" alt="admin@bootstrapmaster.com">
+                            <img src="<?= $this->Url->image('admin/avatars/2.jpg'); ?>" class="img-avatar"
+                                 alt="admin@bootstrapmaster.com">
                         </div>
                         <div class="avatar avatar-xs">
-                            <img src="<?= $this->Url->image('admin/avatars/3.jpg'); ?>" class="img-avatar" alt="admin@bootstrapmaster.com">
+                            <img src="<?= $this->Url->image('admin/avatars/3.jpg'); ?>" class="img-avatar"
+                                 alt="admin@bootstrapmaster.com">
                         </div>
                         <div class="avatar avatar-xs">
-                            <img src="<?= $this->Url->image('admin/avatars/4.jpg'); ?>" class="img-avatar" alt="admin@bootstrapmaster.com">
+                            <img src="<?= $this->Url->image('admin/avatars/4.jpg'); ?>" class="img-avatar"
+                                 alt="admin@bootstrapmaster.com">
                         </div>
                         <div class="avatar avatar-xs">
-                            <img src="<?= $this->Url->image('admin/avatars/5.jpg'); ?>" class="img-avatar" alt="admin@bootstrapmaster.com">
+                            <img src="<?= $this->Url->image('admin/avatars/5.jpg'); ?>" class="img-avatar"
+                                 alt="admin@bootstrapmaster.com">
                         </div>
                         <div class="avatar avatar-xs">
-                            <img src="<?= $this->Url->image('admin/avatars/6.jpg'); ?>" class="img-avatar" alt="admin@bootstrapmaster.com">
+                            <img src="<?= $this->Url->image('admin/avatars/6.jpg'); ?>" class="img-avatar"
+                                 alt="admin@bootstrapmaster.com">
                         </div>
                     </div>
                 </div>
@@ -274,25 +281,32 @@ $cakeDescription = 'Test Admin';
                     <small class="text-muted"><i class="icon-home"></i>&nbsp; creativeLabs HQ</small>
                     <div class="avatars-stack mt-2">
                         <div class="avatar avatar-xs">
-                            <img src="<?= $this->Url->image('admin/avatars/2.jpg'); ?>" class="img-avatar" alt="admin@bootstrapmaster.com">
+                            <img src="<?= $this->Url->image('admin/avatars/2.jpg'); ?>" class="img-avatar"
+                                 alt="admin@bootstrapmaster.com">
                         </div>
                         <div class="avatar avatar-xs">
-                            <img src="<?= $this->Url->image('admin/avatars/3.jpg'); ?>" class="img-avatar" alt="admin@bootstrapmaster.com">
+                            <img src="<?= $this->Url->image('admin/avatars/3.jpg'); ?>" class="img-avatar"
+                                 alt="admin@bootstrapmaster.com">
                         </div>
                         <div class="avatar avatar-xs">
-                            <img src="<?= $this->Url->image('admin/avatars/4.jpg'); ?>" class="img-avatar" alt="admin@bootstrapmaster.com">
+                            <img src="<?= $this->Url->image('admin/avatars/4.jpg'); ?>" class="img-avatar"
+                                 alt="admin@bootstrapmaster.com">
                         </div>
                         <div class="avatar avatar-xs">
-                            <img src="<?= $this->Url->image('admin/avatars/5.jpg'); ?>" class="img-avatar" alt="admin@bootstrapmaster.com">
+                            <img src="<?= $this->Url->image('admin/avatars/5.jpg'); ?>" class="img-avatar"
+                                 alt="admin@bootstrapmaster.com">
                         </div>
                         <div class="avatar avatar-xs">
-                            <img src="<?= $this->Url->image('admin/avatars/6.jpg'); ?>" class="img-avatar" alt="admin@bootstrapmaster.com">
+                            <img src="<?= $this->Url->image('admin/avatars/6.jpg'); ?>" class="img-avatar"
+                                 alt="admin@bootstrapmaster.com">
                         </div>
                         <div class="avatar avatar-xs">
-                            <img src="<?= $this->Url->image('admin/avatars/7.jpg'); ?>" class="img-avatar" alt="admin@bootstrapmaster.com">
+                            <img src="<?= $this->Url->image('admin/avatars/7.jpg'); ?>" class="img-avatar"
+                                 alt="admin@bootstrapmaster.com">
                         </div>
                         <div class="avatar avatar-xs">
-                            <img src="<?= $this->Url->image('admin/avatars/8.jpg'); ?>" class="img-avatar" alt="admin@bootstrapmaster.com">
+                            <img src="<?= $this->Url->image('admin/avatars/8.jpg'); ?>" class="img-avatar"
+                                 alt="admin@bootstrapmaster.com">
                         </div>
                     </div>
                 </div>
@@ -302,7 +316,8 @@ $cakeDescription = 'Test Admin';
                 <div class="message">
                     <div class="py-3 pb-5 mr-3 float-left">
                         <div class="avatar">
-                            <img src="<?= $this->Url->image('admin/avatars/7.jpg'); ?>" class="img-avatar" alt="admin@bootstrapmaster.com">
+                            <img src="<?= $this->Url->image('admin/avatars/7.jpg'); ?>" class="img-avatar"
+                                 alt="admin@bootstrapmaster.com">
                             <span class="avatar-status badge-success"></span>
                         </div>
                     </div>
@@ -319,7 +334,8 @@ $cakeDescription = 'Test Admin';
                 <div class="message">
                     <div class="py-3 pb-5 mr-3 float-left">
                         <div class="avatar">
-                            <img src="<?= $this->Url->image('admin/avatars/7.jpg'); ?>" class="img-avatar" alt="admin@bootstrapmaster.com">
+                            <img src="<?= $this->Url->image('admin/avatars/7.jpg'); ?>" class="img-avatar"
+                                 alt="admin@bootstrapmaster.com">
                             <span class="avatar-status badge-success"></span>
                         </div>
                     </div>
@@ -336,7 +352,8 @@ $cakeDescription = 'Test Admin';
                 <div class="message">
                     <div class="py-3 pb-5 mr-3 float-left">
                         <div class="avatar">
-                            <img src="<?= $this->Url->image('admin/avatars/7.jpg'); ?>" class="img-avatar" alt="admin@bootstrapmaster.com">
+                            <img src="<?= $this->Url->image('admin/avatars/7.jpg'); ?>" class="img-avatar"
+                                 alt="admin@bootstrapmaster.com">
                             <span class="avatar-status badge-success"></span>
                         </div>
                     </div>
@@ -353,7 +370,8 @@ $cakeDescription = 'Test Admin';
                 <div class="message">
                     <div class="py-3 pb-5 mr-3 float-left">
                         <div class="avatar">
-                            <img src="<?= $this->Url->image('admin/avatars/7.jpg'); ?>" class="img-avatar" alt="admin@bootstrapmaster.com">
+                            <img src="<?= $this->Url->image('admin/avatars/7.jpg'); ?>" class="img-avatar"
+                                 alt="admin@bootstrapmaster.com">
                             <span class="avatar-status badge-success"></span>
                         </div>
                     </div>
@@ -370,7 +388,8 @@ $cakeDescription = 'Test Admin';
                 <div class="message">
                     <div class="py-3 pb-5 mr-3 float-left">
                         <div class="avatar">
-                            <img src="<?= $this->Url->image('admin/avatars/7.jpg'); ?>" class="img-avatar" alt="admin@bootstrapmaster.com">
+                            <img src="<?= $this->Url->image('admin/avatars/7.jpg'); ?>" class="img-avatar"
+                                 alt="admin@bootstrapmaster.com">
                             <span class="avatar-status badge-success"></span>
                         </div>
                     </div>
