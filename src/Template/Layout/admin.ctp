@@ -96,6 +96,7 @@ $cakeDescription = 'Test Admin';
                 <a class="dropdown-item"
                    href="<?= $this->Url->build(["controller" => "users", "action" => "logout"]); ?>"><i
                             class="fa fa-lock"></i> Logout</a>
+
             </div>
         </li>
     </ul>
