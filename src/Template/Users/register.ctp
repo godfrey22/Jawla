@@ -48,6 +48,17 @@
                                     'placeholder' => 'Last Name'
                                 ]) ?>
                         </div>
+
+                    <div class="input-group mb-3">
+                            <span class="input-group-addon"><i class="icon-user"></i>
+                            </span>
+                        <?= $this->Form->text('dob',
+                            [
+                                'class' => 'form-control',
+                                'placeholder' => 'Date of Birth'
+
+                            ]) ?>
+                    </div>
                     <div class="input-group mb-3">
                             <span class="input-group-addon"><i class="icon-user"></i>
                             </span>

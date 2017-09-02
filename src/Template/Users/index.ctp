@@ -19,6 +19,7 @@
                                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('First Name') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('Last Name') ?></th>
+                                <th scope="col"><?= $this->Paginator->sort('DOB') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('Mobile') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('School Institution') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('email') ?></th>
@@ -34,6 +35,7 @@
                                     <td><?= $this->Number->format($user->id) ?></td>
                                     <td><?= h($user->first_name) ?></td>
                                     <td><?= h($user->last_name) ?></td>
+                                    <td><?= h($user->dob) ?></td>
                                     <td><?= h($user->mobile) ?></td>
                                     <td><?= h($user->school) ?></td>
                                     <td><?= h($user->email) ?></td>
