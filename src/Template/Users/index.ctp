@@ -17,6 +17,10 @@
                             <thead>
                             <tr>
                                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+                                <th scope="col"><?= $this->Paginator->sort('First Name') ?></th>
+                                <th scope="col"><?= $this->Paginator->sort('Last Name') ?></th>
+                                <th scope="col"><?= $this->Paginator->sort('Mobile') ?></th>
+                                <th scope="col"><?= $this->Paginator->sort('School Institution') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('email') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('password') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
@@ -28,6 +32,10 @@
                             <?php foreach ($users as $user): ?>
                                 <tr>
                                     <td><?= $this->Number->format($user->id) ?></td>
+                                    <td><?= h($user->first_name) ?></td>
+                                    <td><?= h($user->last_name) ?></td>
+                                    <td><?= h($user->mobile) ?></td>
+                                    <td><?= h($user->school) ?></td>
                                     <td><?= h($user->email) ?></td>
                                     <td><?= h($user->password) ?></td>
                                     <td><?= h($user->created) ?></td>

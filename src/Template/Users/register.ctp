@@ -27,11 +27,38 @@
                         <?= $this->Form->create() ?>
                         <h1>Register</h1>
                         <p class="text-muted">Create your account</p>
+
                         <div class="input-group mb-3">
                             <span class="input-group-addon"><i class="icon-user"></i>
                             </span>
-                            <input type="text" class="form-control" placeholder="Username">
+                            <?= $this->Form->text('first_name',
+                                [
+                                    'class' => 'form-control',
+                                    'placeholder' => 'First Name'
+                                ]) ?>
                         </div>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-addon"><i class="icon-user"></i>
+                            </span>
+                            <?= $this->Form->text('last_name',
+                                [
+                                    'class' => 'form-control',
+                                    'placeholder' => 'Last Name'
+                                ]) ?>
+                        </div>
+                    <div class="input-group mb-3">
+                            <span class="input-group-addon"><i class="icon-user"></i>
+                            </span>
+                        <?= $this->Form->text('school',
+                            [
+                                'class' => 'form-control',
+                                'placeholder' => 'School Institution'
+                            ]) ?>
+                    </div>
+
+
 
                         <div class="input-group mb-3">
                             <span class="input-group-addon">@</span>
@@ -41,6 +68,14 @@
                                     'placeholder' => 'Email'
                                 ]) ?>
                         </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-addon">@</span>
+                        <?= $this->Form->text('mobile',
+                            [
+                                'class' => 'form-control',
+                                'placeholder' => 'Mobile Number'
+                            ]) ?>
+                    </div>
 
                         <div class="input-group mb-3">
                             <span class="input-group-addon"><i class="icon-lock"></i>
