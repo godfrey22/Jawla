@@ -22,11 +22,11 @@ class UsersController extends AppController
 
     public function logout()
     {
-        ($this->Auth->logout());
-           return $this->redirect([
-               'controller' => 'Pages',
-               'action' => 'home'
-           ]);
+        $this->Auth->logout();
+        return $this->redirect([
+            'controller' => 'Pages',
+            'action' => 'home'
+        ]);
     }
 
     public function login()
