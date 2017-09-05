@@ -39,7 +39,7 @@ class ContactForm extends Form
         $email->from([$data['email']])
             ->to('dqpha4@student.monash.edu')
             ->subject('Web Site Contact Form')
-            ->send([$data['body']]);
+            ->send([$data['name']],send([$data['body']]);
 
         return true;
     }
