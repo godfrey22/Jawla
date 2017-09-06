@@ -18,7 +18,7 @@
                         <fieldset>
                             <legend><?= __('Add Event') ?></legend>
                             <div class="row">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-12 mb-12">
                                 Price:
                                 <?= $this->Form->text('price',
                                     [
@@ -28,7 +28,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-12 mb-12">
                                 Type:
                                 <?= $this->Form->text('type',
                                     [
@@ -39,7 +39,7 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-12 mb-12">
                                 Name:
                                 <?= $this->Form->text('name',
                                     [
@@ -50,7 +50,7 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-12 mb-12">
                                 Start Date:
                                 <?= $this->Form->text('start_date',
                                     [
@@ -61,7 +61,7 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-12 mb-12">
                                     End Date:
                                     <?= $this->Form->text('end_date',
                                         [
@@ -72,7 +72,7 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-12 mb-12">
                                     Start Time:
                                     <?= $this->Form->text('start_time',
                                         [
@@ -83,7 +83,7 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-12 mb-12">
                                     End Time:
                                     <?= $this->Form->text('end_time',
                                         [
@@ -94,7 +94,7 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-12 mb-12">
                                     Capacity:
                                     <?= $this->Form->text('num_people',
                                         [
@@ -105,7 +105,7 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-9 mb-9">
+                                <div class="col-md-12 mb-12">
                                     Notes:
                                     <?= $this->Form->textarea('notes',
                                         [
@@ -118,7 +118,7 @@
 
                     </div>
                     <div class="card-footer">
-                        <?= $this->Form->button(__('Submit')) ?>
+                        <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-primary']) ?>
                         <?= $this->Form->end() ?>
                     </div>
                 </div>
