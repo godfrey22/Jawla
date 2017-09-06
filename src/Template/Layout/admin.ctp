@@ -30,6 +30,8 @@ $cakeDescription = 'Test Admin';
     <?= $this->Html->css('admin/simple-line-icons.css') ?>
     <?= $this->Html->css('admin/style.css') ?>
 
+    <?= $this->Html->script('admin/jquery/dist/jquery.min.js') ?>
+
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
 
@@ -544,7 +546,6 @@ $cakeDescription = 'Test Admin';
         </span>
 </footer>
 
-<?= $this->Html->script('admin/jquery/dist/jquery.min.js') ?>
 <?= $this->Html->script('admin/popper.js/dist/umd/popper.js') ?>
 
 <?= $this->Html->script('admin/bootstrap/dist/js/bootstrap.min.js') ?>

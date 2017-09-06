@@ -4,6 +4,45 @@
  */
 ?>
 
+<?= $this->Html->script('vendors/jquery-ui.min.js') ?>
+<?= $this->Html->css('vendors/jquery-ui.min.css') ?>
+
+<script>
+    $( function() {
+        var dateFormat = "mm/dd/yy",
+            from = $( "#from" )
+                .datepicker({
+                    defaultDate: "+1w",
+                    changeMonth: true,
+                    numberOfMonths: 3
+                })
+                .on( "change", function() {
+                    to.datepicker( "option", "minDate", getDate( this ) );
+                }),
+            to = $( "#to" ).datepicker({
+                defaultDate: "+1w",
+                changeMonth: true,
+                numberOfMonths: 3
+            })
+                .on( "change", function() {
+                    from.datepicker( "option", "maxDate", getDate( this ) );
+                });
+
+        function getDate( element ) {
+            var date;
+            try {
+                date = $.datepicker.parseDate( dateFormat, element.value );
+            } catch( error ) {
+                date = null;
+            }
+
+            return date;
+        }
+    } );
+</script>
+
+
+
 <div class="container-fluid">
     <div class="animated fadeIn">
         <div class="row">
@@ -55,7 +94,8 @@
                                 <?= $this->Form->text('start_date',
                                     [
                                         'class' => 'form-control col-md-5',
-                                        'placeholder' => 'Start Date'
+                                        'placeholder' => 'Start Date',
+                                        'id' => 'from'
                                     ]) ?>
                                 </div>
                             </div>
@@ -66,7 +106,8 @@
                                     <?= $this->Form->text('end_date',
                                         [
                                             'class' => 'form-control col-md-5',
-                                            'placeholder' => 'End Date'
+                                            'placeholder' => 'End Date',
+                                            'id' => 'to'
                                         ]) ?>
                                 </div>
                             </div>
@@ -129,3 +170,4 @@
         </div>
 
     </div>
+
