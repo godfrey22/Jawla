@@ -51,6 +51,7 @@ class EventsController extends AppController
      */
     public function add()
     {
+        $this->viewBuilder()->setLayout('admin');
         $event = $this->Events->newEntity();
         if ($this->request->is('post')) {
             $event = $this->Events->patchEntity($event, $this->request->getData());
