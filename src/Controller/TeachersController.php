@@ -20,6 +20,8 @@ class TeachersController extends AppController
      */
     public function index()
     {
+        $this->viewBuilder()->setLayout('admin');
+
         $teachers = $this->paginate($this->Teachers);
 
         $this->set(compact('teachers'));

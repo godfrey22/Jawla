@@ -20,6 +20,7 @@ class EventsController extends AppController
      */
     public function index()
     {
+        $this->viewBuilder()->setLayout('admin');
         $events = $this->paginate($this->Events);
 
         $this->set(compact('events'));

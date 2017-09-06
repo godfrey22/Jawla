@@ -24,102 +24,101 @@
 -->
 
 
-    <!-- Main content -->
+<!-- Main content -->
 
 
+<div class="container-fluid">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fa fa-align-justify"></i> Company Information
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered table-striped table-sm table-responsive">
+                            <tr>
+                                <th>Field</th>
+                                <th>Value</th>
+                                <th>Action</th>
+                            </tr>
+                            <tr>
+                                <th>Contact Number</th>
+                                <th>
+                                    <?= h($information[0]->value) ?>
+                                </th>
+                                <th>
+                                    <?=
+                                    $this->Html->link(
+                                        'Edit',
+                                        ['controller' => 'Information', 'action' => 'edit/1', '_full' => true]
+                                    ); ?>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Company Name</th>
+                                <th><?= h($information[1]->value) ?></th>
+                                <th>            <?=
+                                    $this->Html->link(
+                                        'Edit',
+                                        ['controller' => 'Information', 'action' => 'edit/2', '_full' => true]
+                                    ); ?></th>
+                            </tr>
+                            <tr>
+                                <th>ABN</th>
+                                <th><?= h($information[2]->value) ?></th>
+                                <th>            <?=
+                                    $this->Html->link(
+                                        'Edit',
+                                        ['controller' => 'Information', 'action' => 'edit/3', '_full' => true]
+                                    ); ?></th>
+                            </tr>
+                            <tr>
+                                <th>Address - Road</th>
+                                <th><?= h($information[3]->value) ?></th>
+                                <th>            <?=
+                                    $this->Html->link(
+                                        'Edit',
+                                        ['controller' => 'Information', 'action' => 'edit/5', '_full' => true]
+                                    ); ?></th>
+                            </tr>
+                            <tr>
+                                <th>Address - Suburb</th>
+                                <th><?= h($information[4]->value) ?></th>
+                                <th>            <?=
+                                    $this->Html->link(
+                                        'Edit',
+                                        ['controller' => 'Information', 'action' => 'edit/6', '_full' => true]
+                                    ); ?></th>
+                            </tr>
+                            <tr>
+                                <th>Background Image</th>
+                                <th><?= h($information[5]->value) ?></th>
+                                <th>            <?=
+                                    $this->Html->link(
+                                        'Edit',
+                                        ['controller' => 'Information', 'action' => 'edit/7', '_full' => true]
+                                    ); ?></th>
+                            </tr>
+                            <tr>
+                                <th>Logo Image</th>
+                                <th><?= h($information[6]->value) ?></th>
+                                <th>            <?=
+                                    $this->Html->link(
+                                        'Edit',
+                                        ['controller' => 'Information', 'action' => 'edit/8', '_full' => true]
+                                    ); ?></th>
+                            </tr>
 
-        <div class="container-fluid">
-            <div class="animated fadeIn">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <i class="fa fa-align-justify"></i> Company Information
-                            </div>
-                            <div class="card-body">
-                                <table class="table table-bordered table-striped table-sm table-responsive">
-                    <tr>
-                        <th>Field</th>
-                        <th>Value</th>
-                        <th>Action</th>
-                    </tr>
-                    <tr>
-                        <th>Contact Number</th>
-                        <th>
-                            <?= h($information[0]->value) ?>
-                        </th>
-                        <th>
-                            <?=
-                            $this->Html->link(
-                                'Edit',
-                                ['controller' => 'Information', 'action' => 'edit/1', '_full' => true]
-                            ); ?>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Company Name</th>
-                        <th><?= h($information[1]->value) ?></th>
-                        <th>            <?=
-                            $this->Html->link(
-                                'Edit',
-                                ['controller' => 'Information', 'action' => 'edit/2', '_full' => true]
-                            ); ?></th>
-                    </tr>
-                    <tr>
-                        <th>ABN</th>
-                        <th><?= h($information[2]->value) ?></th>
-                        <th>            <?=
-                            $this->Html->link(
-                                'Edit',
-                                ['controller' => 'Information', 'action' => 'edit/3', '_full' => true]
-                            ); ?></th>
-                    </tr>
-                    <tr>
-                        <th>Address - Road</th>
-                        <th><?= h($information[3]->value) ?></th>
-                        <th>            <?=
-                            $this->Html->link(
-                                'Edit',
-                                ['controller' => 'Information', 'action' => 'edit/5', '_full' => true]
-                            ); ?></th>
-                    </tr>
-                    <tr>
-                        <th>Address - Suburb</th>
-                        <th><?= h($information[4]->value) ?></th>
-                        <th>            <?=
-                            $this->Html->link(
-                                'Edit',
-                                ['controller' => 'Information', 'action' => 'edit/6', '_full' => true]
-                            ); ?></th>
-                    </tr>
-                    <tr>
-                        <th>Background Image</th>
-                        <th><?= h($information[5]->value) ?></th>
-                        <th>            <?=
-                            $this->Html->link(
-                                'Edit',
-                                ['controller' => 'Information', 'action' => 'edit/7', '_full' => true]
-                            ); ?></th>
-                    </tr>
-                    <tr>
-                        <th>Logo Image</th>
-                        <th><?= h($information[6]->value) ?></th>
-                        <th>            <?=
-                            $this->Html->link(
-                                'Edit',
-                                ['controller' => 'Information', 'action' => 'edit/8', '_full' => true]
-                            ); ?></th>
-                    </tr>
 
-
-                </table>
-                            </div>
-                        </div>
+                        </table>
                     </div>
                 </div>
-
             </div>
-        <!-- /.conainer-fluid -->
+        </div>
+
+    </div>
+    <!-- /.conainer-fluid -->
 
 
 

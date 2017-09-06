@@ -20,6 +20,8 @@ class StudiosController extends AppController
      */
     public function index()
     {
+        $this->viewBuilder()->setLayout('admin');
+
         $this->paginate = [
             'contain' => ['Events', 'Teachers', 'ClassTypes']
         ];

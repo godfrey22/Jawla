@@ -20,6 +20,7 @@ class ClassTypesController extends AppController
      */
     public function index()
     {
+        $this->viewBuilder()->setLayout('admin');
         $classTypes = $this->paginate($this->ClassTypes);
 
         $this->set(compact('classTypes'));
