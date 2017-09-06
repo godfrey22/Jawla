@@ -100,6 +100,8 @@
                                 </div>
                             </div>
 
+                            <?= $this->Form->control('start_date', ['type' => 'hidden', 'id' => 'sdate']); ?>
+
                             <div class="row">
                                 <div class="col-md-12 mb-12">
                                     End Date:
@@ -115,24 +117,26 @@
                             <div class="row">
                                 <div class="col-md-12 mb-12">
                                     Start Time:
-                                    <?= $this->Form->text('start_time',
-                                        [
-                                            'class' => 'form-control col-md-5',
-                                            'placeholder' => 'Start Time'
-                                        ]) ?>
+<!--                                    --><?//= $this->Form->text('start_time',
+//                                        [
+//                                            'class' => 'form-control col-md-5',
+//                                            'placeholder' => 'Start Time'
+//                                        ]) ?>
                                 </div>
                             </div>
+                            <?= $this->Form->control('start_time'); ?>
 
                             <div class="row">
                                 <div class="col-md-12 mb-12">
                                     End Time:
-                                    <?= $this->Form->text('end_time',
-                                        [
-                                            'class' => 'form-control col-md-5',
-                                            'placeholder' => 'End Time'
-                                        ]) ?>
+<!--                                    --><?//= $this->Form->text('end_time',
+//                                        [
+//                                            'class' => 'form-control col-md-5',
+//                                            'placeholder' => 'End Time'
+//                                        ]) ?>
                                 </div>
                             </div>
+                            <?= $this->Form->control('end_time'); ?>
 
                             <div class="row">
                                 <div class="col-md-12 mb-12">
