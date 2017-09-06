@@ -153,6 +153,33 @@ $cakeDescription = 'Test Admin';
 
                     </ul>
                 </li>
+
+
+                <li class="nav-item nav-dropdown">
+                    <a class="nav-link nav-dropdown-toggle" href="<?= $this->Url->build(["controller" => "events", "action" => "index"]); ?>"><i class="fa fa-user-plus"></i> All Events</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="<?= $this->Url->build(["controller" => "studios", "action" => "index"]); ?>"
+                               target="_top"><i class="fa fa-user"></i> All Classes</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="<?= $this->Url->build(["controller" => "users", "action" => "index2"]); ?>"
+                               target="_top"><i class="fa fa-users"></i>
+                                All Parties<span class="badge badge-primary">NEW</span></a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+
+
+
+
+
             </ul>
         </nav>
     </div>
