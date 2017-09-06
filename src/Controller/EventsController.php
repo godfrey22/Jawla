@@ -110,4 +110,8 @@ class EventsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function add2(){
+        
+    }
 }
