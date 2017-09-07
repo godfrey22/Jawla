@@ -8,7 +8,12 @@ use App\Form\ContactForm;
 class ContactController extends AppController
 {
     public function index()
-    {
+    { $info = $this->loadModel('Information');
+        $information = $info->find('all')->toArray();
+
+        $this->viewBuilder()->setLayout('jalwa');
+        $this->set(compact('information'));
+
         $contact = new ContactForm();
         if ($this->request->is('post')) {
             if ($contact->execute($this->request->data)) {
