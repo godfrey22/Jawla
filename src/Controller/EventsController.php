@@ -1,8 +1,9 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
-
+use Cake\I18n\Time;
 /**
  * Events Controller
  *
@@ -51,13 +52,22 @@ class EventsController extends AppController
      */
     public function add()
     {
+        $this->viewBuilder()->setLayout('admin');
+
+//        ["start_date"] => array(
+//            3{["year"]}=>string(4) "2022"
+//              ["month"]=> string(2) "01"
+//              ["day"]=> string(2) "01"}
+
+//        ["start_date"]=> array(3) { ["year"]=> int(2022) ["month"]=> int(1) ["day"]=> int(1) }
 
         $event = $this->Events->newEntity();
         if ($this->request->is('post')) {
 
-            $this->viewBuilder()->setLayout('admin');
 
             $data = $this->request->getData();
+            $data['start_date'] = array_slice(date_parse($data['start_date']),0,3);
+            $data['end_date'] = array_slice(date_parse($data['end_date']),0,3);
 
             $event = $this->Events->patchEntity($event, $data);
 
@@ -67,7 +77,8 @@ class EventsController extends AppController
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The event could not be saved. Please, try again.'));
-            var_dump($data);
+            return $this->redirect(['action' => 'index']);
+
         }
         $this->set(compact('event'));
         $this->set('_serialize', ['event']);
@@ -118,7 +129,8 @@ class EventsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-    public function add2(){
-        
+    public function add2()
+    {
+
     }
 }

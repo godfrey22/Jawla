@@ -100,7 +100,7 @@
                                 </div>
                             </div>
 
-                            <?= $this->Form->control('start_date', ['type' => 'hidden', 'id' => 'sdate']); ?>
+<!--                            --><?//= $this->Form->control('start_date', ); ?>
 
                             <div class="row">
                                 <div class="col-md-12 mb-12">
