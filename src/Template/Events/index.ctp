@@ -34,6 +34,7 @@
                             </tr>
                             </thead>
                             <tbody>
+
                             <?php foreach ($events as $event): ?>
                                 <tr>
                                     <td><?= $this->Number->format($event->id) ?></td>
@@ -42,8 +43,8 @@
                                     <td><?= h($event->name) ?></td>
                                     <td><?= h($event->start_date) ?></td>
                                     <td><?= h($event->end_date) ?></td>
-                                    <td><?= h($event->start_time) ?></td>
-                                    <td><?= h($event->end_time) ?></td>
+                                    <td><?= h($event->start_time->format('h:i A')) ?></td>
+                                    <td><?= h($event->end_time->format('h:i A')) ?></td>
                                     <td><?= $this->Number->format($event->num_people) ?></td>
                                     <td class="actions">
                                         <?= $this->Html->link(__('View'), ['action' => 'view', $event->id]) ?>
