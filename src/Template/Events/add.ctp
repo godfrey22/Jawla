@@ -71,11 +71,15 @@
                                 <div class="col-md-12 mb-12">
                                     <div class="form-group">
                                         Type:
-                                        <?= $this->Form->text('type',
+                                        <?=
+                                        $this->Form->select('type', ['C' => 'Class', 'P' => 'Party'],
                                             [
-                                                'class' => 'form-control col-md-5',
-                                                'placeholder' => 'Type'
-                                            ]) ?>
+                                                'class' => 'custom-select',
+                                                'style' => 'width:100px;'
+                                            ]
+                                        )
+                                        ;
+                                        ?>
                                     </div>
                                 </div>
                             </div>
@@ -136,9 +140,11 @@
                                                 'start' => 7,
                                                 'end' => 22,
                                                 'class' => 'custom-select',
+                                                'style' => 'width:100px;'
                                             ],
                                             'minute' => [
                                                 'class' => 'custom-select',
+                                                'style' => 'width:100px;'
                                             ],
                                         ]); ?>
                                 </div>
@@ -155,9 +161,11 @@
                                                 'start' => 7,
                                                 'end' => 22,
                                                 'class' => 'custom-select',
+                                                'style' => 'width:100px;'
                                             ],
                                             'minute' => [
                                                 'class' => 'custom-select',
+                                                'style' => 'width:100px;'
                                             ],
                                         ]); ?>
                                 </div>

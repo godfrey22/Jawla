@@ -39,7 +39,7 @@
                                 <tr>
                                     <td><?= $this->Number->format($event->id) ?></td>
                                     <td><?= $this->Number->format($event->price) ?></td>
-                                    <td><?= h($event->type) ?></td>
+                                    <td><?php if($event->type=='C'){echo 'Class'; }else {echo 'Party';} ?></td>
                                     <td><?= h($event->name) ?></td>
                                     <td><?= h($event->start_date) ?></td>
                                     <td><?= h($event->end_date) ?></td>
