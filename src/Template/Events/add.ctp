@@ -8,39 +8,38 @@
 <?= $this->Html->css('vendors/jquery-ui.min.css') ?>
 
 <script>
-    $( function() {
+    $(function () {
         var dateFormat = "mm/dd/yy",
-            from = $( "#from" )
+            from = $("#from")
                 .datepicker({
                     defaultDate: "+1w",
                     changeMonth: true,
                     numberOfMonths: 3
                 })
-                .on( "change", function() {
-                    to.datepicker( "option", "minDate", getDate( this ) );
+                .on("change", function () {
+                    to.datepicker("option", "minDate", getDate(this));
                 }),
-            to = $( "#to" ).datepicker({
+            to = $("#to").datepicker({
                 defaultDate: "+1w",
                 changeMonth: true,
                 numberOfMonths: 3
             })
-                .on( "change", function() {
-                    from.datepicker( "option", "maxDate", getDate( this ) );
+                .on("change", function () {
+                    from.datepicker("option", "maxDate", getDate(this));
                 });
 
-        function getDate( element ) {
+        function getDate(element) {
             var date;
             try {
-                date = $.datepicker.parseDate( dateFormat, element.value );
-            } catch( error ) {
+                date = $.datepicker.parseDate(dateFormat, element.value);
+            } catch (error) {
                 date = null;
             }
 
             return date;
         }
-    } );
+    });
 </script>
-
 
 
 <div class="container-fluid">
@@ -58,120 +57,150 @@
                             <legend><?= __('Add Event') ?></legend>
                             <div class="row">
                                 <div class="col-md-12 mb-12">
-                                Price:
-                                <?= $this->Form->text('price',
-                                    [
-                                        'class' => 'form-control col-md-5',
-                                        'placeholder' => 'Price'
-                                    ]) ?>
+                                    <div class="form-group">
+                                        Price:
+                                        <?= $this->Form->text('price',
+                                            [
+                                                'class' => 'form-control col-md-5',
+                                                'placeholder' => 'Price'
+                                            ]) ?>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12 mb-12">
-                                Type:
-                                <?= $this->Form->text('type',
-                                    [
-                                        'class' => 'form-control col-md-5',
-                                        'placeholder' => 'Type'
-                                    ]) ?>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-12 mb-12">
-                                Name:
-                                <?= $this->Form->text('name',
-                                    [
-                                        'class' => 'form-control col-md-5',
-                                        'placeholder' => 'Name'
-                                    ]) ?>
+                                    <div class="form-group">
+                                        Type:
+                                        <?= $this->Form->text('type',
+                                            [
+                                                'class' => 'form-control col-md-5',
+                                                'placeholder' => 'Type'
+                                            ]) ?>
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-12 mb-12">
-                                Start Date:
-                                <?= $this->Form->text('start_date',
-                                    [
-                                        'class' => 'form-control col-md-5',
-                                        'placeholder' => 'Start Date',
-                                        'id' => 'from'
-                                    ]) ?>
-                                </div>
-                            </div>
-
-<!--                            --><?//= $this->Form->control('start_date', ); ?>
-
-                            <div class="row">
-                                <div class="col-md-12 mb-12">
-                                    End Date:
-                                    <?= $this->Form->text('end_date',
-                                        [
-                                            'class' => 'form-control col-md-5',
-                                            'placeholder' => 'End Date',
-                                            'id' => 'to'
-                                        ]) ?>
+                                    <div class="form-group">
+                                        Name:
+                                        <?= $this->Form->text('name',
+                                            [
+                                                'class' => 'form-control col-md-5',
+                                                'placeholder' => 'Name'
+                                            ]) ?>
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-12 mb-12">
+                                    <div class="form-group">
+                                        Start Date:
+                                        <?= $this->Form->text('start_date',
+                                            [
+                                                'class' => 'form-control col-md-5',
+                                                'placeholder' => 'Start Date',
+                                                'id' => 'from'
+                                            ]) ?>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 mb-12">
+                                    <div class="form-group">
+                                        End Date:
+                                        <?= $this->Form->text('end_date',
+                                            [
+                                                'class' => 'form-control col-md-5',
+                                                'placeholder' => 'End Date',
+                                                'id' => 'to'
+                                            ]) ?>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="form-group col-md-12 mb-12">
                                     Start Time:
-<!--                                    --><?//= $this->Form->text('start_time',
-//                                        [
-//                                            'class' => 'form-control col-md-5',
-//                                            'placeholder' => 'Start Time'
-//                                        ]) ?>
+                                    <?= $this->Form->time('start_time',
+                                        [
+                                            'interval' => 15,
+                                            'empty' => [
+                                                'hour' => 'hh',
+                                                'minute' => 'mm'
+                                            ],
+                                            'hour' => [
+                                                'start' => 7,
+                                                'end' => 22,
+                                                'class' => 'custom-select',
+                                            ],
+                                            'minute' => [
+                                                'class' => 'custom-select',
+                                            ],
+                                        ]); ?>
                                 </div>
-                            </div>
-                            <?= $this->Form->control('start_time'); ?>
-
-                            <div class="row">
-                                <div class="col-md-12 mb-12">
+                                <div class="form-group col-md-12 mb-12">
                                     End Time:
-<!--                                    --><?//= $this->Form->text('end_time',
-//                                        [
-//                                            'class' => 'form-control col-md-5',
-//                                            'placeholder' => 'End Time'
-//                                        ]) ?>
-                                </div>
-                            </div>
-                            <?= $this->Form->control('end_time'); ?>
-
-                            <div class="row">
-                                <div class="col-md-12 mb-12">
-                                    Capacity:
-                                    <?= $this->Form->text('num_people',
+                                    <?= $this->Form->time('end_time',
                                         [
-                                            'class' => 'form-control col-md-5',
-                                            'placeholder' => 'Capacity'
-                                        ]) ?>
+                                            'interval' => 15,
+                                            'empty' => [
+                                                'hour' => 'hh',
+                                                'minute' => 'mm'
+                                            ],
+                                            'hour' => [
+                                                'start' => 7,
+                                                'end' => 22,
+                                                'class' => 'custom-select',
+                                            ],
+                                            'minute' => [
+                                                'class' => 'custom-select',
+                                            ],
+                                        ]); ?>
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col-md-12 mb-12">
-                                    Notes:
-                                    <?= $this->Form->textarea('notes',
-                                        [
-                                            'class' => 'form-control col-md-5',
-                                            'placeholder' => 'Notes'
-                                        ]) ?>
-                                </div>
+                    <div class="row">
+                        <div class="col-md-12 mb-12">
+                            <div class="form-group">
+                                Capacity:
+                                <?= $this->Form->text('num_people',
+                                    [
+                                        'class' => 'form-control col-md-5',
+                                        'placeholder' => 'Capacity'
+                                    ]) ?>
                             </div>
-                        </fieldset>
+                        </div>
+                    </div>
 
+                    <div class="row">
+                        <div class="col-md-12 mb-12">
+                            <div class="form-group">
+                                Notes:
+                                <?= $this->Form->textarea('notes',
+                                    [
+                                        'class' => 'form-control col-md-5',
+                                        'placeholder' => 'Notes'
+                                    ]) ?>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-primary']) ?>
-                        <?= $this->Form->end() ?>
-                    </div>
+                    </fieldset>
+
                 </div>
-
-
+                <div class="card-footer">
+                    <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-primary']) ?>
+                    <?= $this->Form->end() ?>
+                </div>
             </div>
+
 
         </div>
 
     </div>
+
+</div>
 
