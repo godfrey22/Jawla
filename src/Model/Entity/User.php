@@ -46,4 +46,14 @@ class User extends Entity
         $hasher = new DefaultPasswordHasher();
         return $hasher->hash($value);
     }
+
+    protected function _getFullName()
+    {
+        return $this->_properties['first_name'] . ' ' . $this->_properties['last_name'];
+    }
+
+    protected function _getFullAddress()
+    {
+        return $this->_properties['house_no'] . ' ' . $this->_properties['street'] . ', ' . $this->_properties['suburb'] . ', ' . $this->_properties['postcode'] . ' ' . $this->_properties['state'] . ' ' . $this->_properties['country'];
+    }
 }
