@@ -14,16 +14,13 @@
 </style>
 <div class="container clearfix">
     <?= $this->Flash->render() ?>
-    <div class="container">
-        <div class="row justify-content-center">
-            <img src="img/jalwa_logo_home.png" alt="Logo">
-        </div>
+    <div >
     </div>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card mx-4">
-                    <div class="card-body p-4">
+                    <div class="card-body p-3">  </div>
                         <?= $this->Form->create() ?>
                         <h1>Register</h1>
                         <p class="text-muted">Create your account</p>
@@ -37,7 +34,7 @@
                                     'placeholder' => 'First Name'
                                 ]) ?>
                         </div>
-                        </div>
+
 
                         <div class="input-group mb-3">
                             <span class="input-group-addon"><i class="icon-user"></i>
@@ -81,10 +78,50 @@
                         </div>
                     <div class="input-group mb-3">
                         <span class="input-group-addon">@</span>
-                        <?= $this->Form->text('mobile',
+                        <?= $this->Form->text('house_no',
                             [
                                 'class' => 'form-control',
-                                'placeholder' => 'Mobile Number'
+                                'placeholder' => 'House No.'
+                            ]) ?>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-addon">@</span>
+                        <?= $this->Form->text('street',
+                            [
+                                'class' => 'form-control',
+                                'placeholder' => 'Street'
+                            ]) ?>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-addon">@</span>
+                        <?= $this->Form->text('suburb',
+                            [
+                                'class' => 'form-control',
+                                'placeholder' => 'Suburb'
+                            ]) ?>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-addon">@</span>
+                        <?= $this->Form->text('postcode',
+                            [
+                                'class' => 'form-control',
+                                'placeholder' => 'Post Code'
+                            ]) ?>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-addon">@</span>
+                        <?= $this->Form->text('state',
+                            [
+                                'class' => 'form-control',
+                                'placeholder' => 'State'
+                            ]) ?>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-addon">@</span>
+                        <?= $this->Form->text('country',
+                            [
+                                'class' => 'form-control',
+                                'placeholder' => 'Country'
                             ]) ?>
                     </div>
 
