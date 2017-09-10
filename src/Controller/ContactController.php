@@ -11,7 +11,7 @@ class ContactController extends AppController
     { $info = $this->loadModel('Information');
         $information = $info->find('all')->toArray();
 
-        $this->viewBuilder()->setLayout('jalwa');
+        $this->viewBuilder()->setLayout('Jalwa');
         $this->set(compact('information'));
 
         $contact = new ContactForm();
