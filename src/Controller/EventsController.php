@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\I18n\Date;
 use Cake\I18n\Time;
+use DateTime;
 /**
  * Events Controller
  *
@@ -66,14 +68,28 @@ class EventsController extends AppController
 
 
             $data = $this->request->getData();
+
+            $current_loop_date = new DateTime($data['start_date']);
+            $end_date = new DateTime($data['end_date']);
+
+            while($current_loop_date < $end_date){
+                date_add($current_loop_date, date_interval_create_from_date_string('1 days'));
+                debug($current_loop_date);
+
+            };
+
             $data['start_date'] = array_slice(date_parse($data['start_date']),0,3);
             $data['end_date'] = array_slice(date_parse($data['end_date']),0,3);
 
 
             $event = $this->Events->patchEntity($event, $data);
 
+
+            die();
             if ($this->Events->save($event)) {
                 $this->Flash->success(__('The event has been saved.'));
+
+
 
                 return $this->redirect(['action' => 'index']);
             }
