@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Controller\AppController;
 use Cake\I18n\Date;
 use Cake\I18n\Time;
-use DateTime;
+
 /**
  * Events Controller
  *

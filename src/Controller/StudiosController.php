@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use App\Model;
+use DateTime;
 
 /**
  * Studios Controller
@@ -131,8 +132,19 @@ class StudiosController extends AppController
             $studio = $this->Studios->patchEntity($studio, $data);
 
 
-            //--------
 
+
+            $current_loop_date = new DateTime($related_event['start_date']);
+            $end_date = new DateTime($related_event['end_date']);
+
+            do {
+                
+
+            } while(date_add($current_loop_date, date_interval_create_from_date_string('5 days')) < $end_date);
+
+
+
+            die();
             if ($this->Studios->save($studio)) {
                 $this->Flash->success(__('The studio has been saved.'));
 
