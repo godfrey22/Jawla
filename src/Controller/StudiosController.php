@@ -14,7 +14,10 @@ use DateTime;
  */
 class StudiosController extends AppController
 {
-
+    public $paginate = [
+        // Other keys here.
+        'maxLimit' => 100
+    ];
     /**
      * Index method
      *
@@ -30,6 +33,7 @@ class StudiosController extends AppController
         $studios = $this->paginate($this->Studios);
 
         $this->set(compact('studios'));
+
         $this->set('_serialize', ['studios']);
     }
 
