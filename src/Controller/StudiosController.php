@@ -120,7 +120,23 @@ class StudiosController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-    public function batch_add($id = null){
-        
+    public function batchAdd($id = null){
+        $this->viewBuilder()->setLayout('admin');
+        $studio = $this->Studios->newEntity();
+        if ($this->request->is('post')) {
+            $studio = $this->Studios->patchEntity($studio, $this->request->getData());
+            if ($this->Studios->save($studio)) {
+                $this->Flash->success(__('The studio has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The studio could not be saved. Please, try again.'));
+        }
+        $events = $this->Studios->Events->find('list', ['limit' => 200]);
+        $teachers = $this->Studios->Teachers->find('list', ['limit' => 200]);
+        $classTypes = $this->Studios->ClassTypes->find('list', ['limit' => 200]);
+        $this->set(compact('studio', 'events', 'teachers', 'classTypes'));
+        $this->set('_serialize', ['studio']);
+
     }
 }
