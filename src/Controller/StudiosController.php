@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use App\Model;
 
 /**
  * Studios Controller
@@ -122,9 +123,16 @@ class StudiosController extends AppController
 
     public function batchAdd($id = null){
         $this->viewBuilder()->setLayout('admin');
+        $related_event = $this->loadModel('Events')->get($id);
+
         $studio = $this->Studios->newEntity();
         if ($this->request->is('post')) {
-            $studio = $this->Studios->patchEntity($studio, $this->request->getData());
+            $data = $this->request->getData();
+            $studio = $this->Studios->patchEntity($studio, $data);
+
+
+            //--------
+
             if ($this->Studios->save($studio)) {
                 $this->Flash->success(__('The studio has been saved.'));
 
