@@ -29,7 +29,7 @@
                                     <td><?= $studio->has('event') ? $this->Html->link($studio->event->name, ['controller' => 'Events', 'action' => 'view', $studio->event->id]) : '' ?></td>
                                     <td><?= $studio->has('teacher') ? $this->Html->link($studio->teacher->name, ['controller' => 'Teachers', 'action' => 'view', $studio->teacher->id]) : '' ?></td>
                                     <td><?= $studio->has('class_type') ? $this->Html->link($studio->class_type->name, ['controller' => 'ClassTypes', 'action' => 'view', $studio->class_type->id]) : '' ?></td>
-                                    <td><?= h($studio->date) ?></td>
+                                    <td><?= h($studio->date->nice()) ?></td>
                                     <td class="actions">
                                         <?= $this->Html->link(__('View'), ['action' => 'view', $studio->id]) ?>
                                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $studio->id]) ?>
