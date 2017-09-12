@@ -17,10 +17,22 @@
                         <?= $this->Form->create($studio) ?>
                         <fieldset>
                             <legend><?= __('Setting up the class') ?></legend>
-                            <?php
-                            echo $this->Form->control('teacher_id', ['options' => $teachers]);
-                            echo $this->Form->control('class_type_id', ['options' => $classTypes]);
-                            ?>
+
+                            <div class="row">
+                                <div class="col-md-12 mb-12">
+                                    <div class="form-group">
+                                        <?= $this->Form->control('teacher_id', ['options' => $teachers, 'class' => 'form-control']); ?>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 mb-12">
+                                    <div class="form-group">
+                                        <?= $this->Form->control('class_type_id', ['options' => $classTypes, 'class' => 'form-control']); ?>
+                                    </div>
+                                </div>
+                            </div>
 
 
                         </fieldset>
