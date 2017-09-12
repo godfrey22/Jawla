@@ -56,27 +56,11 @@ class EventsController extends AppController
     {
         $this->viewBuilder()->setLayout('admin');
 
-//        ["start_date"] => array(
-//            3{["year"]}=>string(4) "2022"
-//              ["month"]=> string(2) "01"
-//              ["day"]=> string(2) "01"}
-
-//        ["start_date"]=> array(3) { ["year"]=> int(2022) ["month"]=> int(1) ["day"]=> int(1) }
-
         $event = $this->Events->newEntity();
+
         if ($this->request->is('post')) {
 
-
             $data = $this->request->getData();
-
-//            $current_loop_date = new DateTime($data['start_date']);
-//            $end_date = new DateTime($data['end_date']);
-//
-//            while($current_loop_date < $end_date){
-//                date_add($current_loop_date, date_interval_create_from_date_string('1 days'));
-//                debug($current_loop_date);
-//
-//            };
 
             $data['start_date'] = array_slice(date_parse($data['start_date']),0,3);
             $data['end_date'] = array_slice(date_parse($data['end_date']),0,3);

@@ -127,14 +127,10 @@ class StudiosController extends AppController
         $related_event = $this->loadModel('Events')->get($id);
             $current_loop_date = new DateTime($related_event['start_date']);
             $end_date = new DateTime($related_event['end_date']);
-        $studios = array();
+        $studio = "";
 
         if ($this->request->is('post')) {
             $data = $this->request->getData();
-
-//            $patched = $this->Studios->patchEntity($studio, $data);
-//            debug($patched);
-//            die();
 
             do {
                 $date = array_slice(date_parse($current_loop_date->format('m/d/Y')),0,3);
@@ -147,29 +143,8 @@ class StudiosController extends AppController
                 $studio = $this->Studios->newEntity();
                 $patched = $this->Studios->patchEntity($studio, $data);
                 $this->Studios->save($patched);
-                debug($patched);
-
             } while(date_add($current_loop_date, date_interval_create_from_date_string('5 days')) < $end_date);
-
-
-            die();
-//            debug($patched);
-            foreach ($patched as $entity) {
-                echo ":";
-                debug($entity);
-                $this->Studios->save($entity);
-            }
-            die();
-
-
-
-
-            if ($this->Studios->save($studio)) {
-                $this->Flash->success(__('The studio has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The studio could not be saved. Please, try again.'));
+            return $this->redirect(['action' => 'index']);
         }
         $events = $this->Studios->Events->find('list', ['limit' => 200]);
         $teachers = $this->Studios->Teachers->find('list', ['limit' => 200]);
