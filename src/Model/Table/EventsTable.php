@@ -93,6 +93,11 @@ class EventsTable extends Table
         $validator
             ->allowEmpty('notes');
 
+        $validator
+            ->integer('interval')
+            ->requirePresence('interval', 'create')
+            ->notEmpty('interval');
+
         return $validator;
     }
 }
