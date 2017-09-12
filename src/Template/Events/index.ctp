@@ -26,6 +26,8 @@
                                 <th scope="col"><?= $this->Paginator->sort('type') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('start_date') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('end_date') ?></th>
+                                <th scope="col"><?= $this->Paginator->sort('class_interval') ?></th>
+
                                 <th scope="col"><?= $this->Paginator->sort('start_time') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('end_time') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('num_people') ?></th>
@@ -41,6 +43,7 @@
                                     <td><?php if($event->type=='C'){echo 'Class'; }else {echo 'Party';} ?></td>
                                     <td><?= h($event->start_date->nice()) ?></td>
                                     <td><?= h($event->end_date->nice()) ?></td>
+                                    <td><?php if($event->class_interval=='7'){echo 'Weekly'; }else {echo 'Fortnightly';} ?></td>
                                     <td><?= h($event->start_time->format('h:i A')) ?></td>
                                     <td><?= h($event->end_time->format('h:i A')) ?></td>
                                     <td><?= $this->Number->format($event->num_people) ?></td>

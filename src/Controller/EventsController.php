@@ -69,7 +69,7 @@ class EventsController extends AppController
             $data['start_date'] = array_slice(date_parse($data['start_date']),0,3);
             $data['end_date'] = array_slice(date_parse($data['end_date']),0,3);
 
-            var_dump($data);
+
             $event = $this->Events->patchEntity($event, $data);
 
             if ($this->Events->save($event)) {

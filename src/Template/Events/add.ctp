@@ -135,7 +135,7 @@
                                     <div class="form-group">
                                         Interval:
                                         <?=
-                                        $this->Form->select('interval', ['7' => 'Weekly', '14' => 'Fortnightly'],
+                                        $this->Form->select('class_interval', ['7' => 'Weekly', '14' => 'Fortnightly'],
                                             [
                                                 'class' => 'custom-select',
                                                 'style' => 'width:100px;'
