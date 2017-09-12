@@ -22,7 +22,7 @@
                                 <th scope="col"><?= $this->Paginator->sort('Mobile') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('School Institution') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('email') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('password') ?></th>
+<!--                                <th scope="col">--><?//= $this->Paginator->sort('password') ?><!--</th>-->
                                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -37,13 +37,13 @@
                                     <td><?= h($user->mobile) ?></td>
                                     <td><?= h($user->school) ?></td>
                                     <td><?= h($user->email) ?></td>
-                                    <td><?= h($user->password) ?></td>
-                                    <td><?= h($user->created) ?></td>
-                                    <td><?= h($user->modified) ?></td>
+<!--                                    <td>--><?//= h($user->password) ?><!--</td>-->
+                                    <td><?= h($user->created->nice()) ?></td>
+                                    <td><?= h($user->modified->nice()) ?></td>
                                     <td class="actions">
                                         <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
                                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
-                                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
+<!--                                        --><?//= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
