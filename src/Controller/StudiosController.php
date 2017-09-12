@@ -143,8 +143,10 @@ class StudiosController extends AppController
 
             } while(date_add($current_loop_date, date_interval_create_from_date_string('5 days')) < $end_date);
 
-            $patched = $this->Studios->patchEntity($studios, $this->request->getData());
+            $patched = $this->Studios->patchEntity($studio, $studios);
+            debug($patched);
 
+            die();
             if ($this->Studios->save($studio)) {
                 $this->Flash->success(__('The studio has been saved.'));
 
