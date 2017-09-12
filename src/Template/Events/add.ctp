@@ -55,6 +55,22 @@
                         <?= $this->Form->create($event) ?>
                         <fieldset>
                             <legend><?= __('Add Event') ?></legend>
+
+
+                            <div class="row">
+                                <div class="col-md-12 mb-12">
+                                    <div class="form-group">
+                                        Name:
+                                        <?= $this->Form->text('name',
+                                            [
+                                                'class' => 'form-control col-md-5',
+                                                'placeholder' => 'Name'
+                                            ]) ?>
+                                    </div>
+                                </div>
+                            </div>
+
+
                             <div class="row">
                                 <div class="col-md-12 mb-12">
                                     <div class="form-group">
@@ -84,18 +100,7 @@
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col-md-12 mb-12">
-                                    <div class="form-group">
-                                        Name:
-                                        <?= $this->Form->text('name',
-                                            [
-                                                'class' => 'form-control col-md-5',
-                                                'placeholder' => 'Name'
-                                            ]) ?>
-                                    </div>
-                                </div>
-                            </div>
+
 
                             <div class="row">
                                 <div class="col-md-12 mb-12">
@@ -124,6 +129,24 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-md-12 mb-12">
+                                    <div class="form-group">
+                                        Interval:
+                                        <?=
+                                        $this->Form->select('interval', ['7' => 'Weekly', '14' => 'Fortnightly'],
+                                            [
+                                                'class' => 'custom-select',
+                                                'style' => 'width:100px;'
+                                            ]
+                                        )
+                                        ;
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+
 
 
                             <div class="row">
