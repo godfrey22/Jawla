@@ -31,7 +31,7 @@
             echo $this->Form->control('end_time');
             echo $this->Form->control('num_people');
             echo $this->Form->control('notes');
-            echo $this->Form->control('interval');
+            echo $this->Form->control('class_interval');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

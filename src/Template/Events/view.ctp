@@ -39,8 +39,8 @@
             <td><?= $this->Number->format($event->num_people) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Interval') ?></th>
-            <td><?= $this->Number->format($event->interval) ?></td>
+            <th scope="row"><?= __('Class Interval') ?></th>
+            <td><?= $this->Number->format($event->class_interval) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Start Date') ?></th>

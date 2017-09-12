@@ -16,7 +16,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime $end_time
  * @property int $num_people
  * @property string $notes
- * @property int $interval
+ * @property int $class_interval
  *
  * @property \App\Model\Entity\Studio[] $studios
  */
