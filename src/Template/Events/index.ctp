@@ -37,10 +37,10 @@
                             <?php foreach ($events as $event): ?>
                                 <tr>
                                     <td><?= h($event->name) ?></td>
-                                    <td><?= $this->Number->format($event->price) ?></td>
+                                    <td><?= $this->Number->currency($event->price) ?></td>
                                     <td><?php if($event->type=='C'){echo 'Class'; }else {echo 'Party';} ?></td>
-                                    <td><?= h($event->start_date) ?></td>
-                                    <td><?= h($event->end_date) ?></td>
+                                    <td><?= h($event->start_date->nice()) ?></td>
+                                    <td><?= h($event->end_date->nice()) ?></td>
                                     <td><?= h($event->start_time->format('h:i A')) ?></td>
                                     <td><?= h($event->end_time->format('h:i A')) ?></td>
                                     <td><?= $this->Number->format($event->num_people) ?></td>
