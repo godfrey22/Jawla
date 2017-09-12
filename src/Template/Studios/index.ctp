@@ -16,7 +16,6 @@
                         <table class="table table-bordered table-striped table-sm table-responsive">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('event_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('teacher_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('class_type_id') ?></th>
@@ -27,7 +26,6 @@
         <tbody>
             <?php foreach ($studios as $studio): ?>
             <tr>
-                <td><?= $this->Number->format($studio->id) ?></td>
                 <td><?= $studio->has('event') ? $this->Html->link($studio->event->name, ['controller' => 'Events', 'action' => 'view', $studio->event->id]) : '' ?></td>
                 <td><?= $studio->has('teacher') ? $this->Html->link($studio->teacher->name, ['controller' => 'Teachers', 'action' => 'view', $studio->teacher->id]) : '' ?></td>
                 <td><?= $studio->has('class_type') ? $this->Html->link($studio->class_type->name, ['controller' => 'ClassTypes', 'action' => 'view', $studio->class_type->id]) : '' ?></td>
