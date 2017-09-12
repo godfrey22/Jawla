@@ -119,4 +119,8 @@ class StudiosController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function batch_add($id = null){
+        
+    }
 }
