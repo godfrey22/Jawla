@@ -127,26 +127,41 @@ class StudiosController extends AppController
         $related_event = $this->loadModel('Events')->get($id);
             $current_loop_date = new DateTime($related_event['start_date']);
             $end_date = new DateTime($related_event['end_date']);
-        $studio = $this->Studios->newEntity();
         $studios = array();
 
         if ($this->request->is('post')) {
             $data = $this->request->getData();
-            do {
-                $single_studio['event_id'] = $id;
-                $single_studio['teacher_id'] = $data['teacher_id'];
-                $single_studio['class_type_id'] = $data['class_type_id'];
-                $single_studio['date'] = array_slice(date_parse($related_event['start_date']),0,3);
-                array_push($studios, $single_studio);
-                debug($studios);
 
+//            $patched = $this->Studios->patchEntity($studio, $data);
+//            debug($patched);
+//            die();
+
+            do {
+                $data = [
+                    'event_id' => $id,
+                    'teacher_id' => $data['teacher_id'],
+                    'class_type_id' => $data['class_type_id'],
+                    'date' => array_slice(date_parse($related_event['start_date']),0,3)
+                ];
+                $studio = $this->Studios->newEntity();
+                $patched = $this->Studios->patchEntity($studio, $data);
+                debug($patched);
 
             } while(date_add($current_loop_date, date_interval_create_from_date_string('5 days')) < $end_date);
 
-            $patched = $this->Studios->patchEntity($studio, $studios);
-            debug($patched);
 
             die();
+//            debug($patched);
+            foreach ($patched as $entity) {
+                echo ":";
+                debug($entity);
+                $this->Studios->save($entity);
+            }
+            die();
+
+
+
+
             if ($this->Studios->save($studio)) {
                 $this->Flash->success(__('The studio has been saved.'));
 
