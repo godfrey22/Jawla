@@ -137,14 +137,16 @@ class StudiosController extends AppController
 //            die();
 
             do {
+                $date = array_slice(date_parse($current_loop_date->format('m/d/Y')),0,3);
                 $data = [
                     'event_id' => $id,
                     'teacher_id' => $data['teacher_id'],
                     'class_type_id' => $data['class_type_id'],
-                    'date' => array_slice(date_parse($related_event['start_date']),0,3)
+                    'date' => $date
                 ];
                 $studio = $this->Studios->newEntity();
                 $patched = $this->Studios->patchEntity($studio, $data);
+                $this->Studios->save($patched);
                 debug($patched);
 
             } while(date_add($current_loop_date, date_interval_create_from_date_string('5 days')) < $end_date);
