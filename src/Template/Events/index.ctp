@@ -21,10 +21,9 @@
                         <table class="table table-bordered table-striped table-sm table-responsive">
                             <thead>
                             <tr>
-                                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+                                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('price') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('type') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('start_date') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('end_date') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('start_time') ?></th>
@@ -37,10 +36,9 @@
 
                             <?php foreach ($events as $event): ?>
                                 <tr>
-                                    <td><?= $this->Number->format($event->id) ?></td>
+                                    <td><?= h($event->name) ?></td>
                                     <td><?= $this->Number->format($event->price) ?></td>
                                     <td><?php if($event->type=='C'){echo 'Class'; }else {echo 'Party';} ?></td>
-                                    <td><?= h($event->name) ?></td>
                                     <td><?= h($event->start_date) ?></td>
                                     <td><?= h($event->end_date) ?></td>
                                     <td><?= h($event->start_time->format('h:i A')) ?></td>
