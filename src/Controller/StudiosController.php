@@ -128,6 +128,7 @@ class StudiosController extends AppController
             $current_loop_date = new DateTime($related_event['start_date']);
             $end_date = new DateTime($related_event['end_date']);
         $studio = "";
+        if($related_event['class_interval']==7){$interval = '7 days';}else{$interval = '14 days';};
 
         if ($this->request->is('post')) {
             $data = $this->request->getData();
@@ -143,7 +144,7 @@ class StudiosController extends AppController
                 $studio = $this->Studios->newEntity();
                 $patched = $this->Studios->patchEntity($studio, $data);
                 $this->Studios->save($patched);
-            } while(date_add($current_loop_date, date_interval_create_from_date_string('5 days')) < $end_date);
+            } while(date_add($current_loop_date, date_interval_create_from_date_string($interval)) < $end_date);
             return $this->redirect(['action' => 'index']);
         }
         $events = $this->Studios->Events->find('list', ['limit' => 200]);
