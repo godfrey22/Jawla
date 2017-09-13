@@ -4,6 +4,8 @@
  * @var \App\Model\Entity\Event[]|\Cake\Collection\CollectionInterface $events
  */
 ?>
+
+
 <div class="container-fluid">
     <div class="animated fadeIn">
         <div class="row">
@@ -56,4 +58,3 @@
                             <?php endforeach; ?>
                             </tbody>
                         </table>
-

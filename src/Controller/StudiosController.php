@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -14,10 +15,6 @@ use DateTime;
  */
 class StudiosController extends AppController
 {
-    public $paginate = [
-        // Other keys here.
-        'maxLimit' => 100
-    ];
     /**
      * Index method
      *
@@ -32,7 +29,11 @@ class StudiosController extends AppController
         ];
         $studios = $this->paginate($this->Studios);
 
+        $studios_json = $this->classList($studios);
+
         $this->set(compact('studios'));
+        $this->set(compact('studios_json'));
+
 
         $this->set('_serialize', ['studios']);
     }
@@ -126,19 +127,24 @@ class StudiosController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-    public function batchAdd($id = null){
+    public function batchAdd($id = null)
+    {
         $this->viewBuilder()->setLayout('admin');
         $related_event = $this->loadModel('Events')->get($id);
-            $current_loop_date = new DateTime($related_event['start_date']);
-            $end_date = new DateTime($related_event['end_date']);
+        $current_loop_date = new DateTime($related_event['start_date']);
+        $end_date = new DateTime($related_event['end_date']);
         $studio = "";
-        if($related_event['class_interval']==7){$interval = '7 days';}else{$interval = '14 days';};
+        if ($related_event['class_interval'] == 7) {
+            $interval = '7 days';
+        } else {
+            $interval = '14 days';
+        };
 
         if ($this->request->is('post')) {
             $data = $this->request->getData();
 
             do {
-                $date = array_slice(date_parse($current_loop_date->format('m/d/Y')),0,3);
+                $date = array_slice(date_parse($current_loop_date->format('m/d/Y')), 0, 3);
                 $data = [
                     'event_id' => $id,
                     'teacher_id' => $data['teacher_id'],
@@ -148,7 +154,7 @@ class StudiosController extends AppController
                 $studio = $this->Studios->newEntity();
                 $patched = $this->Studios->patchEntity($studio, $data);
                 $this->Studios->save($patched);
-            } while(date_add($current_loop_date, date_interval_create_from_date_string($interval)) < $end_date);
+            } while (date_add($current_loop_date, date_interval_create_from_date_string($interval)) < $end_date);
             return $this->redirect(['action' => 'index']);
         }
         $events = $this->Studios->Events->find('list', ['limit' => 200]);
@@ -156,6 +162,11 @@ class StudiosController extends AppController
         $classTypes = $this->Studios->ClassTypes->find('list', ['limit' => 200]);
         $this->set(compact('studio', 'events', 'teachers', 'classTypes'));
         $this->set('_serialize', ['studio']);
+
+    }
+
+    public function classList($studios)
+    {
 
     }
 }

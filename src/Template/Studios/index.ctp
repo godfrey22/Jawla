@@ -4,6 +4,87 @@
  * @var \App\Model\Entity\Studio[]|\Cake\Collection\CollectionInterface $studios
  */
 ?>
+<?= $this->Html->css('vendors/fullCan/fullcalendar.min.css') ?>
+<?= $this->Html->css('vendors/fullCan/fullcalendar.print.min.css') ?>
+<?= $this->Html->script('vendors/fullCan/moment.min.js') ?>
+<?= $this->Html->script('vendors/fullCan/fullcalendar.min.js') ?>
+
+
+<?= $this->fetch('css') ?>
+<?= $this->fetch('script') ?>
+
+<script>
+
+    $(document).ready(function() {
+
+        $('#calendar').fullCalendar({
+            defaultDate: '2017-09-12',
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events
+            events: [
+                {
+                    title: 'All Day Event',
+                    start: '2017-09-01'
+                },
+                {
+                    title: 'Long Event',
+                    start: '2017-09-07',
+                    end: '2017-09-10'
+                },
+                {
+                    id: 999,
+                    title: 'Repeating Event',
+                    start: '2017-09-09T16:00:00'
+                },
+                {
+                    id: 999,
+                    title: 'Repeating Event',
+                    start: '2017-09-16T16:00:00'
+                },
+                {
+                    title: 'Conference',
+                    start: '2017-09-11',
+                    end: '2017-09-13'
+                },
+                {
+                    title: 'Meeting',
+                    start: '2017-09-12T10:30:00',
+                    end: '2017-09-12T12:30:00'
+                },
+                {
+                    title: 'Lunch',
+                    start: '2017-09-12T12:00:00'
+                },
+                {
+                    title: 'Meeting',
+                    start: '2017-09-12T14:30:00'
+                },
+                {
+                    title: 'Happy Hour',
+                    start: '2017-09-12T17:30:00'
+                },
+                {
+                    title: 'Dinner',
+                    start: '2017-09-12T20:00:00'
+                },
+                {
+                    title: 'Birthday Party',
+                    start: '2017-09-13T07:00:00'
+                },
+                {
+                    title: 'Click for Google',
+                    url: 'http://google.com/',
+                    start: '2017-09-28'
+                }
+            ]
+        });
+
+  
+
+    });
+
+</script>
+
 <div class="container-fluid">
     <div class="animated fadeIn">
         <div class="row">
@@ -49,3 +130,5 @@
                             </ul>
                             <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
                         </div>
+                        <div id='calendar'></div>
+
