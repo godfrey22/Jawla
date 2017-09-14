@@ -22,7 +22,11 @@
                                 <th scope="col"><?= $this->Paginator->sort('Mobile') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('Address') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('School Institution') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('email') ?></th>
+                                <th scope="col"><?= $this->Paginator->sort('Email') ?></th>
+                                <th scope="col"><?= $this->Paginator->sort('Photo/Video Consent') ?></th>
+                                <th scope="col"><?= $this->Paginator->sort('Medical Record') ?></th>
+                                <th scope="col"><?= $this->Paginator->sort('Guardians Full Name') ?></th>
+                                <th scope="col"><?= $this->Paginator->sort('Guardians Contact Details') ?></th>
                                <!-- <th scope="col"><?= $this->Paginator->sort('password') ?></th> -->
                                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
@@ -39,7 +43,11 @@
                                     <td><?= h($user->FullAddress) ?></td>
                                     <td><?= h($user->school) ?></td>
                                     <td><?= h($user->email) ?></td>
+                                    <td><?= h($user->p_consent) ?></td>
+                                    <td><?= h($user->medical) ?></td>
                                    <!--  <td><?= h($user->password) ?></td> -->
+                                    <td><?= h($user->GFullName) ?></td>
+                                    <td><?= h($user->GDetails) ?></td>
                                     <td><?= h($user->created) ?></td>
                                     <td><?= h($user->modified) ?></td>
                                     <td class="actions">

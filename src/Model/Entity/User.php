@@ -51,7 +51,14 @@ class User extends Entity
     {
         return $this->_properties['first_name'] . ' ' . $this->_properties['last_name'];
     }
-
+    protected function _getGFullName()
+    {
+        return $this->_properties['g_fname'] . ' ' . $this->_properties['g_lname'];
+    }
+    protected function _getGDetails()
+    {
+        return $this->_properties['g_mobile'] . ' ' . $this->_properties['g_email'];
+    }
     protected function _getFullAddress()
     {
         return $this->_properties['house_no'] . ' ' . $this->_properties['street'] . ', ' . $this->_properties['suburb'] . ', ' . $this->_properties['postcode'] . ' ' . $this->_properties['state'] . ' ' . $this->_properties['country'];
