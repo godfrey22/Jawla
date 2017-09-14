@@ -29,7 +29,6 @@ class StudiosController extends AppController
         ];
         $studios = $this->paginate($this->Studios);
 
-        $studios_json = $this->classList($studios);
 
         $this->set(compact('studios'));
         $this->set(compact('studios_json'));
@@ -165,22 +164,13 @@ class StudiosController extends AppController
 
     }
 
-    public function classList($studios)
-    {
-
-    }
 
     public function calendar()
     {
         $this->viewBuilder()->setLayout('ajax');
-
         $this->request->allowMethod('ajax'); // No direct access via browser URL - Note for Cake2.5: allowMethod()
 
-        $data = array(
-            'content' => 'success',
-            'error' => 'none',
-            'time' => time()
-        );
+        $data = $this->Studios->find('all');
 
         echo json_encode($data);
         die();
