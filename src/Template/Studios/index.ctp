@@ -21,69 +21,43 @@
 
     $(document).ready(function () {
 
+//        var calendar;
+//
+//        $.ajax({
+//            type: 'get',
+//            url: '/team103/studios/calendar?ext=json',
+//            beforeSend: function (xhr) {
+//                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+//            },
+//            success: function (response) {
+//                if (response.error) {
+//                    console.log(response.error);
+//                }
+//                if (response.content) {
+//                    calendar = response;
+//                }
+//
+//                $('#test').text("ok");
+//                calendar = response;
+//            },
+//            error: function (e) {
+//                alert("An error occurred: " + e.responseText.message);
+//                console.log(e);
+//            }
+//        });
+
         $('#calendar').fullCalendar({
             defaultDate: '2017-09-12',
-            disableDragging: true,
+            editable: true,
             eventLimit: true, // allow "more" link when too many events
-//            events: [
-//                {
-//                    title: 'All Day Event',
-//                    start: '2017-09-01'
-//                },
-//                {
-//                    title: 'Long Event',
-//                    start: '2017-09-07',
-//                    end: '2017-09-10'
-//                },
-//                {
-//                    id: 999,
-//                    title: 'Repeating Event',
-//                    start: '2017-09-09T16:00:00'
-//                },
-//                {
-//                    id: 999,
-//                    title: 'Repeating Event',
-//                    start: '2017-09-16T16:00:00'
-//                },
-//                {
-//                    title: 'Conference',
-//                    start: '2017-09-11',
-//                    end: '2017-09-13'
-//                },
-//                {
-//                    title: 'Meeting',
-//                    start: '2017-09-12T10:30:00',
-//                    end: '2017-09-12T12:30:00'
-//                },
-//                {
-//                    title: 'Lunch',
-//                    start: '2017-09-12T12:00:00'
-//                },
-//                {
-//                    title: 'Meeting',
-//                    start: '2017-09-12T14:30:00'
-//                },
-//                {
-//                    title: 'Happy Hour',
-//                    start: '2017-09-12T17:30:00'
-//                },
-//                {
-//                    title: 'Dinner',
-//                    start: '2017-09-12T20:00:00'
-//                },
-//                {
-//                    title: 'Birthday Party',
-//                    start: '2017-09-13T07:00:00'
-//                },
-//                {
-//                    title: 'Click for Google',
-//                    url: 'http://google.com/',
-//                    start: '2017-09-28'
-//                }
-//            ]
-
+            events:
+                {
+                    url: '/team103/studios/calendar?ext=json',
+                    type: 'get'
+                }
 
         });
+
 
 
     });
@@ -103,7 +77,7 @@
                             <div id='calendar'></div>
                         </div>
                         <div class="card-block col-6 col-md-auto col-sm-auto">
-                            <h1>Class List</h1>
+                            <h1 id="test">Class List</h1>
                             <table class="table table-bordered table-striped table-sm table-responsive">
                                 <thead>
                                 <tr>

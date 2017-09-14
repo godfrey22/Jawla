@@ -175,13 +175,11 @@ class StudiosController extends AppController
 
         foreach ($results as $result){
             $data['title'] = $result['event']['name'];
-            $data['start'] = $result['date']->format('Y/m/d').'T'.$result['event']['start_time']->format('h:i:s');
-            $data['end'] = $result['date']->format('Y/m/d').'T'.$result['event']['end_time']->format('h:i:s');
-
-            debug($data);
+            $data['start'] = $result['date']->format('Y-m-d').'T'.$result['event']['start_time']->format('h:i:s');
+            $data['end'] = $result['date']->format('Y-m-d').'T'.$result['event']['end_time']->format('h:i:s');
+            $return_json[] = $data;
         }
-
-//        echo json_encode($data);
+        echo json_encode($return_json);
         die();
 
     }
