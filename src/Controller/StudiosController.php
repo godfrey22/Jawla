@@ -169,4 +169,9 @@ class StudiosController extends AppController
     {
 
     }
+
+    public function calendar(){
+        $this->viewBuilder()->setLayout('blank');
+
+    }
 }

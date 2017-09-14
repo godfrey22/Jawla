@@ -5,13 +5,17 @@
  */
 ?>
 <?= $this->Html->css('vendors/fullCan/fullcalendar.min.css') ?>
-<?= $this->Html->css('vendors/fullCan/fullcalendar.print.min.css') ?>
-<?= $this->Html->script('vendors/fullCan/moment.min.js') ?>
+<?= $this->Html->css('vendors/fullCan/fullcalendar.print.min.css', ['media' => 'print']) ?>
+<style>
+    .fc-title, .fc-time{
+        color: white;
+        font-weight: bold;
+    }
+
+</style>
+<?= $this->Html->script('vendors/fullCan/lib/moment.min.js') ?>
 <?= $this->Html->script('vendors/fullCan/fullcalendar.min.js') ?>
 
-
-<?= $this->fetch('css') ?>
-<?= $this->fetch('script') ?>
 
 <script>
 
@@ -19,7 +23,7 @@
 
         $('#calendar').fullCalendar({
             defaultDate: '2017-09-12',
-            editable: true,
+            disableDragging: true,
             eventLimit: true, // allow "more" link when too many events
             events: [
                 {
