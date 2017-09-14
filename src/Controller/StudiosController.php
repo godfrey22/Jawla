@@ -170,8 +170,35 @@ class StudiosController extends AppController
 
     }
 
-    public function calendar(){
-        $this->viewBuilder()->setLayout('blank');
+    public function calendar()
+    {
+        $this->viewBuilder()->setLayout('ajax');
 
+        $this->request->allowMethod('ajax'); // No direct access via browser URL - Note for Cake2.5: allowMethod()
+
+        $data = array(
+            'content' => 'success',
+            'error' => 'none',
+            'time' => time()
+        );
+
+        echo json_encode($data);
+        die();
+        $this->set(compact('data'));
+        $this->set('_serialize', 'data');
+
+    }
+
+    public function calendar2()
+    {
+//        $this->request->allowMethod('ajax'); // No direct access via browser URL - Note for Cake2.5: allowMethod()
+        $data = array(
+            'content' => 'success',
+            'error' => 'none',
+            'time' => time()
+        );
+
+        $this->set(compact('data')); // Pass $data to the view
+        $this->set('_serialize', 'data'); // Let the JsonView class know what variable to use
     }
 }
