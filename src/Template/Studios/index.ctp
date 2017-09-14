@@ -21,31 +21,6 @@
 
     $(document).ready(function () {
 
-//        var calendar;
-//
-//        $.ajax({
-//            type: 'get',
-//            url: '/team103/studios/calendar?ext=json',
-//            beforeSend: function (xhr) {
-//                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-//            },
-//            success: function (response) {
-//                if (response.error) {
-//                    console.log(response.error);
-//                }
-//                if (response.content) {
-//                    calendar = response;
-//                }
-//
-//                $('#test').text("ok");
-//                calendar = response;
-//            },
-//            error: function (e) {
-//                alert("An error occurred: " + e.responseText.message);
-//                console.log(e);
-//            }
-//        });
-
         $('#calendar').fullCalendar({
             defaultDate: '2017-09-12',
             editable: true,
@@ -58,8 +33,6 @@
 
         });
 
-
-
     });
 
 </script>
@@ -70,7 +43,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <i class="fa fa-align-justify"></i> Company Information
+                        <i class="fa fa-align-justify"></i> Studio Information
                     </div>
                     <div class="card-body row">
                         <div class="card-block col-lg-6 col-md-auto col-sm-auto">

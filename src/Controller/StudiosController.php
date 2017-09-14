@@ -184,8 +184,4 @@ class StudiosController extends AppController
 
     }
 
-    public function calendar2()
-    {
-
-    }
 }
