@@ -170,25 +170,24 @@ class StudiosController extends AppController
         $this->viewBuilder()->setLayout('ajax');
         $this->request->allowMethod('ajax'); // No direct access via browser URL - Note for Cake2.5: allowMethod()
 
-        $data = $this->Studios->find('all');
+        $results = $this->Studios->find('all', array(
+            'contain' => array('Events', 'Teachers', 'ClassTypes')));
 
-        echo json_encode($data);
+        foreach ($results as $result){
+            $data['title'] = $result['event']['name'];
+            $data['start'] = $result['date']->format('Y/m/d').'T'.$result['event']['start_time']->format('h:i:s');
+            $data['end'] = $result['date']->format('Y/m/d').'T'.$result['event']['end_time']->format('h:i:s');
+
+            debug($data);
+        }
+
+//        echo json_encode($data);
         die();
-        $this->set(compact('data'));
-        $this->set('_serialize', 'data');
 
     }
 
     public function calendar2()
     {
-//        $this->request->allowMethod('ajax'); // No direct access via browser URL - Note for Cake2.5: allowMethod()
-        $data = array(
-            'content' => 'success',
-            'error' => 'none',
-            'time' => time()
-        );
 
-        $this->set(compact('data')); // Pass $data to the view
-        $this->set('_serialize', 'data'); // Let the JsonView class know what variable to use
     }
 }
