@@ -177,6 +177,7 @@ class StudiosController extends AppController
             $data['title'] = $result['event']['name'];
             $data['start'] = $result['date']->format('Y-m-d').'T'.$result['event']['start_time']->format('h:i:s');
             $data['end'] = $result['date']->format('Y-m-d').'T'.$result['event']['end_time']->format('h:i:s');
+            $data['url'] = "/team103/studios/edit/".$result['id'];
             $return_json[] = $data;
         }
         echo json_encode($return_json);
