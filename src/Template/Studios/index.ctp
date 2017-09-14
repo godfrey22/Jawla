@@ -22,8 +22,6 @@
     $(document).ready(function () {
 
         $('#calendar').fullCalendar({
-            defaultDate: '2017-09-12',
-            editable: true,
             eventLimit: true, // allow "more" link when too many events
             events:
                 {
