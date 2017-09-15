@@ -93,7 +93,12 @@ class StudiosController extends AppController
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $studio = $this->Studios->patchEntity($studio, $this->request->getData());
+
+            $data = $this->request->getData();
+
+            $data['date'] = array_slice(date_parse($data['date']),0,3);
+
+            $studio = $this->Studios->patchEntity($studio, $data);
             if ($this->Studios->save($studio)) {
                 $this->Flash->success(__('The studio has been saved.'));
 
