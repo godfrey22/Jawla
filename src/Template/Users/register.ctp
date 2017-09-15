@@ -44,12 +44,22 @@
                     <div class="input-group mb-3">
                             <span class="input-group-addon"><i class="icon-user"></i>
                             </span>
-                        <?= $this->Form->text('dob',
-                            [
-                                'class' => 'form-control',
-                                'placeholder' => 'Date of Birth'
+                        <?= $this->Form->control('dob', array(
+                       'templates'=>['dateWidget' => '<div class="clearfix">{{day}}{{month}}{{year}}</div>',],
 
-                            ]) ?>
+                                'type'  => 'date',
+                                'label' => 'Date Of Birth',
+                                'empty' => TRUE,
+                                'minYear' => 1900,
+                                'dateFormat' => '',
+                                'maxYear' => date('Y'),
+                                'minYear' => date('Y') - 10
+
+                            ));
+                        ?>
+
+
+                           
                     </div>
                     <div class="input-group mb-3">
                             <span class="input-group-addon"><i class="icon-user"></i>
@@ -157,7 +167,7 @@
                                 'placeholder' => 'Email'
                             ]) ?>
                     </div>
-                    <p class="text-muted">Consent for photo and video to be taken</p>
+                    <p class="text-muted">Consent for photo and video to be taken?</p>
                     <div class="input-group mb-3">
                             <span class="input-group-addon"><i class="icon-user"></i>
                             </span>
