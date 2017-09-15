@@ -8,7 +8,7 @@
 <div class="container-fluid">
     <div class="animated fadeIn">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-4">
                 <div class="card">
                     <div class="card-header">
                         <i class="fa fa-align-justify"></i> Company Information
@@ -17,7 +17,6 @@
                         <table class="table table-bordered table-striped table-sm table-responsive">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -25,7 +24,6 @@
         <tbody>
             <?php foreach ($classTypes as $classType): ?>
             <tr>
-                <td><?= $this->Number->format($classType->id) ?></td>
                 <td><?= h($classType->name) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $classType->id]) ?>
