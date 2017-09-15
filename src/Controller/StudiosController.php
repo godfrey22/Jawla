@@ -87,6 +87,8 @@ class StudiosController extends AppController
      */
     public function edit($id = null)
     {
+        $this->viewBuilder()->setLayout('admin');
+
         $studio = $this->Studios->get($id, [
             'contain' => []
         ]);

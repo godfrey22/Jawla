@@ -1,37 +1,71 @@
 <?php
 /**
-  * @var \App\View\AppView $this
-  */
+ * @var \App\View\AppView $this
+ */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $studio->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $studio->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Studios'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Events'), ['controller' => 'Events', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Event'), ['controller' => 'Events', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Teachers'), ['controller' => 'Teachers', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Teacher'), ['controller' => 'Teachers', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Class Types'), ['controller' => 'ClassTypes', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Class Type'), ['controller' => 'ClassTypes', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="studios form large-9 medium-8 columns content">
-    <?= $this->Form->create($studio) ?>
-    <fieldset>
-        <legend><?= __('Edit Studio') ?></legend>
-        <?php
-            echo $this->Form->control('event_id', ['options' => $events, 'empty' => true]);
-            echo $this->Form->control('teacher_id', ['options' => $teachers]);
-            echo $this->Form->control('class_type_id', ['options' => $classTypes]);
-            echo $this->Form->control('date', ['empty' => true]);
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
-</div>
+<?= $this->Html->script('vendors/jquery-ui.min.js') ?>
+<?= $this->Html->css('vendors/jquery-ui.min.css') ?>
+<script>
+    $(function () {
+        $("#datepicker").datepicker();
+    });
+</script>
+<div class="container-fluid">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fa fa-align-justify"></i> Studio Information
+                    </div>
+                    <div class="card-body">
+                        <div class="studios form large-9 medium-8 columns content">
+                            <?= $this->Form->create($studio) ?>
+                            <fieldset>
+                                <legend><?= __('Edit Studio') ?></legend>
+
+                                <div class="row">
+                                    <div class="col-md-12 mb-12">
+                                        <div class="form-group">
+                                            <?= $this->Form->control('event_id', ['options' => $events, 'empty' =>
+                                                true, 'class' => 'form-control col-md-5']); ?>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 mb-12">
+                                        <div class="form-group">
+                                            <?= $this->Form->control('teacher_id', ['options' => $teachers,
+                                                'class' => 'form-control col-md-5']); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 mb-12">
+                                        <div class="form-group">
+                                            <?= $this->Form->control('class_type_id', ['options' =>
+                                                $classTypes, 'class' => 'form-control col-md-5']); ?>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 mb-12">
+                                        <div class="form-group">
+                                            Date:
+                                            <?= $this->Form->text('date',
+                                                [
+                                                    'class' => 'form-control col-md-5',
+                                                    'placeholder' => 'Date',
+                                                    'id' => 'datepicker'
+                                                ])
+
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <?= $this->Form->button(__('Submit'),['class' => 'btn btn-primary']) ?>
+                            <?= $this->Form->end() ?>
+                        </div>
