@@ -56,9 +56,22 @@ class UsersTable extends Table
             ->requirePresence('email', 'create')
             ->notEmpty('email');
 
+
+       // $validator
+         //         ->add('f_name', 'custom', array(
+           //             'rule' => array('custom', '/^[a-zA-Z\s]*$/') ,
+             //           'message' => 'Please a valid name'
+              //          ))
+        //->requirePresence('f_name', 'create')
+        //->notEmpty('f_name');
+
+
         $validator
             ->requirePresence('password', 'create')
             ->notEmpty('password');
+        $validator
+            ->date('dob')
+            ->notEmpty('dob', 'Please fill this field');
 
         return $validator;
     }
