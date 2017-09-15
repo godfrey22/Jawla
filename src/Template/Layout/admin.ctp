@@ -156,9 +156,6 @@ $cakeDescription = 'Test Admin';
                     </ul>
                 </li>
 
-
-
-
                 <li class="nav-item nav-dropdown">
                     <a class="nav-link nav-dropdown-toggle"><i
                                 class="fa fa-calendar-o"></i> Classes</a>
@@ -186,6 +183,25 @@ $cakeDescription = 'Test Admin';
                                target="_top"><i class="fa fa-tasks"></i>
                                 Class Type<span class="badge badge-primary">NEW</span></a>
                         </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item nav-dropdown">
+                    <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-user-plus"></i> Enrollment</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="<?= $this->Url->build(["controller" => "users1", "action" => "index1"]); ?>"
+                               target="_top"><i class="fa fa-user"></i> Individual</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="<?= $this->Url->build(["controller" => "users1", "action" => "index21"]); ?>"
+                               target="_top"><i class="fa fa-users"></i>
+                                Family<span class="badge badge-primary">NEW</span></a>
+                        </li>
+
                     </ul>
                 </li>
 
