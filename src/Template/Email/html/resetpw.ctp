@@ -1,9 +1,5 @@
 <?php ?>
-/**
- * Created by PhpStorm.
- * User: David
- * Date: 15/09/2017
- * Time: 12:44 PM
+    
 
  <p>Your username is <?php echo $username; ?></p>
 
