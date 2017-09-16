@@ -56,7 +56,12 @@
 
                             </div>
                             <div class="col-6 text-right">
-                                <button type="button" class="btn btn-link px-0">Forgot password?</button>
+                             <?php
+                                                            echo $this->Html->link("Forgot password?",
+                                                                array('controller' => 'users', 'action' => 'password'),
+                                                                array('class' => 'btn btn-link px-0'));
+                                                            ?>
+                               
                             </div>
                         </div>
                     </div>
