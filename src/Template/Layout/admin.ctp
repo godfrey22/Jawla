@@ -30,6 +30,8 @@ $cakeDescription = 'Test Admin';
     <?= $this->Html->css('admin/simple-line-icons.css') ?>
     <?= $this->Html->css('admin/style.css') ?>
 
+    <?= $this->Html->script('admin/jquery/dist/jquery.min.js') ?>
+
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
 
@@ -153,6 +155,57 @@ $cakeDescription = 'Test Admin';
 
                     </ul>
                 </li>
+
+                <li class="nav-item nav-dropdown">
+                    <a class="nav-link nav-dropdown-toggle"><i
+                                class="fa fa-calendar-o"></i> Classes</a>
+                    <ul class="nav-dropdown-items">
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="<?= $this->Url->build(["controller" => "events", "action" => "index"]); ?>"><i
+                                        class="fa fa-calendar-plus-o"></i> All Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="<?= $this->Url->build(["controller" => "studios", "action" => "index"]); ?>"
+                               target="_top"><i class="fa fa-calendar"></i> All Classes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="<?= $this->Url->build(["controller" => "teachers", "action" => "index"]); ?>"
+                               target="_top"><i class="fa fa-graduation-cap"></i>
+                                Teacher<span class="badge badge-primary">NEW</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="<?= $this->Url->build(["controller" => "classTypes", "action" => "index"]); ?>"
+                               target="_top"><i class="fa fa-tasks"></i>
+                                Class Type<span class="badge badge-primary">NEW</span></a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item nav-dropdown">
+                    <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-user-plus"></i> Enrollment</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="<?= $this->Url->build(["controller" => "users1", "action" => "index1"]); ?>"
+                               target="_top"><i class="fa fa-user"></i> Individual</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="<?= $this->Url->build(["controller" => "users1", "action" => "index21"]); ?>"
+                               target="_top"><i class="fa fa-users"></i>
+                                Family<span class="badge badge-primary">NEW</span></a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
             </ul>
         </nav>
     </div>
@@ -517,7 +570,6 @@ $cakeDescription = 'Test Admin';
         </span>
 </footer>
 
-<?= $this->Html->script('admin/jquery/dist/jquery.min.js') ?>
 <?= $this->Html->script('admin/popper.js/dist/umd/popper.js') ?>
 
 <?= $this->Html->script('admin/bootstrap/dist/js/bootstrap.min.js') ?>

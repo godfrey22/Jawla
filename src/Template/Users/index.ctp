@@ -38,8 +38,10 @@
                                     <td><?= h($user->school) ?></td>
                                     <td><?= h($user->email) ?></td>
 <!--                                    <td>--><?//= h($user->password) ?><!--</td>-->
+
                                     <td><?= h($user->created->nice()) ?></td>
                                     <td><?= h($user->modified->nice()) ?></td>
+
                                     <td class="actions">
                                         <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
                                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
