@@ -18,7 +18,6 @@ use Cake\Core\Configure;
 use Cake\Network\Exception\ForbiddenException;
 use Cake\Network\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
-use App\Model;
 
 /**
  * Static content controller
@@ -33,10 +32,4 @@ class AdminController extends AppController
         $this->viewBuilder()->setLayout('admin');
     }
 
-    public function details(){
-        $info = $this->loadModel('Information');
-        $information = $info->find('all')->toArray();
-        $this->set(compact('information'));
-        $this->viewBuilder()->setLayout('admin');
-    }
 }

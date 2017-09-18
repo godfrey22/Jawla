@@ -3,6 +3,3 @@
 /tmp/*
 /logs/*
 *.xml
-*.iml
-.DS_Store
-._.DS_Store
