@@ -9,14 +9,80 @@
 
 
 
-$this->layout="f-password";
-echo $this->Html->css('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
-$this->assign('title', 'Request Password Reset'); ?><div class="users content">
-    <h3><?php echo __('Forgot Password'); ?></h3>
-    <?php
-    echo $this->Form->create();
-    echo $this->Form->input('email', ['autofocus' => true, 'label' => 'Email address', 'required' => true]);
-    echo $this->Form->button('Request reset email');
-    echo $this->Form->end();
-    ?>
+?>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Login Form Template</title>
+
+
+
+    <?php $this->layout = false; ?>
+
+    <?= $this->Html->css('Password/bootstrap.min') ?>
+    <?= $this->Html->css('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css') ?>
+    <?= $this->Html->css('Password/form-elements') ?>
+    <?= $this->Html->css('Password/style') ?>
+
+    <?= $this->Html->script('jquery-1.11.1.min') ?>
+    <?= $this->Html->script('bootstrap.min') ?>
+    <?= $this->Html->script('jquery.backstretch.min') ?>
+    <?= $this->Html->script('scripts') ?>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+<body >
+
+<div class="top-content">
+    <div class="inner-bg">
+        <div class="container">
+            <div class="row">
+
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3 form-box">
+                    <div class="form-top">
+                        <div class="form-top-left">
+                            <h3>Reset Password</h3>
+                            <p>Please enter your username to reset password:</p>
+                        </div>
+                        <div class="form-top-right">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                    </div>
+                    <div class="form-bottom">
+                        <form role="form" action="" method="post" class="login-form">
+                            <div class="form-group">
+                                <label class="sr-only" for="form-username">Email</label>
+                                <?= $this->Form->input('email', ['class' => 'form-control', 'placeholder' => 'Username', 'label' => false, 'required' => true]) ?>
+                            </div>
+                            <?= $this->Form->button(__('Request reset email'), ['class' => 'btn']); ?>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+</body>
+
+
+
+</html>
