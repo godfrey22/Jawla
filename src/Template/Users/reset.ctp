@@ -77,6 +77,7 @@ $this->layout = false; ?>
                                 <?= $this->Form->input('confirm_password', ['type' => 'password', 'required' => true,'class' => 'form-control', 'Placeholder' => 'Confirm Password']) ?>
                             </div>
                             <?php echo $this->Form->button('Submit', ['class' => 'btn']) ?>
+                            <?= $this->Flash->render();?>
 
                             <?php echo $this->Form->end(); ?>
                         </form>
@@ -87,6 +88,8 @@ $this->layout = false; ?>
         </div>
     </div>
 </div>
+
+
 
 </body>
 

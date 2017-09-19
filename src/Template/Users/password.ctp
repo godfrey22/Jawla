@@ -6,7 +6,8 @@
  * Time: 12:41 PM
  */
 
- $this->layout = false; ?>
+ $this->layout = false;
+ ?>
 
 
 
@@ -66,8 +67,10 @@
                         <form role="form" action="" method="post" class="login-form">
                             <div class="form-group">
                                 <?= $this->Form->input('email', ['autofocus'=>true,'class' => 'form-control', 'Placeholder' => 'Email Address', 'label' => false, 'required' => true]) ?>
+
                             </div>
                             <?= $this->Form->button(__('Request reset email'), ['class' => 'btn']); ?>
+                            <?= $this->Flash->render();?>
                         </form>
 
                     </div>
