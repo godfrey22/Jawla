@@ -53,7 +53,7 @@
                                 'minYear' => 1900,
                                 'dateFormat' => '',
                                 'maxYear' => date('Y'),
-                                'minYear' => date('Y') - 10
+                                'minYear' => date('Y') - 100
 
                             ));
                         ?>

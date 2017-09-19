@@ -57,7 +57,7 @@ class User extends Entity
     }
     protected function _getGDetails()
     {
-        return $this->_properties['g_mobile'] . ' ' . $this->_properties['g_email'];
+        return $this->_properties['g_mobile'] . ' / ' . $this->_properties['g_email'];
     }
     protected function _getFullAddress()
     {
