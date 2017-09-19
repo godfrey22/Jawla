@@ -6,10 +6,7 @@
  * Time: 12:41 PM
  */
 
-
-
-
-?>
+ $this->layout = false; ?>
 
 
 
@@ -28,7 +25,7 @@
 
 
 
-    <?php $this->layout = false; ?>
+
 
     <?= $this->Html->css('Password/bootstrap.min') ?>
     <?= $this->Html->css('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css') ?>
@@ -68,8 +65,7 @@
                     <div class="form-bottom">
                         <form role="form" action="" method="post" class="login-form">
                             <div class="form-group">
-                                <label class="sr-only" for="form-username">Email</label>
-                                <?= $this->Form->input('email', ['class' => 'form-control', 'placeholder' => 'Username', 'label' => false, 'required' => true]) ?>
+                                <?= $this->Form->input('email', ['autofocus'=>true,'class' => 'form-control', 'Placeholder' => 'Email Address', 'label' => false, 'required' => true]) ?>
                             </div>
                             <?= $this->Form->button(__('Request reset email'), ['class' => 'btn']); ?>
                         </form>

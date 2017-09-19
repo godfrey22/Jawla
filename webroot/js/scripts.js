@@ -5,6 +5,7 @@ jQuery(document).ready(function() {
         Fullscreen background
     */
     $.backstretch("../img/jalwa_bg.jpg");
+
     
     /*
         Form validation
