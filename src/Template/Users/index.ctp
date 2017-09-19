@@ -27,10 +27,11 @@
                                 <th scope="col"><?= $this->Paginator->sort('Medical Record') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('Guardians Full Name') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('Guardians Contact Details') ?></th>
-                               <!-- <th scope="col"><?= $this->Paginator->sort('password') ?></th> -->
-                                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                                 <th scope="col" class="actions"><?= __('Actions') ?></th>
+                                <!-- <th scope="col"><?= $this->Paginator->sort('password') ?></th>
+                                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
+                              <th scope="col"><?= $this->Paginator->sort('modified') ?></th> -->
+
                             </tr>
                             </thead>
                             <tbody>
@@ -48,8 +49,8 @@
                                    <!--  <td><?= h($user->password) ?></td> -->
                                     <td><?= h($user->GFullName) ?></td>
                                     <td><?= h($user->GDetails) ?></td>
-                                    <td><?= h($user->created) ?></td>
-                                    <td><?= h($user->modified) ?></td>
+                                  <!--  <td><?= h($user->created) ?></td>
+                                    <td><?= h($user->modified) ?></td> -->
                                     <td class="actions">
                                         <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
                                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
