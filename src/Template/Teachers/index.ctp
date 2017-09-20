@@ -11,7 +11,7 @@
             <div class="col-lg-4">
                 <div class="card">
                     <div class="card-header">
-                        <i class="fa fa-align-justify"></i> Company Information
+                        <i class="fa fa-align-justify"></i> Teachers Information
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered table-striped table-sm table-responsive">

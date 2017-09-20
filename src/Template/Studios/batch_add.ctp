@@ -10,7 +10,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        Website Content Management
+                        Add Events - Classes Information
                     </div>
                     <div class="card-block information form-group">
 
