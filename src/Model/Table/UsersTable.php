@@ -148,9 +148,16 @@ class UsersTable extends Table
                  'rule' => array('custom', '/^[0-9]{10}$/') ,
                         'message' => 'Please Enter A valid mobile number ,'
                         ));
+        $validator
+
+            ->add('g_mobile', 'custom',array(
+                'rule' => array('custom', '/^[0-9]{10}$/') ,
+                'message' => 'Please Enter A valid Guardian mobile number ,'
+            ));
 
 
-            $validator //postcode 4 digit number
+
+        $validator //postcode 4 digit number
                        ->add('postcode', 'custom', array(
                         'rule' => array('custom', '/^[0-9]{4}$/') ,
                        'message' => 'Please Enter A valid postcode'
