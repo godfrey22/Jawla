@@ -80,21 +80,7 @@ class UsersTable extends Table
                 'message' => 'School field only allows characters'
             ));
 
-        $validator
-            ->requirePresence('mobile', 'create')
-            ->notEmpty('mobile')
-            ->add('mobile','custom',array(
-                'rule'=> array ('custom',['minLength',10]),
-                'message'=>'Mobile number requires at least 10 digits'
-            ))
-            ->add('mobile','custom',array(
-                'rule'=> array ('custom',['maxLength',14]),
-                'message'=>'Mobile number exceeds maximum 14 digits'
-            ))
-            ->add('mobile','custom',array(
-                'rule'=> array ('custom',['numeric']),
-                'message'=>'Mobile number only allows numbers'
-            ));
+
 
         $validator
             ->requirePresence('street', 'create')
@@ -112,13 +98,7 @@ class UsersTable extends Table
                 'message' => 'Suburb field only allows characters '
             ));
 
-        $validator
-            ->requirePresence('postcode', 'create')
-            ->notEmpty('postcode','This field is required')
-            ->add('postcode','custom',array(
-                'rule'=> array ('custom',['numeric']),
-                'message'=>'Postcode field only allows numbers '
-            ));
+
 
         $validator
             ->requirePresence('state', 'create')
