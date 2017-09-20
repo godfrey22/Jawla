@@ -29,7 +29,12 @@ use App\Model;
  */
 class PagesController extends AppController
 {
-
+    public function initialize()
+    {
+        parent::initialize();
+        // Add the 'add' action to the allowed actions list.
+        $this->Auth->allow(['construction']);
+    }
     /**
      * Displays a view
      *
@@ -40,12 +45,15 @@ class PagesController extends AppController
      *   be found or \Cake\View\Exception\MissingTemplateException in debug mode.
      */
 
-    public function home(){
+    public function home()
+    {
         $info = $this->loadModel('Information');
         $information = $info->find('all')->toArray();
 
         $this->viewBuilder()->setLayout('jalwa');
         $this->set(compact('information'));
-    }
 
+    }
+    public function construction()
+    {}
 }

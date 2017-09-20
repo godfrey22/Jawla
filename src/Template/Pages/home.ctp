@@ -1,49 +1,4 @@
-<div class="wrapper">
-
-    <div class="navbar" id="navbar">
-        <a href="#" class="nav-toggle" id="nav-toggle"><i class="fa fa-bars" data-swap="fa fa-times"></i> Menu</a>
-        <ul class="nav pull-left">
-            <li class="current"><a href="http://www.jalwadancecompany.com/">Home</a></li>
-            <li><a href="http://www.jalwadancecompany.com/genres/">Genres</a></li>
-            <li class="parent"><a href="http://www.jalwadancecompany.com/classes/">Dance Classes</a>
-                <ul class="sub-menu">
-                    <li><a href="http://www.jalwadancecompany.com/classes/">Studio</a></li>
-                    <li><a href="http://www.jalwadancecompany.com/kids/school-incursions/">School Incursions</a></li>
-                    <li><a href="http://www.jalwadancecompany.com/team-bonding/">Team Bonding</a></li>
-                    <li><a href="http://www.jalwadancecompany.com/hens-nights/">Hen’s Nights</a></li>
-                    <li><a href="http://www.jalwadancecompany.com/kids/kids-parties/">Kid’s Parties</a></li>
-                </ul>
-            </li>
-            <li class="parent"><a href="http://www.jalwadancecompany.com/live-entertainment/">Live Entertainment</a>
-                <ul class="sub-menu">
-                    <li><a href="http://www.jalwadancecompany.com/functions-festivals-events/">Functions, Festivals
-                            &amp; Events</a></li>
-                    <li><a href="http://www.jalwadancecompany.com/kids/kids-parties/">Kid’s Parties</a></li>
-                    <li><a href="http://www.jalwadancecompany.com/hens-nights/">Hen’s Nights</a></li>
-                </ul>
-            </li>
-            <li class="parent"><a href="http://www.jalwadancecompany.com/kids/kids-parties/">Kids</a>
-                <ul class="sub-menu">
-                    <li><a href="http://www.jalwadancecompany.com/classes/">Dance Classes</a></li>
-                    <li><a href="http://www.jalwadancecompany.com/kids/kids-parties/">Kid’s Parties</a></li>
-                    <li><a href="http://www.jalwadancecompany.com/kids/school-incursions/">School Incursions</a></li>
-                </ul>
-            </li>
-            <li><a href="http://www.jalwadancecompany.com/studio-hire/">Studio Hire</a></li>
-            <li><a href="http://www.jalwadancecompany.com/contact/">Contact</a></li>
-        </ul>
-        <ul class="social pull-right">
-            <li><a href="tel:0423652338"><i class="fa fa-phone"></i><span>
-                        <?= h($information[0]->value) ?>
-                    </span></a></li>
-            <li>
-                <?= $this->Html->link("Login / Register",
-                    array('controller' => 'Users', 'action' => 'login'));
-                ?>
-            </li>
-        </ul>
-        <div class="clear"></div>
-    </div>
+<?= $this->element('header') ?>
 
     <div class="feature front-page"
          style="background-image: url(<?= $this->Url->image('home/'.$information[5]->value); ?>);">
@@ -64,43 +19,48 @@
             <div class="where-to">
                 <ul>
                     <li>
-                        <a href="http://www.jalwadancecompany.com/genres/">
+<!--                        <a href="http://www.jalwadancecompany.com/genres/">-->
                             <div class="box"
                                  style="background-image: url(http://www.jalwadancecompany.com/wp-content/uploads/2016/09/GENRES-300x167.jpg)">
                             </div>
-                            <span>Genres ›</span>
+                        <?php echo $this->Html->link('Genres >','/pages/construction')?>
+<!--                            <span>Genres ›</span>-->
                         </a>
                     </li>
                     <li>
-                        <a href="http://www.jalwadancecompany.com/classes/">
+<!--                        <a href="http://www.jalwadancecompany.com/classes/">-->
                             <div class="box"
                                  style="background-image: url(http://www.jalwadancecompany.com/wp-content/uploads/2016/09/Sequence-01.Still003-300x169.jpg)">
                             </div>
-                            <span>Dance Classes ›</span>
+                        <?php echo $this->Html->link('Dance Classes >','/pages/construction')?>
+<!--                            <span>Dance Classes ›</span>-->
                         </a>
                     </li>
                     <li>
-                        <a href="http://www.jalwadancecompany.com/kids/kids-parties/">
+<!--                        <a href="http://www.jalwadancecompany.com/kids/kids-parties/">-->
                             <div class="box"
                                  style="background-image: url(http://www.jalwadancecompany.com/wp-content/uploads/2016/09/KIDS-300x200.jpg)">
                             </div>
-                            <span>Kids ›</span>
+                        <?php echo $this->Html->link('Kids >','/pages/construction')?>
+<!--                            <span>Kids ›</span>-->
                         </a>
                     </li>
                     <li>
-                        <a href="http://www.jalwadancecompany.com/live-entertainment/">
+<!--                        <a href="http://www.jalwadancecompany.com/live-entertainment/">-->
                             <div class="box"
                                  style="background-image: url(http://www.jalwadancecompany.com/wp-content/uploads/2016/09/LIVE-ENTERTAINMENT-300x168.jpg)">
                             </div>
-                            <span>Live Entertainment ›</span>
+                        <?php echo $this->Html->link('Live Entertainment >','/pages/construction')?>
+<!--                            <span>Live Entertainment ›</span>-->
                         </a>
                     </li>
                     <li>
-                        <a href="http://www.jalwadancecompany.com/studio-hire/">
+<!--                        <a href="http://www.jalwadancecompany.com/studio-hire/">-->
                             <div class="box"
                                  style="background-image: url(http://www.jalwadancecompany.com/wp-content/uploads/2016/09/STUDIO-HIRE-1-1-300x106.jpg)">
                             </div>
-                            <span>Studio Hire ›</span>
+                        <?php echo $this->Html->link('Studio Hire >','/pages/construction')?>
+<!--                            <span>Studio Hire ›</span>-->
                         </a>
                     </li>
                 </ul>
@@ -134,21 +94,4 @@
 
 </div>
 
-<div class="footer">
-
-    <div class="container">
-        <div class="clear"></div>
-
-        <div class="attribution">
-
-            <p class="pull-left">A passion for cultures, irresistibly contagious </p>
-
-            <p class="pull-right">Copyright © <?= h($information[1]->value) ?> | ABN <?= h($information[2]->value) ?>
-                | <?= h($information[3]->value) ?>
-                O<?= h($information[4]->value) ?></p>
-            <div class="clear"></div>
-        </div>
-
-    </div>
-
-</div>
+<?= $this->element('footer') ?>
