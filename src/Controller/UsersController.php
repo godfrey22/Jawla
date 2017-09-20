@@ -94,7 +94,26 @@ class UsersController extends AppController
 
                 return $this->redirect(['action' => 'login']);
             }
-            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+            if($user->errors()){
+                $error_msg = [];
+                foreach( $user->errors() as $errors){
+                    if(is_array($errors)){
+                        foreach($errors as $error){
+                            $error_msg[]    =   $error;
+                        }
+                    }else{
+                        $error_msg[]    =   $errors;
+                    }
+                }
+
+                if(!empty($error_msg)){
+                    $this->Flash->error(
+                        __("Please fix the following error(s):".implode("\n \r", $error_msg))
+                    );
+                }
+            }
+
+//            $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
