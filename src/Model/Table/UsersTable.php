@@ -54,22 +54,22 @@ class UsersTable extends Table
         $validator
             ->email('email')
             ->requirePresence('email', 'create')
-            ->notEmpty('email','Please fill this field'); //email
+            ->notEmpty('email','Please fill in Email'); //email
 
         $validator
             ->requirePresence('first_name', 'create')
-            ->notEmpty('first_name','This field is required')
+            ->notEmpty('first_name','First name field is required')
             ->add('first_name', 'custom', array(
                         'rule' => array('custom', '/^[a-zA-Z\s]*$/') ,
-                        'message' => 'Characters only'
+                        'message' => 'First name field only allows characters'
             ));
 
         $validator
             ->requirePresence('last_name', 'create')
-            ->notEmpty('last_name','This field is required')
+            ->notEmpty('last_name','Last name field is required')
             ->add('last_name', 'custom', array(
                 'rule' => array('custom', '/^[a-zA-Z\s]*$/') ,
-                'message' => 'Characters only'
+                'message' => 'Last name field only allows characters'
             ));
 
         $validator
@@ -77,7 +77,7 @@ class UsersTable extends Table
             ->notEmpty('school')
             ->add('school', 'custom', array(
                 'rule' => array('custom', '/^[a-zA-Z\s]*$/') ,
-                'message' => 'Characters only'
+                'message' => 'School field only allows characters'
             ));
 
         $validator
@@ -85,23 +85,23 @@ class UsersTable extends Table
             ->notEmpty('mobile')
             ->add('mobile','custom',array(
                 'rule'=> array ('custom',['minLength',10]),
-                'message'=>'Require at least 10 digits'
+                'message'=>'Mobile number requires at least 10 digits'
             ))
             ->add('mobile','custom',array(
                 'rule'=> array ('custom',['maxLength',14]),
-                'message'=>'Maximum 14 digits'
+                'message'=>'Mobile number exceeds maximum 14 digits'
             ))
             ->add('mobile','custom',array(
                 'rule'=> array ('custom',['numeric']),
-                'message'=>'Numbers only'
+                'message'=>'Mobile number only allows numbers'
             ));
 
         $validator
             ->requirePresence('street', 'create')
-            ->notEmpty('street','This field is required')
+            ->notEmpty('street','Street field is required')
             ->add('street', 'custom', array(
                 'rule' => array('custom', '/^[a-zA-Z\s]*$/') ,
-                'message' => 'Characters only'
+                'message' => 'Street field only allows characters'
             ));
 
         $validator
@@ -109,7 +109,7 @@ class UsersTable extends Table
             ->notEmpty('suburb','This field is required')
             ->add('suburb', 'custom', array(
                 'rule' => array('custom', '/^[a-zA-Z\s]*$/') ,
-                'message' => 'Characters only'
+                'message' => 'Suburb field only allows characters '
             ));
 
         $validator
@@ -117,7 +117,7 @@ class UsersTable extends Table
             ->notEmpty('postcode','This field is required')
             ->add('postcode','custom',array(
                 'rule'=> array ('custom',['numeric']),
-                'message'=>'Numbers only'
+                'message'=>'Postcode field only allows numbers '
             ));
 
         $validator
@@ -125,7 +125,7 @@ class UsersTable extends Table
             ->notEmpty('state','This field is required')
             ->add('state', 'custom', array(
                 'rule' => array('custom', '/^[a-zA-Z\s]*$/') ,
-                'message' => 'Characters only'
+                'message' => 'State field only allows characters '
             ));
 
         $validator
@@ -133,21 +133,21 @@ class UsersTable extends Table
             ->notEmpty('country','This field is required')
             ->add('country', 'custom', array(
                 'rule' => array('custom', '/^[a-zA-Z\s]*$/') ,
-                'message' => 'Characters only'
+                'message' => 'Country field only allows characters '
             ));
 
         $validator
             ->requirePresence('g_fname', 'create')
             ->add('g_fname', 'custom', array(
                 'rule' => array('custom', '/^[a-zA-Z\s]*$/') ,
-                'message' => 'Characters only'
+                'message' => 'Guardian first name field only allows characters.'
             ));
 
         $validator
             ->requirePresence('g_lname', 'create')
             ->add('g_lname', 'custom', array(
                 'rule' => array('custom', '/^[a-zA-Z\s]*$/') ,
-                'message' => 'Characters only'
+                'message' => 'Guardian last name field only allows characters.'
             ));
 
         $validator
@@ -156,11 +156,11 @@ class UsersTable extends Table
 
         $validator
             ->requirePresence('password', 'create')
-            ->notEmpty('password','Password required');
+            ->notEmpty('password','Password required.');
         
         $validator
             ->date('dob')
-            ->notEmpty('dob', 'Please fill this field');
+            ->notEmpty('dob', 'Please fill date of birth.');
 
         return $validator;
     }
