@@ -144,14 +144,17 @@ class UsersTable extends Table
 
         $validator
 
-             ->add('mobile', 'custom', array( 'rule' => array('custom', '/^\({0,1}((0|\+61)(2|4|3|7|8)){0,1}\){0,1}(\ |-){0,1}[0-9]{2}(\ |-){0,1}[0-9]{2}(\ |-){0,1}[0-9]{1}(\ |-){0,1}[0-9]{3}$/') ,
-                        'message' => 'Enter A valid mobile number ,'
+             ->add('mobile', 'custom',array(
+                 'rule' => array('custom', '/^[0-9]{10}$/') ,
+                        'message' => 'Please Enter A valid mobile number ,'
                         ));
-        $validator
 
-            ->add('postcode', 'custom', array( 'rule' => array('custom', '/^\({0,1}((0|\+61)(2|4|3|7|8)){0,1}\){0,1}(\ |-){0,1}[0-9]{2}(\ |-){0,1}[0-9]{2}(\ |-){0,1}[0-9]{1}(\ |-){0,1}[0-9]{3}$/') ,
-                'message' => 'Enter A valid Postcode.'
-            ));
+
+            $validator //postcode 4 digit number
+                       ->add('postcode', 'custom', array(
+                        'rule' => array('custom', '/^[0-9]{4}$/') ,
+                       'message' => 'Please Enter A valid postcode'
+                        ));
         return $validator;
     }
 
