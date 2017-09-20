@@ -91,8 +91,7 @@
                         <div class="card-body text-center">
                             <div>
                                 <h2>Sign up</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.</p>
+                                <p> Click to register now!</p>
                                 <?php
                                 echo $this->Html->link("Register Now!",
                                     array('controller' => 'Users', 'action' => 'register'),
