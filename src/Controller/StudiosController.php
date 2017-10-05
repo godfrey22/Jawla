@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Controller\AppController;
 use App\Model;
 use DateTime;
+use Cake\Routing\Router;
 
 /**
  * Studios Controller
@@ -174,6 +175,7 @@ class StudiosController extends AppController
 
     public function calendar()
     {
+
         $this->viewBuilder()->setLayout('ajax');
         $this->request->allowMethod('ajax'); // No direct access via browser URL - Note for Cake2.5: allowMethod()
 
@@ -184,9 +186,14 @@ class StudiosController extends AppController
             $data['title'] = $result['event']['name'];
             $data['start'] = $result['date']->format('Y-m-d').'T'.$result['event']['start_time']->format('h:i:s');
             $data['end'] = $result['date']->format('Y-m-d').'T'.$result['event']['end_time']->format('h:i:s');
-            $data['url'] = "/team103/studios/edit/".$result['id'];
+            $data['url'] = Router::url([
+                "controller" => "Studios",
+                "action" => "edit",
+                $result['id']
+            ]);
             $return_json[] = $data;
         }
+
         echo json_encode($return_json);
         die();
 

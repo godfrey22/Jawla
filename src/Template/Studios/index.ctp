@@ -4,8 +4,8 @@
  * @var \App\Model\Entity\Studio[]|\Cake\Collection\CollectionInterface $studios
  */
 ?>
-<?= $this->Html->css('vendors/fullCan/fullcalendar.min.css') ?>
-<?= $this->Html->css('vendors/fullCan/fullcalendar.print.min.css', ['media' => 'print']) ?>
+<?= $this->Html->css('vendors/fullCan/fullcalendar.min.css'); ?>
+<?= $this->Html->css('vendors/fullCan/fullcalendar.print.min.css', ['media' => 'print']); ?>
 <style>
     .fc-title, .fc-time {
         color: white;
@@ -13,8 +13,8 @@
     }
 
 </style>
-<?= $this->Html->script('vendors/fullCan/lib/moment.min.js') ?>
-<?= $this->Html->script('vendors/fullCan/fullcalendar.min.js') ?>
+<?= $this->Html->script('vendors/fullCan/lib/moment.min.js'); ?>
+<?= $this->Html->script('vendors/fullCan/fullcalendar.min.js'); ?>
 
 
 <script>
@@ -25,7 +25,7 @@
             eventLimit: true, // allow "more" link when too many events
             events:
                 {
-                    url: '/team103/studios/calendar?ext=json',
+                    url: '<?php echo $this->Url->build(array("controller"=>"studios", "action"=>"calendar")) ?>',
                     type: 'get'
                 }
         });
