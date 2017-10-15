@@ -34,7 +34,7 @@
                             <div id='calendar'></div>
                         </div>
                         <div class="card-block col-lg-6 col-md-auto col-sm-auto">
-                            <h2><?= $studio->event->name ?></h2>
+                            <h2><?php echo $studio->event->name." on ".$studio->date->nice() ?></h2>
                             <div>
                                 <table class="table table-bordered">
                                     <thead>
@@ -70,6 +70,9 @@
                                     <tbody>
                                     </tbody>
                                 </table>
+                                <button class="btn btn-primary">Enroll Full-Time Class</button>
+                                <br>-----------OR-----------<br>
+                                <button class="btn btn-primary">Enroll One-Time Class</button>
                             </div>
                         </div>
                     </div>
