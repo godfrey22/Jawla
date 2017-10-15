@@ -68,6 +68,17 @@
                                             <th>End Time</th>
                                             <td><?= $studio->event->end_time->format('h:i A') ?></td>
                                         </tr>
+                                        <tr>
+                                            <th>Price (One-Time Class)</th>
+                                            <td><?= \Cake\I18n\Number::currency($studio->event->price) ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Price (Full-Time From <?= $studio->date->nice() ?>)</th>
+                                            <td>
+                                            <?= \Cake\I18n\Number::currency($studio->event->price * $nclasses) ?>
+                                                <?= "(".$nclasses." Classes)"?>
+                                            </td>
+                                        </tr>
                                         </thead>
                                         <tbody>
                                         </tbody>

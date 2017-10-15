@@ -237,9 +237,18 @@ class UsersController extends AppController
         $this->viewBuilder()->setLayout('user');
 
         if (isset($id)) {
-            $studio = $this->loadModel('Studios')->get($id, array(
+            $studio_model = $this->loadModel("Studios");
+            $studio = $studio_model->get($id, array(
                 'contain' => array('Events', 'Teachers', 'ClassTypes')));
-            $this->set(compact('studio'));
+            $start_date = $studio->date;
+            $query = $studio_model->find('all', [
+                'conditions' => [
+                    'Studios.date >' => $start_date,
+                    'Studios.event_id' => $studio->event->id
+                ]
+            ]);
+            $nclasses = $query->count() + 1;
+            $this->set(compact('studio', 'nclasses'));
         }
     }
 }

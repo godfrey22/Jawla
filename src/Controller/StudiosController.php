@@ -188,8 +188,8 @@ class StudiosController extends AppController
         foreach ($results as $result) {
             $data['title'] = $result['event']['name'];
 
-            $data['start'] = $result['date']->i18nFormat('Y-M-dd') . 'T' . $result['event']['start_time']->i18nFormat('HH:mm:ss');
-            $data['start'] = $result['date']->i18nFormat('Y-M-dd') . 'T' . $result['event']['end_time']->i18nFormat('HH:mm:ss');
+            $data['start'] = $result['date']->i18nFormat('Y-MM-dd') . 'T' . $result['event']['start_time']->i18nFormat('HH:mm:ss');
+            $data['start'] = $result['date']->i18nFormat('Y-MM-dd') . 'T' . $result['event']['end_time']->i18nFormat('HH:mm:ss');
 
             if($this->Global->isAdmin()){
                 $data['url'] = Router::url([
