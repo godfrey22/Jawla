@@ -182,10 +182,13 @@ class StudiosController extends AppController
         $results = $this->Studios->find('all', array(
             'contain' => array('Events', 'Teachers', 'ClassTypes')));
         $return_json = [];
+
         foreach ($results as $result){
             $data['title'] = $result['event']['name'];
-            $data['start'] = $result['date']->format('Y-m-d').'T'.$result['event']['start_time']->format('h:i:s');
-            $data['end'] = $result['date']->format('Y-m-d').'T'.$result['event']['end_time']->format('h:i:s');
+
+            $data['start'] = $result['date']->i18nFormat('Y-M-dd').'T'.$result['event']['start_time']->i18nFormat('HH:mm:ss');
+            $data['start'] = $result['date']->i18nFormat('Y-M-dd').'T'.$result['event']['end_time']->i18nFormat('HH:mm:ss');
+
             $data['url'] = Router::url([
                 "controller" => "Studios",
                 "action" => "edit",
