@@ -178,7 +178,6 @@ class StudiosController extends AppController
 
     public function calendar()
     {
-
         $this->viewBuilder()->setLayout('ajax');
         $this->request->allowMethod('ajax'); // No direct access via browser URL - Note for Cake2.5: allowMethod()
 
@@ -198,11 +197,26 @@ class StudiosController extends AppController
                     "action" => "edit",
                     $result['id']
                 ]);
-                $return_json[] = $data;
+            }else{
+                $data['url'] = Router::url([
+                    "controller" => "Studios",
+                    "action" => "enroll",
+                    $result['id']
+                ]);
             }
+            $return_json[] = $data;
 
         }
         echo json_encode($return_json);
         die();
+    }
+
+    public function enroll($id = null){
+        $this->viewBuilder()->setLayout('user');
+        $studio = $this->Studios->get($id, [
+            'contain' => ['Events', 'Teachers', 'ClassTypes']
+        ]);
+        $this->set('studio', $studio);
+        $this->set('_serialize', ['studio']);
     }
 }
