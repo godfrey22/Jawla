@@ -199,7 +199,7 @@ class StudiosController extends AppController
                 ]);
             }else{
                 $data['url'] = Router::url([
-                    "controller" => "Studios",
+                    "controller" => "Users",
                     "action" => "enroll",
                     $result['id']
                 ]);
