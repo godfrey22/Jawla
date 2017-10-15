@@ -23,7 +23,6 @@
         <legend><?= __('Edit Event') ?></legend>
         <?php
             echo $this->Form->control('price');
-            echo $this->Form->control('type');
             echo $this->Form->control('name');
             echo $this->Form->control('start_date');
             echo $this->Form->control('end_date');

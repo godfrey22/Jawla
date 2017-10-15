@@ -59,10 +59,6 @@ class EventsTable extends Table
             ->notEmpty('price');
 
         $validator
-            ->requirePresence('type', 'create')
-            ->notEmpty('type');
-
-        $validator
             ->requirePresence('name', 'create')
             ->notEmpty('name');
 

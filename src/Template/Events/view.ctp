@@ -19,10 +19,6 @@
     <h3><?= h($event->name) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Type') ?></th>
-            <td><?= h($event->type) ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Name') ?></th>
             <td><?= h($event->name) ?></td>
         </tr>
