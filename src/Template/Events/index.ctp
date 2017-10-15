@@ -43,7 +43,7 @@
                                     <td><?= $this->Number->currency($event->price) ?></td>
                                     <td><?= h($event->start_date->nice()) ?></td>
                                     <td><?= h($event->end_date->nice()) ?></td>
-                                    <td><?php if($event->class_interval=='7'){echo 'Weekly'; }else {echo 'Fortnightly';} ?></td>
+                                    <td><?php if($event->class_interval=='7'){echo 'Weekly, '.$event->start_date->format('D'); }else {echo 'Fortnightly'.$event->start_date->format('D');} ?></td>
                                     <td><?= h($event->start_time->format('h:i A')) ?></td>
                                     <td><?= h($event->end_time->format('h:i A')) ?></td>
                                     <td><?= $this->Number->format($event->num_people) ?></td>
