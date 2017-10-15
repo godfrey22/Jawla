@@ -16,6 +16,14 @@ use Cake\Routing\Router;
  */
 class StudiosController extends AppController
 {
+
+    public function initialize()
+    {
+        parent::initialize();
+        $this->loadComponent('Global');
+    }
+
+
     /**
      * Index method
      *
@@ -24,17 +32,12 @@ class StudiosController extends AppController
     public function index()
     {
         $this->viewBuilder()->setLayout('admin');
-
         $this->paginate = [
             'contain' => ['Events', 'Teachers', 'ClassTypes']
         ];
         $studios = $this->paginate($this->Studios);
-
-
         $this->set(compact('studios'));
         $this->set(compact('studios_json'));
-
-
         $this->set('_serialize', ['studios']);
     }
 
@@ -97,7 +100,7 @@ class StudiosController extends AppController
 
             $data = $this->request->getData();
 
-            $data['date'] = array_slice(date_parse($data['date']),0,3);
+            $data['date'] = array_slice(date_parse($data['date']), 0, 3);
 
             $studio = $this->Studios->patchEntity($studio, $data);
             if ($this->Studios->save($studio)) {
@@ -183,23 +186,23 @@ class StudiosController extends AppController
             'contain' => array('Events', 'Teachers', 'ClassTypes')));
         $return_json = [];
 
-        foreach ($results as $result){
+        foreach ($results as $result) {
             $data['title'] = $result['event']['name'];
 
-            $data['start'] = $result['date']->i18nFormat('Y-M-dd').'T'.$result['event']['start_time']->i18nFormat('HH:mm:ss');
-            $data['start'] = $result['date']->i18nFormat('Y-M-dd').'T'.$result['event']['end_time']->i18nFormat('HH:mm:ss');
+            $data['start'] = $result['date']->i18nFormat('Y-M-dd') . 'T' . $result['event']['start_time']->i18nFormat('HH:mm:ss');
+            $data['start'] = $result['date']->i18nFormat('Y-M-dd') . 'T' . $result['event']['end_time']->i18nFormat('HH:mm:ss');
 
-            $data['url'] = Router::url([
-                "controller" => "Studios",
-                "action" => "edit",
-                $result['id']
-            ]);
-            $return_json[] = $data;
+            if($this->Global->isAdmin()){
+                $data['url'] = Router::url([
+                    "controller" => "Studios",
+                    "action" => "edit",
+                    $result['id']
+                ]);
+                $return_json[] = $data;
+            }
+
         }
-
         echo json_encode($return_json);
         die();
-
     }
-
 }

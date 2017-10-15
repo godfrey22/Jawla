@@ -22,8 +22,14 @@ use App\Model;
  */
 class DashboardController extends AppController
 {
+    public function initialize()
+    {
+        parent::initialize();
+        $this->loadComponent('Global');
+    }
+
     public function index(){
-        if($this->isAdmin()){
+        if($this->Global->isAdmin()){
             $this->viewBuilder()->setLayout('admin');
         }else{
             $this->viewBuilder()->setLayout('user');
@@ -31,7 +37,7 @@ class DashboardController extends AppController
     }
 
     public function details(){
-        if($this->isAdmin()) {
+        if($this->Global->isAdmin()) {
             $info = $this->loadModel('Information');
             $information = $info->find('all')->toArray();
             $this->set(compact('information'));
@@ -39,13 +45,5 @@ class DashboardController extends AppController
         }
     }
 
-    public function isAdmin(){
-        $user = $this->Auth->user();
-        $uid = $user['id'];
-        if ($uid == 53){
-            return true;
-        }else{
-            return false;
-        }
-    }
+
 }
