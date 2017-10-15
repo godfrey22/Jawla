@@ -70,7 +70,6 @@
                                 </div>
                             </div>
 
-
                             <div class="row">
                                 <div class="col-md-12 mb-12">
                                     <div class="form-group">
@@ -78,29 +77,13 @@
                                         <?= $this->Form->text('price',
                                             [
                                                 'class' => 'form-control col-md-5',
-                                                'placeholder' => 'Price'
+                                                'placeholder' => 'Price',
+                                                'type' => 'number',
+                                                'min' => '0'
                                             ]) ?>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12 mb-12">
-                                    <div class="form-group">
-                                        Type:
-                                        <?=
-                                        $this->Form->select('type', ['C' => 'Class', 'P' => 'Party'],
-                                            [
-                                                'class' => 'custom-select',
-                                                'style' => 'width:100px;'
-                                            ]
-                                        )
-                                        ;
-                                        ?>
-                                    </div>
-                                </div>
-                            </div>
-
-
 
                             <div class="row">
                                 <div class="col-md-12 mb-12">
