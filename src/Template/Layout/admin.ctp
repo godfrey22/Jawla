@@ -123,7 +123,8 @@ $cakeDescription = 'Test Admin';
                 <li class="nav-item">
                     <a class="nav-link" href="
                     <?= $this->Url->build([
-                        "controller" => "dashboard"
+                        "controller" => "dashboard",
+                        "action" => "details"
                     ]);
                     ?>"><i class="icon-info"></i> Website Info
                         <span class="badge badge-primary">NEW</span>
@@ -162,12 +163,12 @@ $cakeDescription = 'Test Admin';
                         <li class="nav-item">
                             <a class="nav-link"
                                href="<?= $this->Url->build(["controller" => "events", "action" => "index"]); ?>"><i
-                                        class="fa fa-calendar-plus-o"></i> All Events</a>
+                                        class="fa fa-calendar-plus-o"></i> All Classes</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
                                href="<?= $this->Url->build(["controller" => "studios", "action" => "index"]); ?>"
-                               target="_top"><i class="fa fa-calendar"></i> All Classes</a>
+                               target="_top"><i class="fa fa-calendar"></i> Class Timetable</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
