@@ -34,9 +34,9 @@
                             <div id='calendar'></div>
                         </div>
 
-                        <?php if(isset($studio)){ ?>
+                        <?php if (isset($studio)) { ?>
                             <div class="card-block col-lg-6 col-md-auto col-sm-auto">
-                                <h2><?php echo $studio->event->name." on ".$studio->date->nice() ?></h2>
+                                <h2><?php echo $studio->event->name . " on " . $studio->date->nice() ?></h2>
                                 <div>
                                     <table class="table table-bordered">
                                         <thead>
@@ -75,17 +75,25 @@
                                         <tr>
                                             <th>Price (Full-Time From <?= $studio->date->nice() ?>)</th>
                                             <td>
-                                            <?= \Cake\I18n\Number::currency($studio->event->price * $nclasses) ?>
-                                                <?= "(".$nclasses." Classes)"?>
+                                                <?= \Cake\I18n\Number::currency($studio->event->price * $nclasses) ?>
+                                                <?= "(" . $nclasses . " out of ". $total. " Classes)" ?>
                                             </td>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         </tbody>
                                     </table>
-                                    <button class="btn btn-primary">Enroll Full-Time Class</button>
-                                    <br>-----------OR-----------<br>
-                                    <button class="btn btn-primary">Enroll One-Time Class</button>
+                                    <?php if ($studio->date->isPast()) {?>
+                                        <button class="btn btn-primary disabled">Not Available</button>
+                                    <?php } else {
+                                        if ($nclasses != 1) { ?>
+                                            <button class="btn btn-primary">Enroll Full-Time Class</button>
+                                            <br>-----------OR-----------<br>
+                                        <?php } ?>
+                                        <button class="btn btn-primary">Enroll One-Time Class</button>
+                                    <?php } ?>
+
+
                                 </div>
                             </div>
                         <?php } ?>

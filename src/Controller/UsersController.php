@@ -248,7 +248,13 @@ class UsersController extends AppController
                 ]
             ]);
             $nclasses = $query->count() + 1;
-            $this->set(compact('studio', 'nclasses'));
+            $query = $studio_model->find('all', [
+                'conditions' => [
+                    'Studios.event_id' => $studio->event->id
+                ]
+            ]);
+            $total = $query->count();
+            $this->set(compact('studio', 'nclasses', 'total'));
         }
     }
 }
