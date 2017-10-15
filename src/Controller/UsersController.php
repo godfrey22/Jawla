@@ -22,6 +22,7 @@ class UsersController extends AppController
         // Add the 'add' action to the allowed actions list.
         $this->Auth->allow(['logout', 'register', 'password', 'reset']);
     }
+
     public function logout()
     {
         $this->Auth->logout();
@@ -30,6 +31,7 @@ class UsersController extends AppController
             'action' => 'home'
         ]);
     }
+
     public function login()
     {
         $this->viewBuilder()->setLayout('login');
@@ -44,6 +46,7 @@ class UsersController extends AppController
             $this->Flash->error('Your username or password is incorrect.');
         }
     }
+
     /**
      * Index method
      *
@@ -58,6 +61,7 @@ class UsersController extends AppController
         $this->set(compact('users'));
         $this->set('_serialize', ['users']);
     }
+
     /**
      * View method
      *
@@ -74,6 +78,7 @@ class UsersController extends AppController
         $this->set('user', $user);
         $this->set('_serialize', ['user']);
     }
+
     /**
      * Add method
      *
@@ -115,6 +120,7 @@ class UsersController extends AppController
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
     }
+
     /**
      * Edit method
      *
@@ -139,6 +145,7 @@ class UsersController extends AppController
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
     }
+
     /**
      * Delete method
      *
@@ -158,6 +165,7 @@ class UsersController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
     public function password()
     {
         if ($this->request->is('post')) {
@@ -178,6 +186,7 @@ class UsersController extends AppController
             }
         }
     }
+
     private function sendResetEmail($url, $user)
     {
         $email = new Email();
@@ -193,6 +202,7 @@ class UsersController extends AppController
             $this->Flash->error(__('Error sending email: ') . $email->smtpError);
         }
     }
+
     public function reset($passkey = null)
     {
         if ($passkey) {
@@ -221,10 +231,15 @@ class UsersController extends AppController
             $this->redirect('/');
         }
     }
-    public function enroll($id = null){
+
+    public function enroll($id = null)
+    {
         $this->viewBuilder()->setLayout('user');
-        $studio = $this->loadModel('Studios')->get($id, array(
-            'contain' => array('Events', 'Teachers', 'ClassTypes')));
-        $this->set(compact('studio'));
+
+        if (isset($id)) {
+            $studio = $this->loadModel('Studios')->get($id, array(
+                'contain' => array('Events', 'Teachers', 'ClassTypes')));
+            $this->set(compact('studio'));
+        }
     }
 }

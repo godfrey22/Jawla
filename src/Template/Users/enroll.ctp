@@ -33,48 +33,52 @@
                         <div class="card-block col-lg-6 col-md-auto col-sm-auto">
                             <div id='calendar'></div>
                         </div>
-                        <div class="card-block col-lg-6 col-md-auto col-sm-auto">
-                            <h2><?php echo $studio->event->name." on ".$studio->date->nice() ?></h2>
-                            <div>
-                                <table class="table table-bordered">
-                                    <thead>
-                                    <tr>
-                                        <th width="40%">Class Name</th>
-                                        <td><?= $studio->event->name ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Teacher Name</th>
-                                        <td><?= $studio->teacher->name ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Class Type</th>
-                                        <td><?= $studio->class_type->name ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Start Date</th>
-                                        <td><?= $studio->event->start_date->nice() ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>End Date</th>
-                                        <td><?= $studio->event->end_date->nice() ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Start Time</th>
-                                        <td><?= $studio->event->start_time->format('h:i A') ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>End Time</th>
-                                        <td><?= $studio->event->end_time->format('h:i A') ?></td>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                </table>
-                                <button class="btn btn-primary">Enroll Full-Time Class</button>
-                                <br>-----------OR-----------<br>
-                                <button class="btn btn-primary">Enroll One-Time Class</button>
+
+                        <?php if(isset($studio)){ ?>
+                            <div class="card-block col-lg-6 col-md-auto col-sm-auto">
+                                <h2><?php echo $studio->event->name." on ".$studio->date->nice() ?></h2>
+                                <div>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th width="40%">Class Name</th>
+                                            <td><?= $studio->event->name ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Teacher Name</th>
+                                            <td><?= $studio->teacher->name ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Class Type</th>
+                                            <td><?= $studio->class_type->name ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Start Date</th>
+                                            <td><?= $studio->event->start_date->nice() ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th>End Date</th>
+                                            <td><?= $studio->event->end_date->nice() ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Start Time</th>
+                                            <td><?= $studio->event->start_time->format('h:i A') ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th>End Time</th>
+                                            <td><?= $studio->event->end_time->format('h:i A') ?></td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                    <button class="btn btn-primary">Enroll Full-Time Class</button>
+                                    <br>-----------OR-----------<br>
+                                    <button class="btn btn-primary">Enroll One-Time Class</button>
+                                </div>
                             </div>
-                        </div>
+                        <?php } ?>
+
                     </div>
                 </div>
             </div>
