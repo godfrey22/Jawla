@@ -181,7 +181,7 @@ class StudiosController extends AppController
 
         $results = $this->Studios->find('all', array(
             'contain' => array('Events', 'Teachers', 'ClassTypes')));
-
+        $return_json = [];
         foreach ($results as $result){
             $data['title'] = $result['event']['name'];
             $data['start'] = $result['date']->format('Y-m-d').'T'.$result['event']['start_time']->format('h:i:s');

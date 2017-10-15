@@ -82,7 +82,7 @@ class InformationController extends AppController
             if ($this->Information->save($information)) {
 //                $this->Flash->success(__('The information has been saved.'));
 
-                return $this->redirect('/admin/details');
+                return $this->redirect('/dashboard/details');
             }
 //            $this->Flash->error(__('The information could not be saved. Please, try again.'));
         }

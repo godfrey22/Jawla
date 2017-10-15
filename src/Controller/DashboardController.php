@@ -31,7 +31,7 @@ class DashboardController extends AppController
     }
 
     public function details(){
-        if(isAdmin()) {
+        if($this->isAdmin()) {
             $info = $this->loadModel('Information');
             $information = $info->find('all')->toArray();
             $this->set(compact('information'));
