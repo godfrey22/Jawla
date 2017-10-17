@@ -68,7 +68,8 @@ class EnrollmentsController extends AppController
             $data = $this->request->getData();
             $data['user_id'] = $user_info['id'];
             $data['studio_id'] = $id;
-
+            $data['payment_id'] = null;
+            $data['paid_amount'] = 0;
             $enrollment = $this->Enrollments->patchEntity($enrollment, $data);
             if ($this->Enrollments->save($enrollment)) {
                 $this->Flash->success(__('The enrollment has been saved.'));
