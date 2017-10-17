@@ -283,9 +283,11 @@ class UsersController extends AppController
             foreach ($family_members as $family_member){
                 $member_enrollments = $enrollments->find("all",
                     array('contain'=>['Users', 'Participants', 'Studios'])
-                )->leftJoinWith('Payments');
+                )->leftJoinWith('Payments')->where([
+                    'participant_id =' => $family_member['id']
+                ]);
                 foreach ($member_enrollments as $member_enrollment){
-                    debug($member_enrollment);
+                    debug($member_enrollment['id']);
                 }
             }
 
