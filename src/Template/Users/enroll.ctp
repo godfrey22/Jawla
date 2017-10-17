@@ -76,21 +76,28 @@
                                             <th>Price (Full-Time From <?= $studio->date->nice() ?>)</th>
                                             <td>
                                                 <?= \Cake\I18n\Number::currency($studio->event->price * $nclasses) ?>
-                                                <?= "(" . $nclasses . " out of ". $total. " Classes)" ?>
+                                                <?= "(" . $nclasses . " out of " . $total . " Classes)" ?>
                                             </td>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         </tbody>
                                     </table>
-                                    <?php if ($studio->date->isPast()) {?>
+                                    <?php if ($studio->date->isPast()) { ?>
                                         <button class="btn btn-primary disabled">Not Available</button>
                                     <?php } else {
                                         if ($nclasses != 1) { ?>
-                                            <button class="btn btn-primary">Enroll Full-Time Class</button>
+                                            <a class="btn btn-primary"
+                                               href="<?= $this->Url->build(["controller" => "enrollments", "action" => "add", $studio->id, "F"]); ?>"
+                                            >
+                                                Enroll Full-Time Class
+                                            </a>
                                             <br>-----------OR-----------<br>
                                         <?php } ?>
-                                        <button class="btn btn-primary">Enroll One-Time Class</button>
+                                        <a class="btn btn-primary"
+                                           href="<?= $this->Url->build(["controller" => "enrollments", "action" => "add", $studio->id, "O"]); ?>"
+                                        >Enroll
+                                            One-Time Class</a>
                                     <?php } ?>
 
 

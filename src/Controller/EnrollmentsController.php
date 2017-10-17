@@ -57,12 +57,12 @@ class EnrollmentsController extends AppController
      *
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
-    public function add($id = null)
+    public function add($id = null, $method)
     {
 
         $this->viewBuilder()->setLayout("user");
         $user_info = $this->Global->getUser();
-
+        
         $enrollment = $this->Enrollments->newEntity();
         if ($this->request->is('post')) {
 
