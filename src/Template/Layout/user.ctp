@@ -118,21 +118,6 @@ $cakeDescription = 'Test Admin';
                 </li>
 
                 <li class="nav-title">
-                    Content Management
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="
-                    <?= $this->Url->build([
-                        "controller" => "dashboard",
-                        "action" => "details"
-                    ]);
-                    ?>"><i class="icon-info"></i> Website Info
-                        <span class="badge badge-primary">NEW</span>
-                    </a>
-                </li>
-                <li class="divider"></li>
-
-                <li class="nav-title">
                     Administration
                 </li>
 
@@ -163,45 +148,18 @@ $cakeDescription = 'Test Admin';
                         <li class="nav-item">
                             <a class="nav-link"
                                href="<?= $this->Url->build(["controller" => "events", "action" => "index"]); ?>"><i
-                                        class="fa fa-calendar-plus-o"></i> All Classes</a>
+                                        class="fa fa-calendar-plus-o"></i>My Classes</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
                                href="<?= $this->Url->build(["controller" => "studios", "action" => "index"]); ?>"
-                               target="_top"><i class="fa fa-calendar"></i> Class Timetable</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"
-                               href="<?= $this->Url->build(["controller" => "teachers", "action" => "index"]); ?>"
-                               target="_top"><i class="fa fa-graduation-cap"></i>
-                                Teacher<span class="badge badge-primary">NEW</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"
-                               href="<?= $this->Url->build(["controller" => "classTypes", "action" => "index"]); ?>"
-                               target="_top"><i class="fa fa-tasks"></i>
-                                Class Type<span class="badge badge-primary">NEW</span></a>
+                               target="_top"><i class="fa fa-calendar-plus-o"></i> My Attendance</a>
                         </li>
                     </ul>
                 </li>
 
-                <li class="nav-item nav-dropdown">
-                    <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-user-plus"></i> Enrollment</a>
-                    <ul class="nav-dropdown-items">
-                        <li class="nav-item">
-                            <a class="nav-link"
-                               href="<?= $this->Url->build(["controller" => "users1", "action" => "index1"]); ?>"
-                               target="_top"><i class="fa fa-user"></i> Individual</a>
-
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"
-                               href="<?= $this->Url->build(["controller" => "users1", "action" => "index21"]); ?>"
-                               target="_top"><i class="fa fa-users"></i>
-                                Family<span class="badge badge-primary">NEW</span></a>
-                        </li>
-
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= $this->Url->build(["controller" => "users", "action" => "enroll"]); ?>"><i class="fa fa-calendar"></i> Enrollment</a>
                 </li>
 
 
@@ -216,7 +174,8 @@ $cakeDescription = 'Test Admin';
             <li class="breadcrumb-item">Home</li>
             <li class="breadcrumb-item"><a href="
                 <?= $this->Url->build([
-                    "controller" => "dashboard"
+                    "controller" => "admin",
+                    "action" => "home",
                 ]);
                 ?>">Admin</a>
             </li>

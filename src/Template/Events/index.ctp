@@ -25,7 +25,6 @@
                             <tr>
                                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('price') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('type') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('start_date') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('end_date') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('class_interval') ?></th>
@@ -42,10 +41,9 @@
                                 <tr>
                                     <td><?= h($event->name) ?></td>
                                     <td><?= $this->Number->currency($event->price) ?></td>
-                                    <td><?php if($event->type=='C'){echo 'Class'; }else {echo 'Party';} ?></td>
                                     <td><?= h($event->start_date->nice()) ?></td>
                                     <td><?= h($event->end_date->nice()) ?></td>
-                                    <td><?php if($event->class_interval=='7'){echo 'Weekly'; }else {echo 'Fortnightly';} ?></td>
+                                    <td><?php if($event->class_interval=='7'){echo 'Weekly, '.$event->start_date->format('D'); }else {echo 'Fortnightly'.$event->start_date->format('D');} ?></td>
                                     <td><?= h($event->start_time->format('h:i A')) ?></td>
                                     <td><?= h($event->end_time->format('h:i A')) ?></td>
                                     <td><?= $this->Number->format($event->num_people) ?></td>

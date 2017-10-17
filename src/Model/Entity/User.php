@@ -12,6 +12,29 @@ use Cake\ORM\Entity;
  * @property string $password
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
+ * @property string $first_name
+ * @property string $last_name
+ * @property string $mobile
+ * @property string $school
+ * @property \Cake\I18n\FrozenDate $dob
+ * @property string $house_no
+ * @property string $street
+ * @property string $suburb
+ * @property string $postcode
+ * @property string $state
+ * @property string $country
+ * @property string $g_fname
+ * @property string $g_lname
+ * @property string $g_email
+ * @property string $g_mobile
+ * @property string $p_consent
+ * @property string $medical
+ * @property string $passkey
+ * @property \Cake\I18n\FrozenTime $timeout
+ * @property int $family_id
+ *
+ * @property \App\Model\Entity\Enrollment[] $enrollment_payer
+ * @property \App\Model\Entity\Enrollment[] $enrollment_participants
  */
 class User extends Entity
 {

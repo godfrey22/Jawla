@@ -4,22 +4,21 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Event Entity
+ * Enrollment Entity
  *
  * @property int $id
- * @property float $price
- * @property string $name
- * @property \Cake\I18n\FrozenDate $start_date
- * @property \Cake\I18n\FrozenDate $end_date
- * @property \Cake\I18n\FrozenTime $start_time
- * @property \Cake\I18n\FrozenTime $end_time
- * @property int $num_people
- * @property string $notes
- * @property int $class_interval
+ * @property int $user_id
+ * @property int $participant_id
+ * @property int $studio_id
+ * @property int $payment_id
+ * @property int $paid_amount
  *
- * @property \App\Model\Entity\Studio[] $studios
+ * @property \App\Model\Entity\User $user
+ * @property \App\Model\Entity\User $participant
+ * @property \App\Model\Entity\Studio $studio
+ * @property \App\Model\Entity\Payment $payment
  */
-class Event extends Entity
+class Enrollment extends Entity
 {
 
     /**
