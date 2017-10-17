@@ -256,5 +256,20 @@ class UsersController extends AppController
             $total = $query->count();
             $this->set(compact('studio', 'nclasses', 'total'));
         }
+     }
+
+    public function myclasses(){
+        $this->viewBuilder()->setLayout('user');
+
+
+    }
+
+    public function class_calendar(){
+        $this->viewBuilder()->setLayout('ajax');
+        $this->request->allowMethod('ajax');
+
+        $my_class = []; //participant id = user id
+        $my_family_class = []; //user id = id
+
     }
 }
