@@ -31,6 +31,10 @@ use Cake\ORM\Entity;
  * @property string $medical
  * @property string $passkey
  * @property \Cake\I18n\FrozenTime $timeout
+ * @property int $family_id
+ *
+ * @property \App\Model\Entity\Enrollment[] $enrollment_payer
+ * @property \App\Model\Entity\Enrollment[] $enrollment_participants
  */
 class User extends Entity
 {
