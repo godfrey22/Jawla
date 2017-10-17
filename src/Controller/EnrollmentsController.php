@@ -13,6 +13,12 @@ use App\Controller\AppController;
 class EnrollmentsController extends AppController
 {
 
+    public function initialize()
+    {
+        parent::initialize();
+        $this->loadComponent('Global');
+    }
+    
     /**
      * Index method
      *
