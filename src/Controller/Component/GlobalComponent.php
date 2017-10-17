@@ -14,7 +14,7 @@ class GlobalComponent extends Component
     public $components = ['Auth'];
 
     public function isAdmin(){
-        $user = $this->Auth->user();
+        $user = $this->getUser();
         $uid = $user['id'];
 
         if ($uid == 53){
@@ -22,5 +22,10 @@ class GlobalComponent extends Component
         }else{
             return false;
         }
+    }
+
+    public function getUser(){
+        $user = $this->Auth->user();
+        return $user;
     }
 }
