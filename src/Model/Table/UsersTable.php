@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Model\Table;
 
 use Cake\ORM\Query;
@@ -9,6 +10,7 @@ use Cake\Validation\Validator;
 /**
  * Users Model
  *
+ * @property |\Cake\ORM\Association\BelongsTo $Families
  * @property |\Cake\ORM\Association\HasMany $Enrollments
  *
  * @method \App\Model\Entity\User get($primaryKey, $options = [])
@@ -48,6 +50,9 @@ class UsersTable extends Table
             'foreignKey' => 'participant_id',
             'className' => 'Enrollments'
         ]);
+
+        $this->belongsTo('Families', [
+            'foreignKey' => 'family_id']);
     }
 
     /**
@@ -65,21 +70,21 @@ class UsersTable extends Table
         $validator
             ->email('email')
             ->requirePresence('email', 'create')
-            ->notEmpty('email','Please fill in Email'); //email
+            ->notEmpty('email', 'Please fill in Email'); //email
 
         $validator
             ->requirePresence('first_name', 'create')
-            ->notEmpty('first_name','First name field is required')
+            ->notEmpty('first_name', 'First name field is required')
             ->add('first_name', 'custom', array(
-                        'rule' => array('custom', '/^[a-zA-Z\s]*$/') ,
-                        'message' => 'First name field only allows characters ,'
+                'rule' => array('custom', '/^[a-zA-Z\s]*$/'),
+                'message' => 'First name field only allows characters ,'
             ));
 
         $validator
             ->requirePresence('last_name', 'create')
-            ->notEmpty('last_name','Last name field is required')
+            ->notEmpty('last_name', 'Last name field is required')
             ->add('last_name', 'custom', array(
-                'rule' => array('custom', '/^[a-zA-Z\s]*$/') ,
+                'rule' => array('custom', '/^[a-zA-Z\s]*$/'),
                 'message' => 'Last name field only allows characters ,'
             ));
 
@@ -87,57 +92,55 @@ class UsersTable extends Table
             ->requirePresence('school', 'create')
             ->notEmpty('school')
             ->add('school', 'custom', array(
-                'rule' => array('custom', '/^[a-zA-Z\s]*$/') ,
+                'rule' => array('custom', '/^[a-zA-Z\s]*$/'),
                 'message' => 'School field only allows characters ,'
             ));
 
 
-
         $validator
             ->requirePresence('street', 'create')
-            ->notEmpty('street','Street field is required')
+            ->notEmpty('street', 'Street field is required')
             ->add('street', 'custom', array(
-                'rule' => array('custom', '/^[a-zA-Z\s]*$/') ,
+                'rule' => array('custom', '/^[a-zA-Z\s]*$/'),
                 'message' => 'Street field only allows characters ,'
             ));
 
         $validator
             ->requirePresence('suburb', 'create')
-            ->notEmpty('suburb','This field is required')
+            ->notEmpty('suburb', 'This field is required')
             ->add('suburb', 'custom', array(
-                'rule' => array('custom', '/^[a-zA-Z\s]*$/') ,
+                'rule' => array('custom', '/^[a-zA-Z\s]*$/'),
                 'message' => 'Suburb field only allows characters ,'
             ));
 
 
-
         $validator
             ->requirePresence('state', 'create')
-            ->notEmpty('state','This field is required')
+            ->notEmpty('state', 'This field is required')
             ->add('state', 'custom', array(
-                'rule' => array('custom', '/^[a-zA-Z\s]*$/') ,
+                'rule' => array('custom', '/^[a-zA-Z\s]*$/'),
                 'message' => 'State field only allows characters ,'
             ));
 
         $validator
             ->requirePresence('country', 'create')
-            ->notEmpty('country','This field is required')
+            ->notEmpty('country', 'This field is required')
             ->add('country', 'custom', array(
-                'rule' => array('custom', '/^[a-zA-Z\s]*$/') ,
+                'rule' => array('custom', '/^[a-zA-Z\s]*$/'),
                 'message' => 'Country field only allows characters ,'
             ));
 
         $validator
             ->requirePresence('g_fname', 'create')
             ->add('g_fname', 'custom', array(
-                'rule' => array('custom', '/^[a-zA-Z\s]*$/') ,
+                'rule' => array('custom', '/^[a-zA-Z\s]*$/'),
                 'message' => 'Guardian first name field only allows characters ,'
             ));
 
         $validator
             ->requirePresence('g_lname', 'create')
             ->add('g_lname', 'custom', array(
-                'rule' => array('custom', '/^[a-zA-Z\s]*$/') ,
+                'rule' => array('custom', '/^[a-zA-Z\s]*$/'),
                 'message' => 'Guardian last name field only allows characters ,'
             ));
 
@@ -147,32 +150,29 @@ class UsersTable extends Table
 
         $validator
             ->requirePresence('password', 'create')
-            ->notEmpty('password','Password required ,');
-        
+            ->notEmpty('password', 'Password required ,');
+
         $validator
             ->date('dob')
             ->notEmpty('dob', 'Please fill date of birth ,');
 
         $validator
-
-             ->add('mobile', 'custom',array(
-                 'rule' => array('custom', '/^[0-9]{10}$/') ,
-                        'message' => 'Please Enter A valid mobile number ,'
-                        ));
+            ->add('mobile', 'custom', array(
+                'rule' => array('custom', '/^[0-9]{10}$/'),
+                'message' => 'Please Enter A valid mobile number ,'
+            ));
         $validator
-
-            ->add('g_mobile', 'custom',array(
-                'rule' => array('custom', '/^[0-9]{10}$/') ,
+            ->add('g_mobile', 'custom', array(
+                'rule' => array('custom', '/^[0-9]{10}$/'),
                 'message' => 'Please Enter A valid Guardian mobile number ,'
             ));
 
 
-
-        $validator //postcode 4 digit number
-                       ->add('postcode', 'custom', array(
-                        'rule' => array('custom', '/^[0-9]{4}$/') ,
-                       'message' => 'Please Enter A valid postcode'
-                        ));
+        $validator//postcode 4 digit number
+        ->add('postcode', 'custom', array(
+            'rule' => array('custom', '/^[0-9]{4}$/'),
+            'message' => 'Please Enter A valid postcode'
+        ));
         return $validator;
     }
 
@@ -186,6 +186,7 @@ class UsersTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->isUnique(['email']));
+        $rules->add($rules->existsIn(['family_id'], 'Families'));
 
         return $rules;
     }
