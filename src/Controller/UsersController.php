@@ -291,10 +291,27 @@ class UsersController extends AppController
                     $data['title'] = $member_enrollment['studio']['event']['name'];
                     $data['start'] = $member_enrollment['studio']['date']->i18nFormat('Y-MM-dd') . 'T' . $member_enrollment['studio']['event']['start_time']->i18nFormat('HH:mm:ss');
                     $data['end'] = $member_enrollment['studio']['date']->i18nFormat('Y-MM-dd') . 'T' . $member_enrollment['studio']['event']['end_time']->i18nFormat('HH:mm:ss');
-                    $data['color'] = "#ADD8E6";
+                    $data['color'] = "#488AC7";
                     $return_json[] = $data;
                 }
             }
+
+
+            $my_enrollments = $enrollments->find("all",
+                array('contain'=>['Users', 'Participants', 'Studios' => ['Events']])
+            )->leftJoinWith('Payments')->where([
+                'participant_id =' => $user_info['id']
+            ]);
+            foreach ($my_enrollments as $my_enrollment){
+                $data['title'] = $my_enrollment['studio']['event']['name'];
+                $data['start'] = $my_enrollment['studio']['date']->i18nFormat('Y-MM-dd') . 'T' . $my_enrollment['studio']['event']['start_time']->i18nFormat('HH:mm:ss');
+                $data['end'] = $my_enrollment['studio']['date']->i18nFormat('Y-MM-dd') . 'T' . $my_enrollment['studio']['event']['end_time']->i18nFormat('HH:mm:ss');
+                $data['color'] = "#C68E17";
+                $return_json[] = $data;
+            }
+
+
+
             echo json_encode($return_json);
             die();
 
