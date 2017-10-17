@@ -20,13 +20,13 @@
                             <div class="row">
                                 <div class="col-md-12 mb-12">
                                     <div class="form-group">
-                                        Participant:
                                         <?=
                                         $this->Form->control('participant_id',
                                             [
                                                 'options' => $participants,
                                                 'class' => 'custom-select',
-                                                'style' => 'width:100px;'
+                                                'style' => 'width:200px;'
+
                                             ]);
                                         ?>
                                     </div>

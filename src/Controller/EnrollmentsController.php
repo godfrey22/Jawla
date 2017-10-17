@@ -80,12 +80,17 @@ class EnrollmentsController extends AppController
         }
         $users = $this->Enrollments->Users->find('list', ['limit' => 200]);
 
+        $participants =[];
         if ($user_info['family_id']!=null){
-            $participants = $this->Enrollments->Participants->find('all') ->where(['family_id =' => $user_info['family_id']]);
+            $results = $this->Enrollments->Participants->find('all') ->where(['family_id =' => $user_info['family_id']]);
+            foreach ($results as $result){
+                $participants[$result['id']] = $result['first_name']." ".$result['last_name'];
+            }
         }else{
-            $participants = $this->Enrollments->Participants->get($user_info['id']);
+            $result = $this->Enrollments->Participants->get($user_info['id']);
+            $participants[$result['id']] = $result['first_name']." ".$result['last_name'];
         }
-        
+
         $studios = $this->Enrollments->Studios->find('list', ['limit' => 200]);
         $payments = $this->Enrollments->Payments->find('list', ['limit' => 200]);
         $this->set(compact('enrollment', 'users', 'participants', 'studios', 'payments'));
