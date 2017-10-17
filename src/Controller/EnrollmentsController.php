@@ -53,6 +53,9 @@ class EnrollmentsController extends AppController
      */
     public function add()
     {
+
+        $this->viewBuilder()->setLayout("user");
+
         $enrollment = $this->Enrollments->newEntity();
         if ($this->request->is('post')) {
             $enrollment = $this->Enrollments->patchEntity($enrollment, $this->request->getData());
