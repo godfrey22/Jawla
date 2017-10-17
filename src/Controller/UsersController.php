@@ -266,8 +266,8 @@ class UsersController extends AppController
     }
 
     public function classcalendar(){
-//        $this->viewBuilder()->setLayout('ajax');
-//        $this->request->allowMethod('ajax');
+        $this->viewBuilder()->setLayout('ajax');
+        $this->request->allowMethod('ajax');
 //        1. get family members
 //        2. get all members enrollment
 
