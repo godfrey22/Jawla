@@ -27,7 +27,7 @@
         <legend><?= __('Edit Enrollment') ?></legend>
         <?php
             echo $this->Form->control('user_id', ['options' => $users]);
-            echo $this->Form->control('participant_id');
+            echo $this->Form->control('participant_id', ['options' => $participants]);
             echo $this->Form->control('studio_id', ['options' => $studios]);
             echo $this->Form->control('payment_id', ['options' => $payments]);
             echo $this->Form->control('paid_amount');

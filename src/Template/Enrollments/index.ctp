@@ -35,7 +35,7 @@
             <tr>
                 <td><?= $this->Number->format($enrollment->id) ?></td>
                 <td><?= $enrollment->has('user') ? $this->Html->link($enrollment->user->id, ['controller' => 'Users', 'action' => 'view', $enrollment->user->id]) : '' ?></td>
-                <td><?= $this->Number->format($enrollment->participant_id) ?></td>
+                <td><?= $enrollment->has('participant') ? $this->Html->link($enrollment->participant->id, ['controller' => 'Users', 'action' => 'view', $enrollment->participant->id]) : '' ?></td>
                 <td><?= $enrollment->has('studio') ? $this->Html->link($enrollment->studio->id, ['controller' => 'Studios', 'action' => 'view', $enrollment->studio->id]) : '' ?></td>
                 <td><?= $enrollment->has('payment') ? $this->Html->link($enrollment->payment->id, ['controller' => 'Payments', 'action' => 'view', $enrollment->payment->id]) : '' ?></td>
                 <td><?= $this->Number->format($enrollment->paid_amount) ?></td>

@@ -18,7 +18,9 @@ class EnrollmentsControllerTest extends IntegrationTestCase
     public $fixtures = [
         'app.enrollments',
         'app.users',
+        'app.enrollment_payer',
         'app.participants',
+        'app.enrollment_participants',
         'app.studios',
         'app.events',
         'app.teachers',

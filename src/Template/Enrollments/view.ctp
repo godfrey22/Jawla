@@ -27,6 +27,10 @@
             <td><?= $enrollment->has('user') ? $this->Html->link($enrollment->user->id, ['controller' => 'Users', 'action' => 'view', $enrollment->user->id]) : '' ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Participant') ?></th>
+            <td><?= $enrollment->has('participant') ? $this->Html->link($enrollment->participant->id, ['controller' => 'Users', 'action' => 'view', $enrollment->participant->id]) : '' ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Studio') ?></th>
             <td><?= $enrollment->has('studio') ? $this->Html->link($enrollment->studio->id, ['controller' => 'Studios', 'action' => 'view', $enrollment->studio->id]) : '' ?></td>
         </tr>
@@ -37,10 +41,6 @@
         <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($enrollment->id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Participant Id') ?></th>
-            <td><?= $this->Number->format($enrollment->participant_id) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Paid Amount') ?></th>

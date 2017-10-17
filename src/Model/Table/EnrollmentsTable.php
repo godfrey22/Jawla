@@ -10,7 +10,7 @@ use Cake\Validation\Validator;
  * Enrollments Model
  *
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
- * @property \App\Model\Table\ParticipantsTable|\Cake\ORM\Association\BelongsTo $Participants
+ * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Participants
  * @property \App\Model\Table\StudiosTable|\Cake\ORM\Association\BelongsTo $Studios
  * @property \App\Model\Table\PaymentsTable|\Cake\ORM\Association\BelongsTo $Payments
  *
@@ -41,12 +41,15 @@ class EnrollmentsTable extends Table
 
         $this->belongsTo('Users', [
             'foreignKey' => 'user_id',
-            'joinType' => 'INNER'
+            'joinType' => 'INNER',
+            'className' => 'Users'
         ]);
         $this->belongsTo('Participants', [
             'foreignKey' => 'participant_id',
-            'joinType' => 'INNER'
+            'joinType' => 'INNER',
+            'className' => 'Users'
         ]);
+
         $this->belongsTo('Studios', [
             'foreignKey' => 'studio_id',
             'joinType' => 'INNER'

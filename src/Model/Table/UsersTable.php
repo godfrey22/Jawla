@@ -9,6 +9,8 @@ use Cake\Validation\Validator;
 /**
  * Users Model
  *
+ * @property |\Cake\ORM\Association\HasMany $Enrollments
+ *
  * @method \App\Model\Entity\User get($primaryKey, $options = [])
  * @method \App\Model\Entity\User newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\User[] newEntities(array $data, array $options = [])
@@ -37,6 +39,15 @@ class UsersTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+
+        $this->hasMany('EnrollmentPayer', [
+            'foreignKey' => 'user_id',
+            'className' => 'Enrollments'
+        ]);
+        $this->hasMany('EnrollmentParticipants', [
+            'foreignKey' => 'participant_id',
+            'className' => 'Enrollments'
+        ]);
     }
 
     /**

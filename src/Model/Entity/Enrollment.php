@@ -14,7 +14,7 @@ use Cake\ORM\Entity;
  * @property int $paid_amount
  *
  * @property \App\Model\Entity\User $user
- * @property \App\Model\Entity\Participant $participant
+ * @property \App\Model\Entity\User $participant
  * @property \App\Model\Entity\Studio $studio
  * @property \App\Model\Entity\Payment $payment
  */
