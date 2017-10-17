@@ -273,6 +273,7 @@ class UsersController extends AppController
 
         $user_info = $this->Global->getUser();
         $enrollments = $this->loadModel('Enrollments');
+        $return_json = [];
 
         if($user_info['family_id']!=null){
             $family_members = $this->Users->find('all')->where([
@@ -282,14 +283,20 @@ class UsersController extends AppController
 
             foreach ($family_members as $family_member){
                 $member_enrollments = $enrollments->find("all",
-                    array('contain'=>['Users', 'Participants', 'Studios'])
+                    array('contain'=>['Users', 'Participants', 'Studios' => ['Events']])
                 )->leftJoinWith('Payments')->where([
                     'participant_id =' => $family_member['id']
                 ]);
                 foreach ($member_enrollments as $member_enrollment){
-                    debug($member_enrollment['id']);
+                    $data['title'] = $member_enrollment['studio']['event']['name'];
+                    $data['start'] = $member_enrollment['studio']['date']->i18nFormat('Y-MM-dd') . 'T' . $member_enrollment['studio']['event']['start_time']->i18nFormat('HH:mm:ss');
+                    $data['end'] = $member_enrollment['studio']['date']->i18nFormat('Y-MM-dd') . 'T' . $member_enrollment['studio']['event']['end_time']->i18nFormat('HH:mm:ss');
+                    $data['color'] = "#ADD8E6";
+                    $return_json[] = $data;
                 }
             }
+            echo json_encode($return_json);
+            die();
 
         }
 

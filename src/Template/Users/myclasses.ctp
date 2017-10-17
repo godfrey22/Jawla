@@ -14,7 +14,7 @@
             eventLimit: true, // allow "more" link when too many events
             events:
                 {
-                    url: '<?php echo $this->Url->build(array("controller" => "users", "action" => "calendar")) ?>',
+                    url: '<?php echo $this->Url->build(array("controller" => "users", "action" => "classcalendar")) ?>',
                     type: 'get'
                 }
         });
