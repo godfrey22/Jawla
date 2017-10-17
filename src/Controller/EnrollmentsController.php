@@ -18,7 +18,7 @@ class EnrollmentsController extends AppController
         parent::initialize();
         $this->loadComponent('Global');
     }
-    
+
     /**
      * Index method
      *
@@ -57,14 +57,20 @@ class EnrollmentsController extends AppController
      *
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function add($id = null)
     {
 
         $this->viewBuilder()->setLayout("user");
+        $user_info = $this->Global->getUser();
 
         $enrollment = $this->Enrollments->newEntity();
         if ($this->request->is('post')) {
-            $enrollment = $this->Enrollments->patchEntity($enrollment, $this->request->getData());
+
+            $data = $this->request->getData();
+            $data['user_id'] = $user_info['id'];
+            $data['studio_id'] = $id;
+
+            $enrollment = $this->Enrollments->patchEntity($enrollment, $data);
             if ($this->Enrollments->save($enrollment)) {
                 $this->Flash->success(__('The enrollment has been saved.'));
 
