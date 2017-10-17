@@ -268,17 +268,39 @@ class UsersController extends AppController
     public function classcalendar(){
 //        $this->viewBuilder()->setLayout('ajax');
 //        $this->request->allowMethod('ajax');
+//        1. get family members
+//        2. get all members enrollment
 
         $user_info = $this->Global->getUser();
-        $studios = $this->loadModel('Enrollments');
+        $enrollments = $this->loadModel('Enrollments');
 
-        $my_class = $studios->find("all")->where(['user_id =' => $user_info['id']]); //participant id = user id
+        if($user_info['family_id']!=null){
+            $family_members = $this->Users->find('all')->where([
+                'family_id = '=> $user_info['family_id'],
+                'id !=' => $user_info['id']
+            ]);
 
-        foreach ($my_class as $class){
-            debug($class);
+            foreach ($family_members as $family_member){
+                $member_enrollments = $enrollments->find("all",
+                    array('contain'=>['Users', 'Participants', 'Studios'])
+                )->leftJoinWith('Payments');
+                foreach ($member_enrollments as $member_enrollment){
+                    debug($member_enrollment);
+                }
+            }
 
         }
-        die();
+
+//        $my_class = $studios->find("all")->where(['participant_id =' => $user_info['id']]); //participant id = user id
+//        $my_family_class = $studios->find("all")->where([
+//            'participant_id !=' => $user_info['id'],
+//            'user_id' => $user_info['id']
+//        ]);
+//        foreach ($my_family_class as $class){
+//            debug($class);
+//
+//        }
+//        die();
         $my_family_class = []; //user id = id
 
     }
