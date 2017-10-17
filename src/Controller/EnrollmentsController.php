@@ -74,7 +74,7 @@ class EnrollmentsController extends AppController
             if ($this->Enrollments->save($enrollment)) {
                 $this->Flash->success(__('The enrollment has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller'=>'dashboard', 'action' => 'index']);
             }
             $this->Flash->error(__('The enrollment could not be saved. Please, try again.'));
         }
