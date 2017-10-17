@@ -1,7 +1,7 @@
 <?php
 /**
-  * @var \App\View\AppView $this
-  */
+ * @var \App\View\AppView $this
+ */
 ?>
 <div class="container-fluid">
     <div class="animated fadeIn">
@@ -16,13 +16,23 @@
                         <?= $this->Form->create($enrollment) ?>
                         <fieldset>
                             <legend><?= __('Add Enrollment') ?></legend>
-                            <?php
-                            //echo $this->Form->control('user_id', ['options' => $users]);
-                            echo $this->Form->control('participant_id', ['options' => $participants]);
-                            //echo $this->Form->control('studio_id', ['options' => $studios]);
-                            //echo $this->Form->control('payment_id', ['options' => $payments, 'empty' => true]);
-                            //echo $this->Form->control('paid_amount');
-                            ?>
+
+                            <div class="row">
+                                <div class="col-md-12 mb-12">
+                                    <div class="form-group">
+                                        Participant:
+                                        <?=
+                                        $this->Form->control('participant_id',
+                                            [
+                                                'options' => $participants,
+                                                'class' => 'custom-select',
+                                                'style' => 'width:100px;'
+                                            ]);
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+
                         </fieldset>
 
                     </div>
