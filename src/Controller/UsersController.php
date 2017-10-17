@@ -20,6 +20,7 @@ class UsersController extends AppController
     {
         parent::initialize();
         // Add the 'add' action to the allowed actions list.
+        $this->loadComponent('Global');
         $this->Auth->allow(['logout', 'register', 'password', 'reset']);
     }
 
@@ -264,11 +265,20 @@ class UsersController extends AppController
 
     }
 
-    public function class_calendar(){
-        $this->viewBuilder()->setLayout('ajax');
-        $this->request->allowMethod('ajax');
+    public function classcalendar(){
+//        $this->viewBuilder()->setLayout('ajax');
+//        $this->request->allowMethod('ajax');
 
-        $my_class = []; //participant id = user id
+        $user_info = $this->Global->getUser();
+        $studios = $this->loadModel('Enrollments');
+
+        $my_class = $studios->find("all")->where(['user_id =' => $user_info['id']]); //participant id = user id
+
+        foreach ($my_class as $class){
+            debug($class);
+
+        }
+        die();
         $my_family_class = []; //user id = id
 
     }
