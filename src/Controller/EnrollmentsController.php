@@ -79,7 +79,13 @@ class EnrollmentsController extends AppController
             $this->Flash->error(__('The enrollment could not be saved. Please, try again.'));
         }
         $users = $this->Enrollments->Users->find('list', ['limit' => 200]);
-        $participants = $this->Enrollments->Participants->find('list', ['limit' => 200]);
+
+        if ($user_info['family_id']!=null){
+            $participants = $this->Enrollments->Participants->find('all') ->where(['family_id =' => $user_info['family_id']]);
+        }else{
+            $participants = $this->Enrollments->Participants->get($user_info['id']);
+        }
+        
         $studios = $this->Enrollments->Studios->find('list', ['limit' => 200]);
         $payments = $this->Enrollments->Payments->find('list', ['limit' => 200]);
         $this->set(compact('enrollment', 'users', 'participants', 'studios', 'payments'));
