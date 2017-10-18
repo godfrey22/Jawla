@@ -16,13 +16,13 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <i class="fa fa-align-justify"></i> Studio Information
+                        <i class="fa fa-align-justify"></i> Class Information
                     </div>
                     <div class="card-body">
                         <div class="studios form large-9 medium-8 columns content">
                             <?= $this->Form->create($studio) ?>
                             <fieldset>
-                                <legend><?= __('Edit Studio') ?></legend>
+                                <legend><?= __('Edit Class') ?></legend>
 
                                 <div class="row">
                                     <div class="col-md-12 mb-12">

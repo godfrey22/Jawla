@@ -68,10 +68,10 @@ class EventsController extends AppController
             $event = $this->Events->patchEntity($event, $data);
 
             if ($this->Events->save($event)) {
-                $this->Flash->success(__('The event has been saved.'));
+                $this->Flash->success(__('The Class Term has been saved.'));
                 return $this->redirect(['controller'=>'studios', 'action' => 'batch_add',  $event->id] );
             }
-            $this->Flash->error(__('The event could not be saved. Please, try again.'));
+            $this->Flash->error(__('The Class Term could not be saved. Please, try again.'));
             return $this->redirect(['action' => 'index']);
 
         }

@@ -10,7 +10,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        Add Events - Classes Information
+                        Add Class Term - Classes Information
                     </div>
                     <div class="card-block information form-group">
 

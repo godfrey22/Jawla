@@ -71,7 +71,7 @@ $cakeDescription = 'Test Admin';
                aria-haspopup="true" aria-expanded="false">
                 <img src="<?= $this->Url->image('admin/avatars/6.jpg'); ?>" class="img-avatar"
                      alt="admin@bootstrapmaster.com">
-                <span class="d-md-down-none">admin</span>
+                <span class="d-md-down-none">Students</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-header text-center">
@@ -177,7 +177,7 @@ $cakeDescription = 'Test Admin';
                     "controller" => "admin",
                     "action" => "home",
                 ]);
-                ?>">Admin</a>
+                ?>">Students</a>
             </li>
             <li class="breadcrumb-item active">Dashboard</li>
 
