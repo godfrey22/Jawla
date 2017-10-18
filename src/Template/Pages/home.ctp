@@ -1,18 +1,19 @@
-<?= $this->element('header') ?>
 
-    <div class="feature front-page"
-         style="background-image: url(<?= $this->Url->image('home/'.$information[5]->value); ?>);">
+
+
+    <!--<div class="feature front-page"
+         style="background-image: url(<?/*= $this->Url->image('home/'.$information[5]->value); */?>);">
         <div class="container">
             <h1 class="logo">
                 <a href="http://www.jalwadancecompany.com">
-                    <img src="<?= $this->Url->image('home/'.$information[6]->value); ?>"
+                    <img src="<?/*= $this->Url->image('home/'.$information[6]->value); */?>"
                          alt="Jalwa Dance Company">
                 </a>
             </h1>
         </div>
 
-    </div>
-    <div class="main">
+    </div>-->
+  <!--  <div class="main">
 
         <div class="container">
 
@@ -20,50 +21,50 @@
                 <ul>
                     <li>
 <!--                        <a href="http://www.jalwadancecompany.com/genres/">-->
-                            <div class="box"
+                           <!-- <div class="box"
                                  style="background-image: url(http://www.jalwadancecompany.com/wp-content/uploads/2016/09/GENRES-300x167.jpg)">
-                            </div>
-                        <?php echo $this->Html->link('Genres >','/pages/construction')?>
+                            </div>-->
+                        <?php /*echo $this->Html->link('Genres >','/pages/construction')*/?>
 <!--                            <span>Genres ›</span>-->
-                        </a>
+                    <!--    </a>
                     </li>
-                    <li>
+                    <li>-->
 <!--                        <a href="http://www.jalwadancecompany.com/classes/">-->
-                            <div class="box"
+                           <!-- <div class="box"
                                  style="background-image: url(http://www.jalwadancecompany.com/wp-content/uploads/2016/09/Sequence-01.Still003-300x169.jpg)">
-                            </div>
-                        <?php echo $this->Html->link('Dance Classes >','/pages/construction')?>
+                            </div>-->
+                        <?php /*echo $this->Html->link('Dance Classes >','/pages/construction')*/?>
 <!--                            <span>Dance Classes ›</span>-->
-                        </a>
+                      <!--  </a>
                     </li>
-                    <li>
+                    <li>-->
 <!--                        <a href="http://www.jalwadancecompany.com/kids/kids-parties/">-->
-                            <div class="box"
+                           <!-- <div class="box"
                                  style="background-image: url(http://www.jalwadancecompany.com/wp-content/uploads/2016/09/KIDS-300x200.jpg)">
-                            </div>
-                        <?php echo $this->Html->link('Kids >','/pages/construction')?>
-<!--                            <span>Kids ›</span>-->
-                        </a>
+                            </div>-->
+                        <?php /*echo $this->Html->link('Kids >','/pages/construction')*/?>
+<!--               <!--             <span>Kids ›</span>-->
+                    <!--    </a>
                     </li>
-                    <li>
+                    <li>-->
 <!--                        <a href="http://www.jalwadancecompany.com/live-entertainment/">-->
-                            <div class="box"
+                           <!-- <div class="box"
                                  style="background-image: url(http://www.jalwadancecompany.com/wp-content/uploads/2016/09/LIVE-ENTERTAINMENT-300x168.jpg)">
-                            </div>
-                        <?php echo $this->Html->link('Live Entertainment >','/pages/construction')?>
+                            </div>-->
+                        <?php /*echo $this->Html->link('Live Entertainment >','/pages/construction')*/?>
 <!--                            <span>Live Entertainment ›</span>-->
-                        </a>
+                      <!--  </a>
                     </li>
                     <li>
 <!--                        <a href="http://www.jalwadancecompany.com/studio-hire/">-->
-                            <div class="box"
+                            <!--<div class="box"
                                  style="background-image: url(http://www.jalwadancecompany.com/wp-content/uploads/2016/09/STUDIO-HIRE-1-1-300x106.jpg)">
-                            </div>
-                        <?php echo $this->Html->link('Studio Hire >','/pages/construction')?>
+                            </div>-->
+                        <?php /*echo $this->Html->link('Studio Hire >','/pages/construction')*/?>
 <!--                            <span>Studio Hire ›</span>-->
-                        </a>
+                    <!--    </a>
                     </li>
-                </ul>
+                </ul>-->
                 <div class="clear"></div>
             </div>
 
@@ -94,4 +95,3 @@
 
 </div>
 
-<?= $this->element('footer') ?>

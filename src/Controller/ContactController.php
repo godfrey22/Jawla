@@ -19,7 +19,7 @@ class ContactController extends AppController
     { $info = $this->loadModel('Information');
         $information = $info->find('all')->toArray();
 
-        $this->viewBuilder()->setLayout('Jalwa');
+        $this->viewBuilder()->setLayout('navfoot');
         $this->set(compact('information'));
 
         $contact = new ContactForm();

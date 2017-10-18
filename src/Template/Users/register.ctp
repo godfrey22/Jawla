@@ -1,146 +1,191 @@
-<body class="app flex-row align-items-center">
-<style>
-    .btn-success {
-        color: #fff;
-        background-color: #af8613;
-        border-color: #af8613;
-    }
 
-    .btn-success:hover {
-        color: #fff;
-        background-color: #c79915;
-        border-color: #c79915;
-    }
-</style>
-<div class="container clearfix">
-    <?= $this->Flash->render() ?>
-    <div >
+<?= $this->Html->css("bootsnip.css") ?>
+<?= $this->Html->script("bootsnip.js") ?>
+
+
+
+<div class="container">
+    <div class="stepwizard">
+        <div class="stepwizard-row setup-panel">
+            <div class="stepwizard-step">
+                <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+                <p>Step 1</p>
+            </div>
+            <div class="stepwizard-step">
+                <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                <p>Step 2</p>
+            </div>
+            <div class="stepwizard-step">
+                <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                <p>Step 3</p>
+            </div>
+            <div class="stepwizard-step">
+                <a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
+                <p>Step 4</p>
+            </div>
+        </div>
     </div>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                <div class="card mx-4">
-                    <div class="card-body p-1">  </div>
-                        <?= $this->Form->create() ?>
-                        <h1>Register</h1>
-                        <p class="text-muted">Create your account</p>
 
-                        <div class="input-group mb-3">
-                            <span class="input-group-addon"><i class="icon-user"></i>
-                            </span>
-                            <?= $this->Form->text('first_name',
-                                [
-                                    'class' => 'form-control',
-                                    'placeholder' => 'First Name'
-                                ]) ?>
-                            <?= $this->Form->text('last_name',
-                                [
-                                    'class' => 'form-control',
-                                    'placeholder' => 'Last Name'
-                                ]) ?>
-                        </div>
-
-
-                    <div class="input-group mb-3">
-                            <span class="input-group-addon"><i class="icon-user"></i>
-                            </span>
-                        <?= $this->Form->control('dob', array(
-                       'templates'=>['dateWidget' => '<div class="clearfix">{{day}}{{month}}{{year}}</div>',],
-
-                                'type'  => 'date',
-                                'label' => 'Date Of Birth',
-                                'empty' => TRUE,
-                                'minYear' => 1900,
-                                'dateFormat' => '',
-                                'maxYear' => date('Y'),
-                                'minYear' => date('Y') - 100
-
-                            ));
-                        ?>
-
-
-                           
-                    </div>
-                    <div class="input-group mb-3">
-                            <span class="input-group-addon"><i class="icon-user"></i>
-                            </span>
-                        <?= $this->Form->text('school',
-                            [
+        <?= $this->Form->create() ?>
+        <div class="row setup-content" id="step-1">
+            <div class="col-xs-12">
+                <div class="col-md-12">
+                    <h3> Step 1</h3>
+                    <div class="form-group">
+                        <label class="control-label">First Name</label>
+                        <?= $this->Form->text('first_name',
+                            ['required'=>'required',
+                                'type'=>'text',
                                 'class' => 'form-control',
-                                'placeholder' => 'School Institution'
+                                'placeholder' => 'First Name',
+                            ]) ?>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Last Name</label>
+                        <?= $this->Form->text('last_name',
+                            ['required'=>'required',
+                                'type'=>'text',
+                                'class' => 'form-control',
+                                'placeholder' => 'Last Name'
                             ]) ?>
                     </div>
+                    <div class="form-group">
+                        <?= $this->Form->control('dob', array(
+                            'class' => 'form-control',
+                            'required'=>'required',
+                            'templates'=>['dateWidget' => '<div class="clearfix">{{day}}{{month}}{{year}}</div>',],
 
+                            'type'  => 'date',
+                            'label' => 'Date Of Birth',
+                            'empty' => TRUE,
+                            'minYear' => 1900,
+                            'dateFormat' => '',
+                            'maxYear' => date('Y'),
+                            'minYear' => date('Y') - 100
 
-                    <p class="text- cted">Contact Details</p>
-                        <div class="input-group mb-3">
-                            <span class="input-group-addon">@</span>
-                            <?= $this->Form->text('email',
-                                [
-                                    'class' => 'form-control',
-                                    'placeholder' => 'Email'
-                                ]) ?>
-                        </div>
-                    <div class="input-group mb-3">
-                            <span class="input-group-addon"><i class="icon-user"></i>
-                            </span>
+                        ));
+                        ?>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Mobile</label>
                         <?= $this->Form->text('mobile',
-                            [
+                            ['required'=>'required',
                                 'class' => 'form-control',
                                 'placeholder' => 'Mobile '
                             ]) ?>
+                    </div><div class="form-group">
+                        <label class="control-label">School</label>
+
+                        <?= $this->Form->text('school',
+
+                            [ 'required'=>'required',
+                                'class' => 'form-control',
+                                'placeholder' => 'School institution'
+                            ]) ?>
+
                     </div>
-                    <p class="text-muted">Home Address</p>
-                    <div class="input-group mb-3">
-                        <span class="input-group-addon">@</span>
-                        <?= $this->Form->text('house_no',
-                            [
+                    <div class="form-group">
+                        <label class="control-label">Medical</label>
+
+                        <?= $this->Form->text('medical',
+
+                            [ 'required'=>'required',
                                 'class' => 'form-control',
-                                'placeholder' => 'House No.'
+                                'placeholder' => 'Medical Issues/Allergies'
                             ]) ?>
-                        <?= $this->Form->text('street',
-                            [
-                                'class' => 'form-control',
-                                'placeholder' => 'Street'
-                            ]) ?>
+
+                    </div>
+                    <div class="form-group">
+                    <label class="control-label"></label>
+
+                    <?= $this->Form->control('p_consent',
+                        [ 'label' => 'Photo/Video Consent (Y/N)',
+                                'required'=>'required',
+                            'class' => 'form-control',
+                            'empty' => TRUE,
+                                'options' => [
+                            'Y' => 'Y',
+                            'N' => 'N',
+
+
+                        ]]) ?>
                     </div>
 
-                    <div class="input-group mb-3">
-                        <span class="input-group-addon">@</span>
-                        <?= $this->Form->text('suburb',
-                            [
-                                'class' => 'form-control',
-                                'placeholder' => 'Suburb'
-                            ]) ?>
-                        <?= $this->Form->text('postcode',
-                            [
-                                'class' => 'form-control',
-                                'placeholder' => 'Post Code'
-                            ]) ?>
-                    </div>
 
-                    <div class="input-group mb-3">
-                        <span class="input-group-addon">@</span>
-                        <?= $this->Form->text('state',
-                            [
-                                'class' => 'form-control',
-                                'placeholder' => 'State'
-                            ]) ?> <?= $this->Form->text('country',
-                            [
-                                'class' => 'form-control',
-                                'placeholder' => 'Country'
-                            ]) ?>
-                    </div>
-                    <p class="text-muted">Guardians Contact Details</p>
+                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                </div>
+            </div>
+        </div>
+        <div class="row setup-content" id="step-2">
+            <div class="col-xs-12">
+                <div class="col-md-12">
+                    <h3> Step 2</h3>
+                    <div class="form-group">
+                    <label class="control-label">House No.</label>
+                    <?= $this->Form->text('house_no',
+                        [
+                            'class' => 'form-control',
+                            'placeholder' => 'House No.'
+                        ]) ?>
+                        <div class="form-group">
+                    <label class="control-label">Street</label>
+                    <?= $this->Form->text('street',
+                        [
+                            'class' => 'form-control',
+                            'placeholder' => 'Street'
+                        ]) ?></div>
+                            <div class="form-group">
+                    <label class="control-label">Suburb</label>
+                    <?= $this->Form->text('suburb',
+                        [
+                            'class' => 'form-control',
+                            'placeholder' => 'Suburb'
+                        ]) ?></div>
+                                <div class="form-group">
+                    <label class="control-label">Postcode</label>
+                    <?= $this->Form->text('postcode',
+                        [
+                            'class' => 'form-control',
+                            'placeholder' => 'Post Code'
+                        ]) ?></div>
+                                    <div class="form-group">
+                    <label class="control-label">State</label>
+                    <?= $this->Form->text('state',
+                        [
+                            'class' => 'form-control',
+                            'placeholder' => 'State'
+                        ]) ?></div>
+                                        <div class="form-group">
+                    <label class="control-label">Country</label>
+                    <?= $this->Form->text('country',
+                        [
+                            'class' => 'form-control',
+                            'placeholder' => 'Country'
+                        ]) ?></div>
 
-                    <div class="input-group mb-3">
-                            <span class="input-group-addon"><i class="icon-user"></i>
-                            </span>
+
+                </div>
+                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row setup-content" id="step-3">
+            <div class="col-xs-12">
+                <div class="col-md-12">
+                    <h3> Step 3</h3>
+                    <div class="form-group">
+                        <label class="control-label">First Name</label>
                         <?= $this->Form->text('g_fname',
                             [
                                 'class' => 'form-control',
                                 'placeholder' => 'First Name'
                             ]) ?>
+                    </div>
+                        <div class="form-group">
+                        <label class="control-label">Last Name</label>
                         <?= $this->Form->text('g_lname',
                             [
                                 'class' => 'form-control',
@@ -148,48 +193,46 @@
                             ]) ?>
                     </div>
 
-                    <div class="input-group mb-3">
-                            <span class="input-group-addon"><i class="icon-user"></i>
-                            </span>
-                        <?= $this->Form->text('g_mobile',
-                            [
-                                'class' => 'form-control',
-                                'placeholder' => 'Mobile No.'
-                            ]) ?>
+                    <div class="form-group">
+                    <label class="control-label">Mobile no.</label>
+                    <?= $this->Form->text('g_mobile',
+                        [
+                            'class' => 'form-control',
+                            'placeholder' => 'Mobile No.'
+                        ]) ?>
 
+                </div>
+                        <div class="form-group">
+                 <label class="control-label">Email</label>
+                <?= $this->Form->text('g_email',
+                    [
+                        'class' => 'form-control',
+                        'placeholder' => 'Email'
+                    ]) ?>
+            </div>
+
+
+        </div>
                     </div>
-                    <div class="input-group mb-3">
-                            <span class="input-group-addon"><i class="icon-user"></i>
-                            </span>
-                        <?= $this->Form->text('g_email',
-                            [
-                                'class' => 'form-control',
-                                'placeholder' => 'Email'
-                            ]) ?>
-                    </div>
-                    <p class="text-muted">Consent for photo and video to be taken?</p>
-                    <div class="input-group mb-3">
-                            <span class="input-group-addon"><i class="icon-user"></i>
-                            </span>
-                        <?= $this->Form->text('p_consent',
-                            [
-                                'class' => 'form-control',
-                                'placeholder' => 'Photo/Video Consent (Y/N)'
-                            ]) ?>
-                    </div>
-                    <p class="text-muted">Do you have any medical issues or allergies? </p>
-                    <div class="input-group mb-3">
-                            <span class="input-group-addon"><i class="icon-user"></i>
-                            </span>
-                        <?= $this->Form->text('medical',
-                            [
-                                'class' => 'form-control',
-                                'placeholder' => 'Medical Issues/Allergies'
-                            ]) ?>
-                    </div>
-                    <div class="input-group mb-3">
-                            <span class="input-group-addon"><i class="icon-lock"></i>
-                            </span>
+                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                </div>
+            </div>
+        </div>
+        <div class="row setup-content" id="step-4">
+            <div class="col-xs-12">
+                <div class="col-md-12">
+                    <h3> Step 4</h3>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Email</label>
+                    <?= $this->Form->text('email',
+                        [
+                            'class' => 'form-control',
+                            'placeholder' => 'Email'
+                        ]) ?>
+                </div>
+                    <div class="form-group">
+                        <label class="control-label">Password</label>
                         <?= $this->Form->text('password',
                             [
                                 'class' => 'form-control',
@@ -198,9 +241,7 @@
                             ]) ?>
                     </div>
 
-                    <div class="input-group mb-3">
-                            <span class="input-group-addon"><i class="icon-lock"></i>
-                            </span>
+                    <div class="form-group">
                         <input type="password" class="form-control" placeholder="Repeat password">
                     </div>
                     <?= $this->Form->submit('Create Account',
@@ -210,19 +251,9 @@
                         ]) ?>
 
                     <?= $this->Form->end() ?>
-
-
-
-                </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
 </div>
-
-
-
-
-</body>
+</html>

@@ -1,60 +1,54 @@
-<?php ?>
+<?php
+/**
+ * Created by PhpStorm.
+ * User: David
+ * Date: 17/10/2017
+ * Time: 4:01 PM
+ */ ?>
 
-<div class="wrapper">
 
-    <div class="navbar" id="navbar">
-        <a href="#" class="nav-toggle" id="nav-toggle"><i class="fa fa-bars" data-swap="fa fa-times"></i> Menu</a>
-        <ul class="nav pull-left">
-            <li class="current">
-                <?php echo $this->Html->link('Home','/')?>
-            </li>
-            <li>
-                <?php echo $this->Html->link('Genres','/pages/construction')?>
-            </li>
-            <li class="parent">
-                <?php echo $this->Html->link('Dance Classes','/pages/construction')?>
-                <ul class="sub-menu">
-                    <?php echo $this->Html->link('Studio','/pages/construction')?>
-                    <?php echo $this->Html->link('School Incursions','/pages/construction')?>
-                    <?php echo $this->Html->link('Team Bonding','/pages/construction')?>
-                    <?php echo $this->Html->link('Hen’s Nights','/pages/construction')?>
-                    <?php echo $this->Html->link('Kid’s Parties','/pages/construction')?>
+    <nav class="navbar navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--<a class="navbar-brand" href="index.html"> <?/*= $this->Html->image('jalwa_logo_home.png',['alt'=>"logo",'height' => '80','width'=> '80']);*/?> </a>-->
 
+            </div>
+
+            <div class="collapse navbar-collapse navbar-left">
+                <ul class="nav navbar-nav">
+                    <li class="active"> <?php echo $this->Html->link('Home','/')?>
+                    <li><?php echo $this->Html->link('Genres','/pages/construction')?></a></li>
+                    <li><?php echo $this->Html->link('Dance Classes','/pages/construction')?></li>
+                    <li> <?php echo $this->Html->link('Live Entertainment','/pages/construction')?></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hiring <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li> <?php echo $this->Html->link('Studio','/pages/construction')?></li>
+                            <li><?php echo $this->Html->link('School Incursions','/pages/construction')?></li>
+                            <li><?php echo $this->Html->link('Team Bonding','/pages/construction')?></li>
+                            <li><?php echo $this->Html->link('Hen’s Nights','/pages/construction')?></li>
+                          <li> <?php echo $this->Html->link('Kid’s Parties','/pages/construction')?></li>
+                        </ul>
+                    </li>
+                    <!--<li><a href="blog.html">Blog</a></li>-->
+                    <li><?php echo $this->Html->link('Contact Us','/contact/index')?></li>
+
+
+                    <li>
+                        <?= $this->Html->link("Login / Register",
+                            array('controller' => 'Users', 'action' => 'login'));
+                        ?>
+                    </li>
                 </ul>
-            </li>
-            <li class="parent">
-                <?php echo $this->Html->link('Live Entertainment','/pages/construction')?>
-                <ul class="sub-menu">
-                    <?php echo $this->Html->link('Functions, Festivals & Events','/pages/construction')?>
-                    <?php echo $this->Html->link('School Incursions','/pages/construction')?>
-                    <?php echo $this->Html->link('Kid’s Parties','/pages/construction')?>
-                    <?php echo $this->Html->link('Hen’s Nights','/pages/construction')?>
-                </ul>
-            </li>
-            <li class="parent">
-                <?php echo $this->Html->link('Kids','/pages/construction')?>
-                <ul class="sub-menu">
-                    <?php echo $this->Html->link('Dance Classes','/pages/construction')?>
-                    <?php echo $this->Html->link('School Incursions','/pages/construction')?>
-                    <?php echo $this->Html->link('Kid’s Parties','/pages/construction')?>
-                </ul>
-            </li>
-            <li>
-                <?php echo $this->Html->link('Studio Hire','/pages/construction')?>
-            </li><li>
-                <?php echo $this->Html->link('Contact','/pages/construction')?>
-            </li>
-        </ul>
-        <ul class="social pull-right">
-            <li><a href="tel:0423652338"><i class="fa fa-phone"></i><span>
-                        <?= h($information[0]->value) ?>
-                    </span></a></li>
-            <li>
-                <?= $this->Html->link("Login / Register",
-                    array('controller' => 'Users', 'action' => 'login'));
-                ?>
-            </li>
-        </ul>
-        <div class="clear"></div>
-    </div>
+
+
+            </div>
+        </div><!--/.container-->
+    </nav><!--/nav-->
 

@@ -50,7 +50,7 @@ class PagesController extends AppController
         $info = $this->loadModel('Information');
         $information = $info->find('all')->toArray();
 
-        $this->viewBuilder()->setLayout('jalwa');
+        $this->viewBuilder()->setLayout('frontend');
         $this->set(compact('information'));
 
     }

@@ -20,7 +20,7 @@ class UsersController extends AppController
     {
         parent::initialize();
         // Add the 'add' action to the allowed actions list.
-        $this->Auth->allow(['logout', 'register', 'password', 'reset']);
+        $this->Auth->allow(['logout', 'register', 'password', 'reset','register2']);
     }
 
     public function logout()
@@ -84,7 +84,7 @@ class UsersController extends AppController
      *
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
-    public function register()
+  /*  public function register()
     {
         $this->viewBuilder()->setLayout('login');
 
@@ -119,8 +119,43 @@ class UsersController extends AppController
         }
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
-    }
+    }*/
+    public function register()
+    {
+        $this->viewBuilder()->setLayout('navfoot');
 
+        $user = $this->Users->newEntity();
+        if ($this->request->is('post')) {
+            $user = $this->Users->patchEntity($user, $this->request->getData());
+            if ($this->Users->save($user)) {
+                $this->Flash->success(__('The account has been created.'));
+
+                return $this->redirect(['action' => 'login']);
+            }
+            if ($user->errors()) {
+                $error_msg = [];
+                foreach ($user->errors() as $errors) {
+                    if (is_array($errors)) {
+                        foreach ($errors as $error) {
+                            $error_msg[] = $error;
+                        }
+                    } else {
+                        $error_msg[] = $errors;
+                    }
+                }
+
+                if (!empty($error_msg)) {
+                    $this->Flash->error(
+                        __("Please fix the following error(s):" . implode("\n \r", $error_msg))
+                    );
+                }
+            }
+
+//            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+        }
+        $this->set(compact('user'));
+        $this->set('_serialize', ['user']);
+    }
     /**
      * Edit method
      *
