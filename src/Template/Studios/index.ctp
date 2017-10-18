@@ -42,7 +42,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <i class="fa fa-align-justify"></i> Classes Information
+                        <i class="fa fa-align-justify"></i> Classes Timetable
                     </div>
                     <div class="card-body row">
                         <div class="card-block col-lg-6 col-md-auto col-sm-auto">

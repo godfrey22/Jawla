@@ -16,18 +16,18 @@
                         <table class ="table table-bordered table-striped table-sm table-responsive" cellpadding="0" cellspacing="0">
                             <thead>
                             <tr>
-                                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('Full Name') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('DOB') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('Mobile') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('Address') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('School Institution') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('Email') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('Photo/Video Consent') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('Medical Record') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('Guardians Full Name') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('Guardians Contact Details') ?></th>
-                                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                                <th width = "3%" scope="col"><?= $this->Paginator->sort('ID') ?></th>
+                                <th width = "10%" scope="col"><?= $this->Paginator->sort('Full Name') ?></th>
+                                <th width = "3%" scope="col"><?= $this->Paginator->sort('DOB') ?></th>
+                                <th width = "8%" scope="col"><?= $this->Paginator->sort('Mobile') ?></th>
+                                <th width = "30%" scope="col"><?= $this->Paginator->sort('Address') ?></th>
+                                <th width = "5%" scope="col"><?= $this->Paginator->sort('School Institution') ?></th>
+                                <th width = "10%" scope="col"><?= $this->Paginator->sort('Email') ?></th>
+<!--                                <th scope="col">--><?//= $this->Paginator->sort('Photo/Video Consent') ?><!--</th>-->
+                                <th width = "3%" scope="col"><?= $this->Paginator->sort('Medical Record') ?></th>
+                                <th width = "10%" scope="col"><?= $this->Paginator->sort('Guardians Full Name') ?></th>
+                                <th width = "15%" scope="col"><?= $this->Paginator->sort('Guardians Contact') ?></th>
+                                <th width = "3%" scope="col" class="actions"><?= __('Actions') ?></th>
                                 <!-- <th scope="col"><?= $this->Paginator->sort('password') ?></th>
                                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                               <th scope="col"><?= $this->Paginator->sort('modified') ?></th> -->
@@ -44,7 +44,7 @@
                                     <td><?= h($user->FullAddress) ?></td>
                                     <td><?= h($user->school) ?></td>
                                     <td><?= h($user->email) ?></td>
-                                    <td><?= h($user->p_consent) ?></td>
+<!--                                    <td>--><?//= h($user->p_consent) ?><!--</td>-->
                                     <td><?= h($user->medical) ?></td>
                                    <!--  <td><?= h($user->password) ?></td> -->
                                     <td><?= h($user->GFullName) ?></td>

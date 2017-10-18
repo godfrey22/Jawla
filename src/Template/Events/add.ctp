@@ -48,13 +48,13 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        Add Events
+                        Add Class Term
                     </div>
                     <div class="card-block information form-group">
 
                         <?= $this->Form->create($event) ?>
                         <fieldset>
-                            <legend><?= __('Add Event') ?></legend>
+                            <legend><?= __('Add Class Term') ?></legend>
 
 
                             <div class="row">
@@ -184,7 +184,8 @@
                                 <?= $this->Form->text('num_people',
                                     [
                                         'class' => 'form-control col-md-5',
-                                        'placeholder' => 'Capacity'
+                                        'placeholder' => 'Capacity',
+                                        'value' => 20
                                     ]) ?>
                             </div>
                         </div>

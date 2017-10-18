@@ -13,7 +13,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div>
-                        <i class="fa fa-align-justify"></i> Events Information
+                        <i class="fa fa-align-justify"></i> Class Term Information
                         </div>
                         <div class="pull-right btn btn-primary">
                             <a class="nav-link" href="<?= $this->Url->build(["controller" => "events", "action" => "add"]); ?>" style="color:#FFFFFF">Add</a>
