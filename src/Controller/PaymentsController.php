@@ -11,7 +11,13 @@ use App\Controller\AppController;
  * @method \App\Model\Entity\Payment[] paginate($object = null, array $settings = [])
  */
 class PaymentsController extends AppController
+{public function initialize()
 {
+    parent::initialize();
+    // Add the 'add' action to the allowed actions list.
+    $this->Auth->allow(['cart']);
+}
+
 
     /**
      * Index method
@@ -108,4 +114,10 @@ class PaymentsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function cart()
+    {
+        $this->viewBuilder()->setLayout('navfoot');
+    }
 }
+

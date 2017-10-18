@@ -17,7 +17,6 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!--<a class="navbar-brand" href="index.html"> <?/*= $this->Html->image('jalwa_logo_home.png',['alt'=>"logo",'height' => '80','width'=> '80']);*/?> </a>-->
-
             </div>
 
             <div class="collapse navbar-collapse navbar-left">
@@ -38,6 +37,9 @@
                     </li>
                     <!--<li><a href="blog.html">Blog</a></li>-->
                     <li><?php echo $this->Html->link('Contact Us','/contact/index')?></li>
+                    <li></li>
+
+                    <a class="collapse navbar-collapse navbar-left" href="payments/cart"> <?= $this->Html->image('cart.png',['alt'=>"logo",'height' => '35','width'=> '35']);?> </a>
 
 
                     <li>
