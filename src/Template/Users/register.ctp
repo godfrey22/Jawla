@@ -31,7 +31,7 @@
         <div class="row setup-content" id="step-1">
             <div class="col-xs-12">
                 <div class="col-md-12">
-                    <h3> Step 1</h3>
+                    <h3> Personal Details</h3>
                     <div class="form-group">
                         <label class="control-label">First Name</label>
                         <?= $this->Form->text('first_name',
@@ -112,17 +112,21 @@
 
 
                         ]]) ?>
+                        <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
                     </div>
 
+                    <div class="form-group">
+                        <br> </br>
+                    </div>
 
-                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
                 </div>
             </div>
         </div>
+    <br> </br>
         <div class="row setup-content" id="step-2">
             <div class="col-xs-12">
                 <div class="col-md-12">
-                    <h3> Step 2</h3>
+                    <h3> Personal Details </h3>
                     <div class="form-group">
                     <label class="control-label">House No.</label>
                     <?= $this->Form->text('house_no',
@@ -166,9 +170,15 @@
                             'placeholder' => 'Country'
                         ]) ?></div>
 
-
                 </div>
                     <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                    <div class="form-group">
+                        <br> </br>
+                    </div> <div class="form-group">
+                        <br> </br>
+                    </div> <div class="form-group">
+                        <br> </br>
+                    </div>
                 </div>
             </div>
         </div>
@@ -176,7 +186,7 @@
         <div class="row setup-content" id="step-3">
             <div class="col-xs-12">
                 <div class="col-md-12">
-                    <h3> Step 3</h3>
+                    <h3> Guardian Details </h3>
                     <div class="form-group">
                         <label class="control-label">First Name</label>
                         <?= $this->Form->text('g_fname',
@@ -211,18 +221,33 @@
                         'placeholder' => 'Email'
                     ]) ?>
             </div>
+                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                    <div class="form-group">
+                        <br> </br>
+                    </div> <div class="form-group">
+                        <br> </br>
+                    </div> <div class="form-group">
+                        <br> </br>
+                    </div>
+                    <div class="form-group">
+                        <br> </br>
+                    </div>
+                    <div class="form-group">
+                        <br> </br>
+                    </div>
 
+                </div>
 
         </div>
                     </div>
-                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+
                 </div>
             </div>
         </div>
         <div class="row setup-content" id="step-4">
             <div class="col-xs-12">
                 <div class="col-md-12">
-                    <h3> Step 4</h3>
+                    <h3> Create account</h3>
                 </div>
                 <div class="form-group">
                     <label class="control-label">Email</label>
@@ -247,14 +272,31 @@
                     </div>
                     <?= $this->Form->submit('Create Account',
                         [
-                            'class'=>'btn btn-block btn-success'
+                            'class'=>'btn btn-block btn-success' ,
+                    'type'=>'submit'
 
                         ]) ?>
 
                     <?= $this->Form->end() ?>
+                <div class="form-group">
+                    <br> </br>
+                </div><div class="form-group">
+                    <br> </br>
+                </div><div class="form-group">
+                    <br> </br>
+                </div><div class="form-group">
+                    <br> </br>
+                </div><div class="form-group">
+                    <br> </br>
+                </div>
+            <div class="form-group">
+                <br> </br>
+            </div>
                 </div>
             </div>
         </div>
 
 </div>
+
+
 </html>
