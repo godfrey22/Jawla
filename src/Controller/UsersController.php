@@ -266,6 +266,46 @@ class UsersController extends AppController
     public function attendance(){
         $this->viewBuilder()->setLayout('user');
 
+        //TODO: Admin Section
+        //1. Get all the studios
+        //2. Generate Links
+        //3. Pull out all participants when click
+        //4. Checkbox
+        //5. Save the attendance (use jquery if possible, increase usability
+
+
+    }
+
+    public function attendancecalendar(){
+
+//        $this->viewBuilder()->setLayout('ajax');
+//        $this->request->allowMethod('ajax'); // No direct access via browser URL - Note for Cake2.5: allowMethod()
+
+        $user_info = $this->Global->getUser();
+        $studios = $this->loadModel('Studios');
+
+        $results = $studios->find('all', array(
+            'contain' => array('Events', 'Teachers', 'ClassTypes')));
+        $return_json = [];
+
+        foreach ($results as $result) {
+            $data['title'] = $result['event']['name'];
+
+            $data['start'] = $result['date']->i18nFormat('Y-MM-dd') . 'T' . $result['event']['start_time']->i18nFormat('HH:mm:ss');
+            $data['end'] = $result['date']->i18nFormat('Y-MM-dd') . 'T' . $result['event']['end_time']->i18nFormat('HH:mm:ss');
+
+            if($this->Global->isAdmin()){
+                $data['url'] = Router::url([
+                    "controller" => "Studios",
+                    "action" => "edit",
+                    $result['id']
+                ]);
+            }
+            $return_json[] = $data;
+
+        }
+        echo json_encode($return_json);
+        die();
     }
 
     public function classcalendar(){
