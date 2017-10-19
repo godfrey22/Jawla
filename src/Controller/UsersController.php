@@ -276,7 +276,7 @@ class UsersController extends AppController
         //TODO: Admin Section
         //1. Get all the studios done
         //2. Generate Links done
-        //3. Pull out all participants when click
+        //3. Pull out all participants when click done
         //4. Checkbox
         //5. Save the attendance (use jquery if possible, increase usability
 
