@@ -17,6 +17,7 @@
                 | <?= h($information[3]->value) ?>
                 |<?= h($information[4]->value) ?></p>
 
+
         </div>
         <div class="clear"></div>
     </div>

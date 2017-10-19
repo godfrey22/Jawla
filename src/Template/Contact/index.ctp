@@ -22,9 +22,10 @@
                         <li class="col-sm-6">
                             <address>
                                 <h5>Jalwa Dance Company</h5>
-                                <p> 4/23-25 Bunney Road |Oakleigh South 3167 VIC <br>
+                                <p> <?= h($information[3]->value) ?>
+                                    |<?= h($information[4]->value) ?> <br>
                                     </p>
-                                <p>Phone:670-898-2847 <br>
+                                <p>Phone Number:  <?= h($information[0]->value) ?> <br>
                                     Email Address:Jalwa@gmail.com</p>
                             </address>
 

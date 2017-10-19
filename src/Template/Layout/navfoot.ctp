@@ -13,12 +13,12 @@
 </head>
 
 <body  class="homepage">
-<?= $this->Flash->render() ?>
+
 <header id="header">
 
     <?= $this->element('header') ?>
 </header>
-
+<?= $this->Flash->render() ?>
 
     <?= $this->fetch('content') ?>
 

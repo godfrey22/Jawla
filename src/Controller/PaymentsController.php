@@ -117,7 +117,11 @@ class PaymentsController extends AppController
 
     public function cart()
     {
-        $this->viewBuilder()->setLayout('navfoot');
-    }
+        $info = $this->loadModel('Information');
+            $information = $info->find('all')->toArray();
+            $this->viewBuilder()->setLayout('navfoot');
+            $this->set(compact('information'));
+
+        }
 }
 
