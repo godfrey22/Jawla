@@ -266,8 +266,7 @@ class UsersController extends AppController
 
     public function attendance($id = null)
     {
-
-        if ($this->Global->isAdmin){
+        if ($this->Global->isAdmin()){
             $this->viewBuilder()->setLayout('admin');
         }else{
             $this->viewBuilder()->setLayout('user');
@@ -280,6 +279,7 @@ class UsersController extends AppController
         //4. Checkbox
         //5. Save the attendance (use jquery if possible, increase usability
 
+        $studio = [];
         if (isset($id)) {
             $enrollment_model = $this->loadModel("Enrollments");
             $studio = $enrollment_model
@@ -295,8 +295,8 @@ class UsersController extends AppController
                 ]);
 
             $studio = $studio->toArray();
-            $this->set(compact('studio'));
         }
+        $this->set(compact('studio'));
 
     }
 
