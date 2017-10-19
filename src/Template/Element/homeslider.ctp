@@ -37,14 +37,14 @@
                 </div>
             </div><!--/.item-->
 
-            <div class="item" style="background-image: url(images/slider/bg2.jpg)">
+            <div class="item" style="background-image: url(<?= $this->Url->image('home/'.$information[5]->value); ?>);">
                 <div class="container">
                     <div class="row slide-margin">
                         <div class="col-sm-6">
                             <div class="carousel-content">
-                                <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
-                                <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</h2>
-                                <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                               <!-- <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
+                                <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</h2>-->
+                               <!-- <a class="btn-slide animation animated-item-3" href="#">Read More</a>-->
                             </div>
                         </div>
 
@@ -58,19 +58,19 @@
                 </div>
             </div><!--/.item-->
 
-            <div class="item" style="background-image: url(images/slider/bg3.jpg)">
+            <div class="item" style="background-image: url(<?= $this->Url->image('home/'.$information[5]->value); ?>);">
                 <div class="container">
                     <div class="row slide-margin">
                         <div class="col-sm-6">
                             <div class="carousel-content">
-                                <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
-                                <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</h2>
-                                <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                              <!--  <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
+                                <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</h2>-->
+                                <!--<a class="btn-slide animation animated-item-3" href="#">Read More</a>-->
                             </div>
                         </div>
                         <div class="col-sm-6 hidden-xs animation animated-item-4">
                             <div class="slider-img">
-                                <img src="images/slider/img3.png" class="img-responsive">
+                                <img src="images/slider/img3.png" class="img-responsive"> (middle pic)
                             </div>
                         </div>
                     </div>

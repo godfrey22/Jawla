@@ -1,11 +1,11 @@
 
 
-<body background = url('img/jalwa_bg.jpg');>
+<body >
 <section id="contact-info">
 
     <div class="center">
         <h2>How to Reach Us?</h2>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+        <!--<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>-->
     </div>
     <div class="gmap-area">
         <div class="container">
@@ -21,14 +21,14 @@
                     <ul class="row">
                         <li class="col-sm-6">
                             <address>
-                                <h5>Head Office</h5>
-                                <p>1537 Flint Street <br>
-                                    Tumon, MP 96911</p>
+                                <h5>Jalwa Dance Company</h5>
+                                <p> 4/23-25 Bunney Road |Oakleigh South 3167 VIC <br>
+                                    </p>
                                 <p>Phone:670-898-2847 <br>
-                                    Email Address:info@domain.com</p>
+                                    Email Address:Jalwa@gmail.com</p>
                             </address>
 
-                            <address>
+                           <!-- <address>
                                 <h5>Zonal Office</h5>
                                 <p>1537 Flint Street <br>
                                     Tumon, MP 96911</p>
@@ -54,7 +54,7 @@
                                 <p>Phone:670-898-2847 <br>
                                     Email Address:info@domain.com</p>
                             </address>
-                        </li>
+                        </li>-->
                     </ul>
                 </div>
             </div>
@@ -65,8 +65,8 @@
 <section id="contact-page">
     <div class="container">
         <div class="center">
-            <h2>Drop Your Message</h2>
-            <p class="lead">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h2>Drop Us Your Message</h2>
+            <!--<p class="lead">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
         </div>
         <div class="row contact-wrap">
 
@@ -85,7 +85,7 @@
                             ]) ?>
                     </div>
                     <div class="form-group">
-                        <?= $this->Form->input('Number *',
+                        <?= $this->Form->input('Number',
                             [
                                 'class' => 'form-control',
                             ]) ?>

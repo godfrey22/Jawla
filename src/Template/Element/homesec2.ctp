@@ -15,9 +15,9 @@
                     <img class="img-responsive"> <?= $this->Html->image('frontpic/fire.jpg')?>
                     <div class="overlay">
                         <div class="recent-work-inner">
-                            <h3><a href="#">Business theme</a> </h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                            <a class="preview" href="images/portfolio/full/item1.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
+                            <h3><a href="#">Genres</a> </h3>
+                            <!--p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
+                            <a class="preview" href="images/portfolio/full/item1.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>-->
                         </div>
                     </div>
                 </div>
@@ -28,9 +28,9 @@
                     <img class="img-responsive"><?= $this->Html->image('frontpic/Danceclass.jpg')?>
                     <div class="overlay">
                         <div class="recent-work-inner">
-                            <h3><a href="#">Business theme</a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                            <a class="preview" href="images/portfolio/full/item2.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
+                            <h3><a href="#">Dance Class</a></h3>
+                            <!--<p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
+                            <a class="preview" href="images/portfolio/full/item2.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>-->
                         </div>
                     </div>
                 </div>
@@ -41,9 +41,9 @@
                     <img class="img-responsive"><?= $this->Html->image('frontpic/kids.jpg')?>
                     <div class="overlay">
                         <div class="recent-work-inner">
-                            <h3><a href="#">Business theme </a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                            <a class="preview" href="images/portfolio/full/item3.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
+                            <h3><a href="#">Kids Parties </a></h3>
+                           <!-- <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
+                            <a class="preview" href="images/portfolio/full/item3.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>-->
                         </div>
                     </div>
                 </div>
@@ -54,9 +54,9 @@
                     <img class="img-responsive"> <?= $this->Html->image('frontpic/studio.jpg')?>
                     <div class="overlay">
                         <div class="recent-work-inner">
-                            <h3><a href="#">Business theme </a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                            <a class="preview" href="images/portfolio/full/item4.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
+                            <h3><a href="#">Studio Hire </a></h3>
+                            <!--<p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
+                            <a class="preview" href="images/portfolio/full/item4.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>-->
                         </div>
                     </div>
                 </div>

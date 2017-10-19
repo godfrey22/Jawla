@@ -173,9 +173,9 @@
                 <script
                     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                     data-key="pk_test_KtD7zLHtIkJIxXrQmvbGLLif"
-                    data-amount="999"
-                    data-name="Demo Site"
-                    data-description="Widget"
+                    data-amount="1400"
+                    data-name="Jalwa dance"
+                    data-description="Payment"
                     data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
                     data-locale="auto"
                     data-zip-code="true"

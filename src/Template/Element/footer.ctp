@@ -10,16 +10,14 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                &copy; 2013 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
+               <!-- <p class="pull-left-">A passion for cultures, irresistibly contagious </p>-->
             </div>
-            <div class="col-sm-6">
-                <ul class="pull-right">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Faq</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </div>
+            <p class="pull-left-">A passion for cultures, irresistibly contagious </p>
+            <p class="pull-right">Copyright © <?= h($information[1]->value) ?> | ABN <?= h($information[2]->value) ?>
+                | <?= h($information[3]->value) ?>
+                |<?= h($information[4]->value) ?></p>
+
         </div>
+        <div class="clear"></div>
     </div>
 </footer><!--/#footer-->

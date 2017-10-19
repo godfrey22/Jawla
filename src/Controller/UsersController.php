@@ -33,6 +33,7 @@ class UsersController extends AppController
     }
 
     public function login()
+
     {
         $this->viewBuilder()->setLayout('login');
         if ($this->request->is('post')) {
@@ -121,8 +122,12 @@ class UsersController extends AppController
         $this->set('_serialize', ['user']);
     }*/
     public function register()
-    {
+    { $info = $this->loadModel('Information');
+        $information = $info->find('all')->toArray();
         $this->viewBuilder()->setLayout('navfoot');
+        $this->set(compact('information'));
+
+
 
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
@@ -155,6 +160,7 @@ class UsersController extends AppController
         }
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
+
     }
     /**
      * Edit method

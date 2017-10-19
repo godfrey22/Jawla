@@ -5,6 +5,7 @@
 
 
 <div class="container">
+    <?= $this->Flash->render() ?>
     <div class="stepwizard">
         <div class="stepwizard-row setup-panel">
             <div class="stepwizard-step">
@@ -125,42 +126,42 @@
                     <div class="form-group">
                     <label class="control-label">House No.</label>
                     <?= $this->Form->text('house_no',
-                        [
+                        ['required'=>'required',
                             'class' => 'form-control',
                             'placeholder' => 'House No.'
                         ]) ?>
                         <div class="form-group">
                     <label class="control-label">Street</label>
                     <?= $this->Form->text('street',
-                        [
+                        ['required'=>'required',
                             'class' => 'form-control',
                             'placeholder' => 'Street'
                         ]) ?></div>
                             <div class="form-group">
                     <label class="control-label">Suburb</label>
                     <?= $this->Form->text('suburb',
-                        [
+                        ['required'=>'required',
                             'class' => 'form-control',
                             'placeholder' => 'Suburb'
                         ]) ?></div>
                                 <div class="form-group">
                     <label class="control-label">Postcode</label>
                     <?= $this->Form->text('postcode',
-                        [
+                        ['required'=>'required',
                             'class' => 'form-control',
                             'placeholder' => 'Post Code'
                         ]) ?></div>
                                     <div class="form-group">
                     <label class="control-label">State</label>
                     <?= $this->Form->text('state',
-                        [
+                        ['required'=>'required',
                             'class' => 'form-control',
                             'placeholder' => 'State'
                         ]) ?></div>
                                         <div class="form-group">
                     <label class="control-label">Country</label>
                     <?= $this->Form->text('country',
-                        [
+                        ['required'=>'required',
                             'class' => 'form-control',
                             'placeholder' => 'Country'
                         ]) ?></div>
@@ -179,7 +180,7 @@
                     <div class="form-group">
                         <label class="control-label">First Name</label>
                         <?= $this->Form->text('g_fname',
-                            [
+                            ['required'=>'required',
                                 'class' => 'form-control',
                                 'placeholder' => 'First Name'
                             ]) ?>
@@ -187,7 +188,7 @@
                         <div class="form-group">
                         <label class="control-label">Last Name</label>
                         <?= $this->Form->text('g_lname',
-                            [
+                            ['required'=>'required',
                                 'class' => 'form-control',
                                 'placeholder' => 'Last Name'
                             ]) ?>
@@ -196,7 +197,7 @@
                     <div class="form-group">
                     <label class="control-label">Mobile no.</label>
                     <?= $this->Form->text('g_mobile',
-                        [
+                        ['required'=>'required',
                             'class' => 'form-control',
                             'placeholder' => 'Mobile No.'
                         ]) ?>
@@ -205,7 +206,7 @@
                         <div class="form-group">
                  <label class="control-label">Email</label>
                 <?= $this->Form->text('g_email',
-                    [
+                    ['required'=>'required',
                         'class' => 'form-control',
                         'placeholder' => 'Email'
                     ]) ?>
