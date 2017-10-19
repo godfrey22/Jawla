@@ -21,6 +21,8 @@
 
     });
 </script>
+
+
 <div class="container-fluid">
     <div class="animated fadeIn">
         <div class="row">
@@ -34,7 +36,7 @@
                             <div id='calendar'></div>
                         </div>
 
-                        <?php if (count($studio) != 0) { ?>
+                        <?php if (count($studio)!= 0) { ?>
                             <div class="card-block col-lg-6 col-md-auto col-sm-auto">
                                 <h2><?php echo $studio[0]->studio->event->name . " on " . $studio[0]->studio->date->nice() ?></h2>
                                 <div>
@@ -48,9 +50,13 @@
                                             <th>Teacher Name</th>
                                             <td><?= $studio[0]->studio->teacher->name ?></td>
                                         </tr>
+                                        <tr>
+                                            <th>Participants</th>
+                                            <td>There are <?= count($studio)?> students enrolled: </td>
+                                        </tr>
                                         <?php foreach ($studio as $item) { ?>
                                             <tr>
-                                                <th>Participants</th>
+                                                <th></th>
                                                 <td><?= $item->participant->first_name." ".$item->participant->last_name ?></td>
                                             </tr>
                                         <?php } ?>
@@ -63,6 +69,10 @@
 
                                 </div>
                             </div>
+                        <?php }else{?>
+                        <div class="card-block col-lg-6 col-md-auto col-sm-auto">
+                            <h2>No one has enrolled in this class</h2>
+                        </div>
                         <?php } ?>
 
                     </div>

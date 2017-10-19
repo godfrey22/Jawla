@@ -300,7 +300,7 @@ class UsersController extends AppController
 
     }
 
-    public function attendancecalendar()
+    public function attendancecalendar($id = null)
     {
 
         $this->viewBuilder()->setLayout('ajax');
@@ -326,7 +326,6 @@ class UsersController extends AppController
                 ]);
             }
             $return_json[] = $data;
-
         }
         echo json_encode($return_json);
         die();
