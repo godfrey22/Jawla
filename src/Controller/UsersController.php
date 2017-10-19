@@ -261,7 +261,10 @@ class UsersController extends AppController
 
     public function myclasses(){
         $this->viewBuilder()->setLayout('user');
+    }
 
+    public function attendance(){
+        $this->viewBuilder()->setLayout('user');
 
     }
 
@@ -316,18 +319,6 @@ class UsersController extends AppController
             die();
 
         }
-
-//        $my_class = $studios->find("all")->where(['participant_id =' => $user_info['id']]); //participant id = user id
-//        $my_family_class = $studios->find("all")->where([
-//            'participant_id !=' => $user_info['id'],
-//            'user_id' => $user_info['id']
-//        ]);
-//        foreach ($my_family_class as $class){
-//            debug($class);
-//
-//        }
-//        die();
-        $my_family_class = []; //user id = id
 
     }
 }

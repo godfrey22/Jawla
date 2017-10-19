@@ -152,7 +152,7 @@ $cakeDescription = 'Test Admin';
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                               href="<?= $this->Url->build(["controller" => "studios", "action" => "index"]); ?>"
+                               href="<?= $this->Url->build(["controller" => "users", "action" => "attendance"]); ?>"
                                target="_top"><i class="fa fa-calendar-plus-o"></i> My Attendance</a>
                         </li>
                     </ul>
