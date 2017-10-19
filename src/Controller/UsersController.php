@@ -263,7 +263,7 @@ class UsersController extends AppController
         $this->viewBuilder()->setLayout('user');
     }
 
-    public function attendance(){
+    public function attendance($id = null){
         $this->viewBuilder()->setLayout('user');
 
         //TODO: Admin Section
@@ -278,10 +278,9 @@ class UsersController extends AppController
 
     public function attendancecalendar(){
 
-//        $this->viewBuilder()->setLayout('ajax');
-//        $this->request->allowMethod('ajax'); // No direct access via browser URL - Note for Cake2.5: allowMethod()
+        $this->viewBuilder()->setLayout('ajax');
+        $this->request->allowMethod('ajax'); // No direct access via browser URL - Note for Cake2.5: allowMethod()
 
-        $user_info = $this->Global->getUser();
         $studios = $this->loadModel('Studios');
 
         $results = $studios->find('all', array(
@@ -296,8 +295,8 @@ class UsersController extends AppController
 
             if($this->Global->isAdmin()){
                 $data['url'] = Router::url([
-                    "controller" => "Studios",
-                    "action" => "edit",
+                    "controller" => "users",
+                    "action" => "attendance",
                     $result['id']
                 ]);
             }
