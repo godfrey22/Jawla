@@ -257,26 +257,56 @@ class UsersController extends AppController
             $total = $query->count();
             $this->set(compact('studio', 'nclasses', 'total'));
         }
-     }
+    }
 
-    public function myclasses(){
+    public function myclasses()
+    {
         $this->viewBuilder()->setLayout('user');
     }
 
-    public function attendance($id = null){
+    public function attendance($id = null)
+    {
         $this->viewBuilder()->setLayout('user');
 
         //TODO: Admin Section
-        //1. Get all the studios
-        //2. Generate Links
+        //1. Get all the studios done
+        //2. Generate Links done
         //3. Pull out all participants when click
         //4. Checkbox
         //5. Save the attendance (use jquery if possible, increase usability
 
+        if (isset($id)) {
+            $enrollment_model = $this->loadModel("Enrollments");
+            $studio = $enrollment_model
+                ->find("all",
+                    array('contain' => ['Users', 'Participants', 'Studios' => ['Events']]))
+                ->where([
+                    "studio_id = " => $id
+                ]);
+
+            debug($studio->toArray());
+            die();
+            $start_date = $studio->date;
+            $query = $studio_model->find('all', [
+                'conditions' => [
+                    'Studios.date >' => $start_date,
+                    'Studios.event_id' => $studio->event->id
+                ]
+            ]);
+            $nclasses = $query->count() + 1;
+            $query = $studio_model->find('all', [
+                'conditions' => [
+                    'Studios.event_id' => $studio->event->id
+                ]
+            ]);
+            $total = $query->count();
+            $this->set(compact('studio', 'nclasses', 'total'));
+        }
 
     }
 
-    public function attendancecalendar(){
+    public function attendancecalendar()
+    {
 
         $this->viewBuilder()->setLayout('ajax');
         $this->request->allowMethod('ajax'); // No direct access via browser URL - Note for Cake2.5: allowMethod()
@@ -293,7 +323,7 @@ class UsersController extends AppController
             $data['start'] = $result['date']->i18nFormat('Y-MM-dd') . 'T' . $result['event']['start_time']->i18nFormat('HH:mm:ss');
             $data['end'] = $result['date']->i18nFormat('Y-MM-dd') . 'T' . $result['event']['end_time']->i18nFormat('HH:mm:ss');
 
-            if($this->Global->isAdmin()){
+            if ($this->Global->isAdmin()) {
                 $data['url'] = Router::url([
                     "controller" => "users",
                     "action" => "attendance",
@@ -307,7 +337,8 @@ class UsersController extends AppController
         die();
     }
 
-    public function classcalendar(){
+    public function classcalendar()
+    {
         $this->viewBuilder()->setLayout('ajax');
         $this->request->allowMethod('ajax');
 //        1. get family members
@@ -317,19 +348,19 @@ class UsersController extends AppController
         $enrollments = $this->loadModel('Enrollments');
         $return_json = [];
 
-        if($user_info['family_id']!=null){
+        if ($user_info['family_id'] != null) {
             $family_members = $this->Users->find('all')->where([
-                'family_id = '=> $user_info['family_id'],
+                'family_id = ' => $user_info['family_id'],
                 'id !=' => $user_info['id']
             ]);
 
-            foreach ($family_members as $family_member){
+            foreach ($family_members as $family_member) {
                 $member_enrollments = $enrollments->find("all",
-                    array('contain'=>['Users', 'Participants', 'Studios' => ['Events']])
+                    array('contain' => ['Users', 'Participants', 'Studios' => ['Events']])
                 )->leftJoinWith('Payments')->where([
                     'participant_id =' => $family_member['id']
                 ]);
-                foreach ($member_enrollments as $member_enrollment){
+                foreach ($member_enrollments as $member_enrollment) {
                     $data['title'] = $member_enrollment['studio']['event']['name'];
                     $data['start'] = $member_enrollment['studio']['date']->i18nFormat('Y-MM-dd') . 'T' . $member_enrollment['studio']['event']['start_time']->i18nFormat('HH:mm:ss');
                     $data['end'] = $member_enrollment['studio']['date']->i18nFormat('Y-MM-dd') . 'T' . $member_enrollment['studio']['event']['end_time']->i18nFormat('HH:mm:ss');
@@ -340,18 +371,17 @@ class UsersController extends AppController
 
 
             $my_enrollments = $enrollments->find("all",
-                array('contain'=>['Users', 'Participants', 'Studios' => ['Events']])
+                array('contain' => ['Users', 'Participants', 'Studios' => ['Events']])
             )->leftJoinWith('Payments')->where([
                 'participant_id =' => $user_info['id']
             ]);
-            foreach ($my_enrollments as $my_enrollment){
+            foreach ($my_enrollments as $my_enrollment) {
                 $data['title'] = $my_enrollment['studio']['event']['name'];
                 $data['start'] = $my_enrollment['studio']['date']->i18nFormat('Y-MM-dd') . 'T' . $my_enrollment['studio']['event']['start_time']->i18nFormat('HH:mm:ss');
                 $data['end'] = $my_enrollment['studio']['date']->i18nFormat('Y-MM-dd') . 'T' . $my_enrollment['studio']['event']['end_time']->i18nFormat('HH:mm:ss');
                 $data['color'] = "#C68E17";
                 $return_json[] = $data;
             }
-
 
 
             echo json_encode($return_json);
