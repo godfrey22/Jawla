@@ -34,71 +34,31 @@
                             <div id='calendar'></div>
                         </div>
 
-                        <?php if (isset($studio)) { ?>
+                        <?php if (count($studio) != 0) { ?>
                             <div class="card-block col-lg-6 col-md-auto col-sm-auto">
-                                <h2><?php echo $studio->event->name . " on " . $studio->date->nice() ?></h2>
+                                <h2><?php echo $studio[0]->studio->event->name . " on " . $studio[0]->studio->date->nice() ?></h2>
                                 <div>
                                     <table class="table table-bordered">
                                         <thead>
                                         <tr>
                                             <th width="40%">Class Name</th>
-                                            <td><?= $studio->event->name ?></td>
+                                            <td><?= $studio[0]->studio->event->name ?></td>
                                         </tr>
                                         <tr>
                                             <th>Teacher Name</th>
-                                            <td><?= $studio->teacher->name ?></td>
+                                            <td><?= $studio[0]->studio->teacher->name ?></td>
                                         </tr>
-                                        <tr>
-                                            <th>Class Type</th>
-                                            <td><?= $studio->class_type->name ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Start Date</th>
-                                            <td><?= $studio->event->start_date->nice() ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th>End Date</th>
-                                            <td><?= $studio->event->end_date->nice() ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Start Time</th>
-                                            <td><?= $studio->event->start_time->format('h:i A') ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th>End Time</th>
-                                            <td><?= $studio->event->end_time->format('h:i A') ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Price (One-Time Class)</th>
-                                            <td><?= \Cake\I18n\Number::currency($studio->event->price) ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Price (Full-Time From <?= $studio->date->nice() ?>)</th>
-                                            <td>
-                                                <?= \Cake\I18n\Number::currency($studio->event->price * $nclasses) ?>
-                                                <?= "(" . $nclasses . " out of " . $total . " Classes)" ?>
-                                            </td>
-                                        </tr>
+                                        <?php foreach ($studio as $item) { ?>
+                                            <tr>
+                                                <th>Participants</th>
+                                                <td><?= $item->participant->first_name." ".$item->participant->last_name ?></td>
+                                            </tr>
+                                        <?php } ?>
+
                                         </thead>
                                         <tbody>
                                         </tbody>
                                     </table>
-                                    <?php if ($studio->date->isPast()) { ?>
-                                        <button class="btn btn-primary disabled">Not Available</button>
-                                    <?php } else {
-                                        if ($nclasses != 1) { ?>
-                                            <a class="btn btn-primary"
-                                               href="<?= $this->Url->build(["controller" => "enrollments", "action" => "add", $studio->id, "F"]); ?>"
-                                            >
-                                                Enroll Full-Time Class
-                                            </a>
-                                            <br>-----------OR-----------<br>
-                                        <?php } ?>
-                                        <a class="btn btn-primary"
-                                           href="<?= $this->Url->build(["controller" => "enrollments", "action" => "add", $studio->id, "O"]); ?>"
-                                        >Enroll
-                                            One-Time Class</a>
-                                    <?php } ?>
 
 
                                 </div>

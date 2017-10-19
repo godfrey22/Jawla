@@ -266,7 +266,12 @@ class UsersController extends AppController
 
     public function attendance($id = null)
     {
-        $this->viewBuilder()->setLayout('user');
+
+        if ($this->Global->isAdmin){
+            $this->viewBuilder()->setLayout('admin');
+        }else{
+            $this->viewBuilder()->setLayout('user');
+        }
 
         //TODO: Admin Section
         //1. Get all the studios done
@@ -279,28 +284,18 @@ class UsersController extends AppController
             $enrollment_model = $this->loadModel("Enrollments");
             $studio = $enrollment_model
                 ->find("all",
-                    array('contain' => ['Users', 'Participants', 'Studios' => ['Events']]))
+                    array('contain' => [
+                        'Users', 'Participants', 'Studios' => [
+                            'Events',
+                            'Teachers'
+                        ]
+                    ]))
                 ->where([
                     "studio_id = " => $id
                 ]);
 
-            debug($studio->toArray());
-            die();
-            $start_date = $studio->date;
-            $query = $studio_model->find('all', [
-                'conditions' => [
-                    'Studios.date >' => $start_date,
-                    'Studios.event_id' => $studio->event->id
-                ]
-            ]);
-            $nclasses = $query->count() + 1;
-            $query = $studio_model->find('all', [
-                'conditions' => [
-                    'Studios.event_id' => $studio->event->id
-                ]
-            ]);
-            $total = $query->count();
-            $this->set(compact('studio', 'nclasses', 'total'));
+            $studio = $studio->toArray();
+            $this->set(compact('studio'));
         }
 
     }
